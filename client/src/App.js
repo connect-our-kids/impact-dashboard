@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './index.scss';
 
 import NavBar from './components/NavBar';
 import Profile from './components/Profile';
