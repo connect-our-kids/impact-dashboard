@@ -2,6 +2,7 @@ name: AWS Deploy
 
 on: 
   pull_request:
+  push:
     branches: 
       - master
 
