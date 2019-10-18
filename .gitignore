@@ -6,3 +6,6 @@ jspm_packages
 .serverless
 
 .DS_Store
+
+# dotenv file, for api keys
+.env

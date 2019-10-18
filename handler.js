@@ -1,5 +1,5 @@
 'use strict';
-
+require('dotenv').config()
 const shakespeare = require('./server/queryShakespeare')
 const fakeData = require('./server/fakeData')
 
