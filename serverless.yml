@@ -21,8 +21,12 @@ service: impact-dashboard
 # frameworkVersion: "=X.X.X"
 
 provider:
+# profile is for your powerUser credentials profile
+  profile: connectKids
   name: aws
   runtime: nodejs10.x
+# make stage dev-[your name]
+  stage: dev-ehalsmer
 
 # you can overwrite defaults here
 #  stage: dev
@@ -49,17 +53,35 @@ provider:
 #    variable1: value1
 
 # you can add packaging information here
-#package:
+package:
 #  include:
 #    - include-me.js
 #    - include-me-dir/**
-#  exclude:
-#    - exclude-me.js
-#    - exclude-me-dir/**
+  exclude:
+    - client/**
 
 functions:
   hello:
     handler: handler.hello
+    name: 'helloworld-${self:provider.stage}'
+    events:
+     - http:
+         path: /
+         method: get
+  catmemes:
+    handler: handler.catMemes
+    name: 'hellocats-${self:provider.stage}'
+    events:
+     - http:
+         path: /cats
+         method: get
+  shakespeareQuotes:
+    handler: handler.shakespeareQuotes
+    name: 'shakespeare-${self:provider.stage}'
+    events:
+     - http:
+          path: /shakespeareQuotes
+          method: get
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
