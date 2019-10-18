@@ -4,7 +4,11 @@ import './index.scss';
 
 import NavBar from './components/NavBar';
 import Profile from './components/Profile';
-import PublicDashboard from './components/PublicDashboard';
+import PublicDashboard from './views/PublicDashboard';
+import PersonalDashboard from './views/PersonalDashboard';
+import TeamDashboard from './views/TeamDashboard';
+
+import { Route } from 'react-router-dom';
 
 function App() {
 
@@ -12,7 +16,9 @@ function App() {
     <div className="App">
       <NavBar/>
       <Profile/>
-      <PublicDashboard />
+      <Route exact path='/' component={PublicDashboard}/>
+      <Route path='/team' component={TeamDashboard} />
+      <Route path='/personal' component={PersonalDashboard}/>
     </div>
   );
 }
