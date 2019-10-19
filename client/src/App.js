@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import './index.scss';
 
@@ -11,7 +11,9 @@ import TeamDashboard from './views/TeamDashboard';
 import { Route } from 'react-router-dom';
 
 function App() {
+  useEffect(() => {
 
+  }, []);
   return (
     <div className="App">
       <NavBar/>

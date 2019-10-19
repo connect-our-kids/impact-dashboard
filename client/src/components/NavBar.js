@@ -1,6 +1,8 @@
 import React from "react";
 import { useAuth0 } from "../auth0-wrapper";
+import { connect } from 'react-redux';
 
+import { login_request } from '../actions/index';
 import './NavBar.scss';
 
 const NavBar = () => {
@@ -12,8 +14,10 @@ const NavBar = () => {
       <div className="menu">
         {!isAuthenticated && (
           <button className="btn login-btn"
-            onClick={() =>
-              loginWithRedirect({})
+            onClick={() => {
+                // login_request()
+                // loginWithRedirect({})
+              }
             }
           >
             Log In
