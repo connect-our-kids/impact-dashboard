@@ -9,3 +9,4 @@ jspm_packages
 
 # dotenv file, for api keys
 .env
+secrets.js
