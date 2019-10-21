@@ -21,6 +21,8 @@ service: impact-dashboard
 # frameworkVersion: "=X.X.X"
 
 provider:
+# profile is for your powerUser credentials profile
+  profile: connectKids
   name: aws
   runtime: nodejs10.x
   profile: default
@@ -50,13 +52,12 @@ provider:
 #    variable1: value1
 
 # you can add packaging information here
-#package:
+package:
 #  include:
 #    - include-me.js
 #    - include-me-dir/**
-#  exclude:
-#    - exclude-me.js
-#    - exclude-me-dir/**
+  exclude:
+    - client/**
 
 functions:
   hello:
