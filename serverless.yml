@@ -25,7 +25,8 @@ provider:
   profile: connectKids
   name: aws
   runtime: nodejs10.x
-  profile: default
+ # make stage dev-[your name]
+  stage: dev-ehalsmer
 
 # you can overwrite defaults here
 #  stage: dev
@@ -65,6 +66,20 @@ functions:
     events:
       - http:
           path: /
+          method: get
+  catmemes:
+    handler: lambda/handler.catMemes
+    name: 'hellocats-${self:provider.stage}'
+    events:
+     - http:
+         path: /cats
+         method: get
+  shakespeareQuotes:
+    handler: lambda/handler.shakespeareQuotes
+    name: 'shakespeare-${self:provider.stage}'
+    events:
+     - http:
+          path: /shakespeareQuotes
           method: get
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
