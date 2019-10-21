@@ -62,21 +62,21 @@ package:
 
 functions:
   hello:
-    handler: handler.hello
+    handler: lambda/handler.hello
     name: 'helloworld-${self:provider.stage}'
     events:
      - http:
          path: /
          method: get
   catmemes:
-    handler: handler.catMemes
+    handler: lambda/handler.catMemes
     name: 'hellocats-${self:provider.stage}'
     events:
      - http:
          path: /cats
          method: get
   shakespeareQuotes:
-    handler: handler.shakespeareQuotes
+    handler: lambda/handler.shakespeareQuotes
     name: 'shakespeare-${self:provider.stage}'
     events:
      - http:

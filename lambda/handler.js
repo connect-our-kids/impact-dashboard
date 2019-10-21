@@ -1,5 +1,7 @@
+// Contains test functions right now
+
 'use strict';
-const shakespeare = require('./server/queryShakespeare')
+const shakespeare = require('./queryShakespeare')
 
 module.exports.hello = async event=> {
       return {
@@ -30,6 +32,7 @@ module.exports.catMemes = async event=> {
     }
 
 
+// This function invokes queryShakespeare (awaiting it), then returns a message along with the query results
 module.exports.shakespeareQuotes = async event=> {
   const query = await shakespeare.queryShakespeare();
   console.log(query, "This is a query maybe")

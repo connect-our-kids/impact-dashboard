@@ -1,3 +1,5 @@
+// This function fetches data from the Shakespeare public dataset on Google BigQuery. We can use a similar function to fetch data from ConnectOurKids once it's available
+
 'use strict';
 
     // Import the Google Cloud client library
