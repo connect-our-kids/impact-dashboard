@@ -1,6 +1,7 @@
 'use strict';
 
     // Import the Google Cloud client library
+    require('dotenv').config()
     const {BigQuery} = require('@google-cloud/bigquery');
     
     
