@@ -1,3 +1,5 @@
+#added secrets.js file to gitignore to hide credentials
+
 # package directories
 node_modules
 jspm_packages
@@ -9,3 +11,4 @@ jspm_packages
 
 # dotenv file, for api keys
 .env
+secrets.js
