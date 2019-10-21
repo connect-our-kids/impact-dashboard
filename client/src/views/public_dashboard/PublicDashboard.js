@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './PublicDashboard.scss';
-import { increment, decrement } from '../actions/index';
+import { increment, decrement } from '../../redux/actions/index';
 import {connect} from 'react-redux';
 
 const PublicDashboard = (props) => {

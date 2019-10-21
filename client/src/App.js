@@ -4,9 +4,9 @@ import './index.scss';
 
 import NavBar from './components/NavBar';
 import Profile from './components/Profile';
-import PublicDashboard from './views/PublicDashboard';
-import PersonalDashboard from './views/PersonalDashboard';
-import TeamDashboard from './views/TeamDashboard';
+import PublicDashboard from './views/public_dashboard/PublicDashboard';
+import PersonalDashboard from './views/personal_dashboard/PersonalDashboard';
+import TeamDashboard from './views/team_dashboard/TeamDashboard';
 
 import { Route } from 'react-router-dom';
 
