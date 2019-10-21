@@ -1,10 +1,13 @@
 import React from 'react';
 
 import './PublicDashboard.scss';
+import { increment, decrement } from '../../redux/actions/index';
+import {connect} from 'react-redux';
 
-const PublicDashboard = () => {
+const PublicDashboard = (props) => {
 
   return (
+    <>
     <>
       <header>
         <h1>Public Dashboard</h1>
@@ -39,7 +42,28 @@ const PublicDashboard = () => {
         </div>
       </main>
     </>
+
+    
+        <div>
+            <p>
+            Clicked: {props.count} times
+            <button onClick={() => {props.increment() }}>
+                +
+            </button>
+            <button onClick={() => {props.decrement() }}>
+                -
+            </button>
+            </p>
+        </div>
+        </>
   )
 }
 
-export default PublicDashboard;
+
+const mapStateToProps = (state) => {
+  return {
+      count: state.count
+  };
+};
+
+export default connect(mapStateToProps, {increment, decrement })(PublicDashboard);

@@ -25,8 +25,13 @@ provider:
   profile: default
   name: aws
   runtime: nodejs10.x
+<<<<<<< HEAD
 # make stage dev-[your name]
   stage: dev-nisa
+=======
+ # make stage dev-[your name]
+  stage: dev-ehalsmer
+>>>>>>> bb138df4a05665ae23b345490fb59e8f58d80def
 
 # you can overwrite defaults here
 #  stage: dev
@@ -62,12 +67,11 @@ package:
 
 functions:
   hello:
-    handler: lambda/handler.hello
-    name: 'helloworld-${self:provider.stage}'
+    handler: handler.hello
     events:
-     - http:
-         path: /
-         method: get
+      - http:
+          path: /
+          method: get
   catmemes:
     handler: lambda/handler.catMemes
     name: 'hellocats-${self:provider.stage}'
@@ -85,10 +89,6 @@ functions:
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
-#    events:
-#      - http:
-#          path: users/create
-#          method: get
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
