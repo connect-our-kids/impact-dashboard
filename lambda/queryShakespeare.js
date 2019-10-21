@@ -1,3 +1,6 @@
+// updated this file from credentials  originally coming from .env(as it didnt work for us with the file structure) and imported the credentials from the secrets.js 
+///file  to keep the credentials from being hard coded and exposed.
+
 // This function fetches data from the Shakespeare public dataset on Google BigQuery. We can use a similar function to fetch data from ConnectOurKids once it's available
 
 'use strict';

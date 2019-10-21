@@ -25,13 +25,8 @@ provider:
   profile: default
   name: aws
   runtime: nodejs10.x
-<<<<<<< HEAD
 # make stage dev-[your name]
   stage: dev-nisa
-=======
- # make stage dev-[your name]
-  stage: dev-ehalsmer
->>>>>>> bb138df4a05665ae23b345490fb59e8f58d80def
 
 # you can overwrite defaults here
 #  stage: dev

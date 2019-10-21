@@ -1,3 +1,5 @@
+#added secrets.js file to gitignore to hide credentials
+
 # package directories
 node_modules
 jspm_packages
