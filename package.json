@@ -28,8 +28,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start2": "node bin/www"
-
+    "start2": "node bin/www",
+    "build:dev": "serverless deploy && yarn start"
   },
   "eslintConfig": {
     "extends": "react-app"

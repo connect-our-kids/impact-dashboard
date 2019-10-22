@@ -2,9 +2,9 @@
 Getting started:
 ---
 
-1. Install the dependencies in the root directory and in the client folder.
+1. Install dependencies  
 2. On the root directory, there should be a file named ```serverless.yml```. Open that up. 
-    * In the provider section, change the profile to match your ```credentials``` file in your ```.aws``` folder
+    * In the provider section, change the profile to match the ```credentials``` file in your ```.aws``` folder
     * Change the stage to ```dev-${your name}``` if you're developing, or ```staging-1```/```staging-2``` if you are doing QA
     
 Although we won't be using the queryShakespeare.js and /shakespeareQuotes endpoint, Nisa has the necessary credentials. Put them in a secrets.js file as a json object, and export it. For example:  
@@ -93,6 +93,11 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+
+### `yarn build:dev`
+
+Builds a dev environment. The backend will depend on what your serverless.yml has specified. The frontend will go to [http://localhost:3000](http://localhost:3000)
 
 ## Learn More
 
