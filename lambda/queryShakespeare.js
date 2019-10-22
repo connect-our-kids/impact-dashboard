@@ -38,8 +38,9 @@
         // Run the query
         const [rows] = await bigqueryClient.query(options);
 
-        console.log('Rows:');
-        rows.forEach(row => console.log(row));
+        // console.log('Rows:');
+        // rows.forEach(row => console.log(row));
+        return rows;
     }
 
 
