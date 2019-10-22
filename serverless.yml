@@ -21,7 +21,7 @@ service: impact-dashboard
 # frameworkVersion: "=X.X.X"
 
 provider:
-# profile is for your powerUser credentials profile
+  # profile is for your powerUser credentials profile
   profile: default
   name: aws
   runtime: nodejs10.x
@@ -54,15 +54,15 @@ provider:
 
 # you can add packaging information here
 package:
-#  include:
-#    - include-me.js
-#    - include-me-dir/**
+  #  include:
+  #    - include-me.js
+  #    - include-me-dir/**
   exclude:
     - client/**
 
 functions:
   hello:
-    handler: handler.hello
+    handler: lambda/handler.hello
     events:
       - http:
           path: /
@@ -71,14 +71,14 @@ functions:
     handler: lambda/handler.catMemes
     name: 'hellocats-${self:provider.stage}'
     events:
-     - http:
-         path: /cats
-         method: get
+      - http:
+          path: /cats
+          method: get
   shakespeareQuotes:
     handler: lambda/handler.shakespeareQuotes
     name: 'shakespeare-${self:provider.stage}'
     events:
-     - http:
+      - http:
           path: /shakespeareQuotes
           method: get
 #    The following are a few example events you can configure

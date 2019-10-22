@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
 import './PublicDashboard.scss';
 import { increment, decrement } from '../../redux/actions/index';
 import {connect} from 'react-redux';
@@ -7,7 +6,6 @@ import {connect} from 'react-redux';
 const PublicDashboard = (props) => {
 
   const [words, setWords] = useState()
-  console.log(words)
 
 
   useEffect(()=>{
@@ -28,34 +26,11 @@ const PublicDashboard = (props) => {
       </header>
       <main>
         <div className="public-stats-grid">
+          {/* provided words is not undefined (after the fetch above happens), map over the first 6 words, displaying a div with the wordcount and word */}
           {words ? words.slice(0,6).map(word => <div className="metric">
             <b>{word.word_count}</b>
             <p>{word.word}</p>
           </div>) : 'Loading words'}
-          {/* <div className="metric">
-            <b>#</b>
-            <p>Metric 1</p>
-          </div>
-          <div className="metric">
-            <b>#</b>
-            <p>Metric 2</p>
-          </div>
-          <div className="metric">
-            <b>#</b>
-            <p>Metric 3</p>
-          </div>
-          <div className="metric">
-            <b>#</b>
-            <p>Metric 4</p>
-          </div>
-          <div className="metric">
-            <b>#</b>
-            <p>Metric 5</p>
-          </div>
-          <div className="metric">
-            <b>#</b>
-            <p>Metric 6</p>
-          </div> */}
         </div>
       </main>
     </>

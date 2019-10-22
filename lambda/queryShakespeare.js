@@ -5,42 +5,43 @@
 
 'use strict';
 
-    // Import the Google Cloud client library
-    const {BigQuery} = require('@google-cloud/bigquery');
-    
-    const bigQueryCreds = require('../secrets')
+// Import the Google Cloud client library
+const {BigQuery} = require('@google-cloud/bigquery');
 
-    exports.queryShakespeare = async function() {
-        // Queries a public Shakespeare dataset.
-        const projectId = "bigquerygithub-256021";    
+const bigQueryCreds = require('../secrets')
 
-        // Create a client
-        const bigqueryClient = new BigQuery({
-            projectId: projectId,
-            credentials: bigQueryCreds
-        });
-        console.log(process.env, "this")
+exports.queryShakespeare = async function () {
+    // Queries a public Shakespeare dataset.
+    const projectId = "bigquerygithub-256021";
 
-        // The SQL query to run
-        const sqlQuery = `SELECT word, word_count
+    // Create a client
+    const bigqueryClient = new BigQuery({
+        projectId: projectId,
+        credentials: bigQueryCreds
+    });
+    console.log(process.env, "this")
+
+    // The SQL query to run
+    const sqlQuery = `SELECT word, word_count
             FROM \`bigquery-public-data.samples.shakespeare\`
             WHERE corpus = @corpus
             AND word_count >= @min_word_count
             ORDER BY word_count DESC`;
 
-        const options = {
+    const options = {
         query: sqlQuery,
         // Location must match that of the dataset(s) referenced in the query.
         location: 'US',
         params: {corpus: 'romeoandjuliet', min_word_count: 250},
-        };
+    };
 
-        // Run the query
-        const [rows] = await bigqueryClient.query(options);
+    // Run the query. Rows is an array of word objects, each having properties word and word_count
+    const [rows] = await bigqueryClient.query(options);
+    console.log('Rows:');
+    rows.forEach(row => console.log(row));
 
-        // console.log('Rows:');
-        // rows.forEach(row => console.log(row));
-        return rows;
+    // we need to return rows, so that we can display the words on the frontend
+    return rows;
     }
 
 
