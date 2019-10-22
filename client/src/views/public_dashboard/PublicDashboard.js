@@ -6,26 +6,17 @@ import {connect} from 'react-redux';
 
 const PublicDashboard = (props) => {
 
-  const [shakespeare, setShakespeare] = useState([])
+  const [words, setWords] = useState()
+  console.log(words)
 
 
   useEffect(()=>{
-    // let xhr = new XMLHttpRequest();
-    // xhr.open('GET', 'https://a5rld810fi.execute-api.us-east-1.amazonaws.com/dev-ehalsmer/shakespeareQuotes', true);
-    // xhr.send();
-    // xhr.addEventListener("readystatechange", processRequest, false);
-  
-    // function processRequest(e) {
-    //   if (xhr.readyState == 4 && xhr.status == 200) {
-    //       // time to partay!!!
-    //       let response = JSON.parse(xhr.responseText);
-    //       console.log('RESPONSE:', response)
-    //   }
-    // }
-    axios.get('https://a5rld810fi.execute-api.us-east-1.amazonaws.com/dev-ehalsmer/shakespeareQuotes')
-    .then(res => {
-      console.log(res)
-    })
+    fetch('https://a5rld810fi.execute-api.us-east-1.amazonaws.com/dev-ehalsmer/shakespeareQuotes')
+      .then(response => response.json())
+      .then(data => {
+        setWords(data.query)
+      })
+      .catch(error => console.log(error))
   }, [])
 
   return (
@@ -37,7 +28,11 @@ const PublicDashboard = (props) => {
       </header>
       <main>
         <div className="public-stats-grid">
-          <div className="metric">
+          {words ? words.slice(0,6).map(word => <div className="metric">
+            <b>{word.word_count}</b>
+            <p>{word.word}</p>
+          </div>) : 'Loading words'}
+          {/* <div className="metric">
             <b>#</b>
             <p>Metric 1</p>
           </div>
@@ -60,7 +55,7 @@ const PublicDashboard = (props) => {
           <div className="metric">
             <b>#</b>
             <p>Metric 6</p>
-          </div>
+          </div> */}
         </div>
       </main>
     </>
