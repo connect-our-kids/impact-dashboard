@@ -58,7 +58,7 @@ package:
   #    - include-me.js
   #    - include-me-dir/**
   exclude:
-    - client/**
+    - src/**
 
 functions:
   hello:
