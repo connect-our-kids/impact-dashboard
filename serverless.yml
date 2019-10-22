@@ -21,11 +21,11 @@ service: impact-dashboard
 # frameworkVersion: "=X.X.X"
 
 provider:
-# profile is for your powerUser credentials profile
+  # profile is for your powerUser credentials profile
   profile: 138110379499_PowerUserAccess
   name: aws
   runtime: nodejs10.x
-# make stage dev-[your name]
+  # make stage dev-[your name]
   stage: dev-sean
 
 # you can overwrite defaults here
@@ -54,9 +54,9 @@ provider:
 
 # you can add packaging information here
 package:
-#  include:
-#    - include-me.js
-#    - include-me-dir/**
+  #  include:
+  #    - include-me.js
+  #    - include-me-dir/**
   exclude:
     - client/**
 
@@ -68,17 +68,17 @@ functions:
           path: /
           method: get
   catmemes:
-    handler: lambda/handler.catMemes
+    handler: handler.catMemes
     name: 'hellocats-${self:provider.stage}'
     events:
-     - http:
-         path: /cats
-         method: get
+      - http:
+          path: /cats
+          method: get
   shakespeareQuotes:
-    handler: lambda/handler.shakespeareQuotes
+    handler: handler.shakespeareQuotes
     name: 'shakespeare-${self:provider.stage}'
     events:
-     - http:
+      - http:
           path: /shakespeareQuotes
           method: get
 #    The following are a few example events you can configure
