@@ -38,6 +38,9 @@ module.exports.shakespeareQuotes = async event=> {
   console.log(query, "This is a query maybe")
       return {
         statusCode: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*"
+        },
         body: JSON.stringify(
           {
             message: 'Look at all these chickens!',

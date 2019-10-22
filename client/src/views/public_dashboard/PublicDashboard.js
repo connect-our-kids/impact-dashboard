@@ -1,13 +1,32 @@
-import React from 'react';
-
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import './PublicDashboard.scss';
 import { increment, decrement } from '../../redux/actions/index';
 import {connect} from 'react-redux';
 
 const PublicDashboard = (props) => {
 
-  
+  const [shakespeare, setShakespeare] = useState([])
 
+
+  useEffect(()=>{
+    // let xhr = new XMLHttpRequest();
+    // xhr.open('GET', 'https://a5rld810fi.execute-api.us-east-1.amazonaws.com/dev-ehalsmer/shakespeareQuotes', true);
+    // xhr.send();
+    // xhr.addEventListener("readystatechange", processRequest, false);
+  
+    // function processRequest(e) {
+    //   if (xhr.readyState == 4 && xhr.status == 200) {
+    //       // time to partay!!!
+    //       let response = JSON.parse(xhr.responseText);
+    //       console.log('RESPONSE:', response)
+    //   }
+    // }
+    axios.get('https://a5rld810fi.execute-api.us-east-1.amazonaws.com/dev-ehalsmer/shakespeareQuotes')
+    .then(res => {
+      console.log(res)
+    })
+  }, [])
 
   return (
     <>
