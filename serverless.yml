@@ -22,11 +22,11 @@ service: impact-dashboard
 
 provider:
 # profile is for your powerUser credentials profile
-  profile: default
+  profile: 138110379499_PowerUserAccess
   name: aws
   runtime: nodejs10.x
 # make stage dev-[your name]
-  stage: dev-nisa
+  stage: dev-sean
 
 # you can overwrite defaults here
 #  stage: dev
