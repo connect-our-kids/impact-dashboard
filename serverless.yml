@@ -26,7 +26,8 @@ provider:
   name: aws
   runtime: nodejs10.x
 # make stage dev-[your name]
-  stage: dev-ehalsmer
+  stage: dev-ehalsmert
+  timeout: 30
 
 # you can overwrite defaults here
 #  stage: dev
@@ -58,7 +59,12 @@ package:
   #    - include-me.js
   #    - include-me-dir/**
   exclude:
-    - client/**
+    - src/**
+    # - node_modules/**
+    # - '!node_modules/@google-cloud/**'
+    # - '!node_modules/arrify/**'
+  # include:
+    # -node_modules/@google-cloud/bigquery
 
 functions:
   hello:

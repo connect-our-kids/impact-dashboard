@@ -29,7 +29,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start2": "node bin/www"
-
   },
   "eslintConfig": {
     "extends": "react-app"

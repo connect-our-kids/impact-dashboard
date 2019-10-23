@@ -9,7 +9,7 @@ const PublicDashboard = (props) => {
 
 
   useEffect(()=>{
-    fetch('https://a5rld810fi.execute-api.us-east-1.amazonaws.com/dev-ehalsmer/shakespeareQuotes')
+    fetch('https://wp4hb8gbwh.execute-api.us-east-1.amazonaws.com/dev-ehalsmert/shakespeareQuotes')
       .then(response => response.json())
       .then(data => {
         setWords(data.query)
