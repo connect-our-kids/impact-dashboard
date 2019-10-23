@@ -26,11 +26,11 @@ plugins:
 
 provider:
   # profile is for your powerUser credentials profile
-  profile: 138110379499_PowerUserAccess
+  profile: default
   name: aws
   runtime: nodejs10.x
   # make stage dev-[your name]
-  stage: dev-sean
+  stage: dev-nisa
 
 # you can overwrite defaults here
 #  stage: dev
@@ -85,6 +85,20 @@ functions:
     events:
       - http:
           path: /shakespeareQuotes
+          method: get
+  gitHubBigQuery:
+    handler: handler.gitHubBigQuery
+    name: 'github-${self:provider.stage}'
+    events:
+      - http:
+          path: /commits
+          method: get
+  moonPhases:
+    handler: handler.moonPhases
+    name: 'moon-${self:provider.stage}'
+    events:
+      - http:
+          path: /moonPhases
           method: get
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
