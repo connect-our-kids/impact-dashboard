@@ -1,10 +1,21 @@
-import React from 'react';
-
+import React, {useState, useEffect} from 'react';
 import './PublicDashboard.scss';
 import { increment, decrement } from '../../redux/actions/index';
 import {connect} from 'react-redux';
 
 const PublicDashboard = (props) => {
+
+  const [words, setWords] = useState()
+
+
+  useEffect(()=>{
+    fetch('https://wp4hb8gbwh.execute-api.us-east-1.amazonaws.com/dev-ehalsmert/shakespeareQuotes')
+      .then(response => response.json())
+      .then(data => {
+        setWords(data.query)
+      })
+      .catch(error => console.log(error))
+  }, [])
 
   return (
     <>
@@ -15,30 +26,11 @@ const PublicDashboard = (props) => {
       </header>
       <main>
         <div className="public-stats-grid">
-          <div className="metric">
-            <b>#</b>
-            <p>Metric 1</p>
-          </div>
-          <div className="metric">
-            <b>#</b>
-            <p>Metric 2</p>
-          </div>
-          <div className="metric">
-            <b>#</b>
-            <p>Metric 3</p>
-          </div>
-          <div className="metric">
-            <b>#</b>
-            <p>Metric 4</p>
-          </div>
-          <div className="metric">
-            <b>#</b>
-            <p>Metric 5</p>
-          </div>
-          <div className="metric">
-            <b>#</b>
-            <p>Metric 6</p>
-          </div>
+          {/* provided words is not undefined (after the fetch above happens), map over the first 6 words, displaying a div with the wordcount and word */}
+          {words ? words.slice(0,6).map(word => <div className="metric">
+            <b>{word.word_count}</b>
+            <p>{word.word}</p>
+          </div>) : 'Loading words'}
         </div>
       </main>
     </>
