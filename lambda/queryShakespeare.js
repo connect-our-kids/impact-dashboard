@@ -35,12 +35,14 @@ exports.queryShakespeare = async function () {
         params: {corpus: 'romeoandjuliet', min_word_count: 250},
     };
 
-    // Run the query
+    // Run the query. Rows is an array of word objects, each having properties word and word_count
     const [rows] = await bigqueryClient.query(options);
-
     console.log('Rows:');
     rows.forEach(row => console.log(row));
-}
+
+    // we need to return rows, so that we can display the words on the frontend
+    return rows;
+    }
 
 
 
