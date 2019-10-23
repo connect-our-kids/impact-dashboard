@@ -1,4 +1,6 @@
 // Contains test functions right now
+///added headers to avoid CORS issues for now whil in dev
+///added methods for new queries
 
 'use strict';
 const shakespeare = require('./lambda/queryShakespeare');
@@ -40,6 +42,9 @@ module.exports.shakespeareQuotes = async event => {
     console.log(query, "This is a query maybe")
     return {
         statusCode: 200,
+        headers: {
+            "Access-Control-Allow-Origin": "*"
+          },
         body: JSON.stringify(
             {
                 message: 'Look at all these chickens!',
@@ -56,6 +61,9 @@ module.exports.gitHubBigQuery = async event => {
     console.log(query, "This is another Query")
     return {
         statusCode: 200,
+        headers: {
+            "Access-Control-Allow-Origin": "*"
+          },
         body: JSON.stringify(
             {
                 message: 'Look at all these commits!',
@@ -72,6 +80,9 @@ module.exports.moonPhases = async event => {
     console.log(query, "This is another Query")
     return {
         statusCode: 200,
+        headers: {
+            "Access-Control-Allow-Origin": "*"
+          },
         body: JSON.stringify(
             {
                 message: 'Look at all these Moon Phases!',

@@ -16,7 +16,8 @@ const NavBar = () => {
           <button className="btn login-btn"
             onClick={() => {
                 // login_request()
-                loginWithRedirect({})
+                // loginWithRedirect({})
+                //having an error populate when log in is clicked
               }
             }
           >
