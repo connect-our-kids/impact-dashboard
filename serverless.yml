@@ -60,11 +60,6 @@ package:
   #    - include-me-dir/**
   exclude:
     - src/**
-    # - node_modules/**
-    # - '!node_modules/@google-cloud/**'
-    # - '!node_modules/arrify/**'
-  # include:
-    # -node_modules/@google-cloud/bigquery
 
 functions:
   hello:
