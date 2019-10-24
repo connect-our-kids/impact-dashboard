@@ -4,7 +4,7 @@
 
 'use strict';
 const shakespeare = require('./queryShakespeare')
-const github = require('./queryGitHub')
+const gitHub = require('./queryGitHub')
 const moon = require('./queryMoonPhase')
 
 module.exports.hello = async event=> {
