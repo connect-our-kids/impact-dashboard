@@ -4,7 +4,9 @@ header {
     color: #508db3;
   }
   h2 {
-    font-weight: normal;
+    color: #6db9d0;
+    font-weight: 700;
+    margin-left: 20rem;
   }
 }
 main {
@@ -12,6 +14,9 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    @media (max-width: 637px) {
+      grid-template-columns: 1fr;
+    }
     .metric {
       background: gray;
       padding: 50px 0;
