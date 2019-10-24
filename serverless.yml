@@ -86,6 +86,22 @@ functions:
       - http:
           path: /shakespeareQuotes
           method: get
+  # posts events to mixpanel
+  mixpanelEvent:
+    handler: lambda/handler.mixpanelEvent
+    name: 'mixpanelevent-${self:provider.stage}'
+    events:
+      -http:
+        path: /mixpanelEvent
+        method: post
+  # posts user info to mixpanel
+  mixpanelUser:
+    handler: lambda/handler.mixpanelUser
+    name: 'mixpaneluser-${self:provider.stage}'
+    events:
+      -http:
+        path: /mixpanelUser
+        method: post
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

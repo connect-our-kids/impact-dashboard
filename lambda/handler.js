@@ -52,3 +52,32 @@ module.exports.shakespeareQuotes = async event=> {
         )
       }
     }
+
+//This function will capture and post events to mixpanel
+module.exports.mixpanelEvent = async event => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify(
+      {
+        message: 'Event sent to mixpanel',
+        event
+      },
+      null,
+      2
+    )
+  }
+}
+//This function will capture and post users to mixpanel
+module.exports.mixpanelUser = async event => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify(
+      {
+        message: 'User sent to mixpanel',
+        event
+      },
+      null,
+      2
+    )
+  }
+}
