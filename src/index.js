@@ -7,6 +7,9 @@ import App from './App';
 import { Auth0Provider } from "./auth0-wrapper";
 import config from './auth_config.json';
 
+// mixpanel
+import { MixpanelProvider } from "react-mixpanel";
+
 //redux/router
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -37,9 +40,11 @@ ReactDOM.render(
         redirect_uri={window.location.origin}
         onRedirectCallback={onRedirectCallback}
       >
-      <Router>
-        <App />
-      </Router>
+        <MixpanelProvider>
+          <Router>
+            <App />
+          </Router>
+        </MixpanelProvider>
       </Auth0Provider>
   </Provider>,
   document.getElementById('root'));
