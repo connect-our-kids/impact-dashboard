@@ -7,6 +7,10 @@ import App from './App';
 import { Auth0Provider } from "./auth0-wrapper";
 import config from './auth_config.json';
 
+//mixpanel
+import mixpanel from "mixpanel-browser";
+import { MixpanelProvider, MixpanelConsumer } from "react-mixpanel";
+
 //redux/router
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -16,6 +20,10 @@ import reducer from './redux/reducers/index'
 
 
 import * as serviceWorker from './serviceWorker';
+
+//initialize mixpanel
+//mixpanel.init("YOUR_TOKEN");
+//double check the order of the mixpanel provider wrapper
 
 const onRedirectCallback = appState => {
   window.history.replaceState(
@@ -37,9 +45,11 @@ ReactDOM.render(
         redirect_uri={window.location.origin}
         onRedirectCallback={onRedirectCallback}
       >
-      <Router>
-        <App />
-      </Router>
+        <MixpanelProvider>
+          <Router>
+            <App />
+          </Router>
+        </MixpanelProvider>
       </Auth0Provider>
   </Provider>,
   document.getElementById('root'));
