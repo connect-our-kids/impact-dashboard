@@ -32,6 +32,7 @@ provider:
 # make stage dev-[your name]
   stage: dev-desiree
 
+
 # you can overwrite defaults here
 #  stage: dev
 #  region: us-east-1
@@ -102,6 +103,20 @@ functions:
       -http:
         path: /mixpanelUser
         method: post
+  gitHubBigQuery:
+    handler: lambda/handler.gitHubBigQuery
+    name: 'github-${self:provider.stage}'
+    events:
+      - http:
+          path: /commits
+          method: get
+  moonPhases:
+    handler: lambda/handler.moonPhases
+    name: 'moon-${self:provider.stage}'
+    events:
+      - http:
+          path: /moonPhases
+          method: get
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

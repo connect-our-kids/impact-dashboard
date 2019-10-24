@@ -1,0 +1,30 @@
+///brought over scss styles to test personal dash
+header {
+  text-align: left;
+  h1 {
+    color: #508db3;
+  }
+  h2 {
+    color: #6db9d0;
+    font-weight: 700;
+    margin-left: 20rem;
+  }
+}
+main {
+  .public-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    @media (max-width: 637px) {
+      grid-template-columns: 1fr;
+    }
+    .metric {
+      background: gray;
+      padding: 50px 0;
+      border: 1px solid black;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
