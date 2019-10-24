@@ -87,14 +87,14 @@ functions:
           path: /shakespeareQuotes
           method: get
   gitHubBigQuery:
-    handler: handler.gitHubBigQuery
+    handler: lambda/handler.gitHubBigQuery
     name: 'github-${self:provider.stage}'
     events:
       - http:
           path: /commits
           method: get
   moonPhases:
-    handler: handler.moonPhases
+    handler: lambda/handler.moonPhases
     name: 'moon-${self:provider.stage}'
     events:
       - http:
