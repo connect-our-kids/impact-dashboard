@@ -2,8 +2,17 @@ import React, {useState, useEffect} from 'react';
 import './PublicDashboard.scss';
 import { increment, decrement } from '../../redux/actions/index';
 import {connect} from 'react-redux';
+import styled from 'styled-components';
 
 const PublicDashboard = (props) => {
+
+  const Button = styled.button`
+  height: 3rem;
+  width: 7rem;margin-top: 3rem;
+  background-color: #1d8eb6;
+  color: white;
+  font-size: 20px;
+  `;
 
   const [words, setWords] = useState()
 
@@ -33,6 +42,10 @@ const PublicDashboard = (props) => {
           </div>) : 'Loading words'}
         </div>
       </main>
+
+      <Button>
+          Donate
+      </Button>
     </>
 
     
