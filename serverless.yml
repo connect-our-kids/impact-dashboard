@@ -19,6 +19,10 @@ service: impact-dashboard
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
+plugins:
+  - serverless-plugin-include-dependencies
+
+
 
 provider:
 # profile is for your powerUser credentials profile
@@ -54,41 +58,37 @@ provider:
 
 # you can add packaging information here
 package:
-#  include:
-#    - include-me.js
-#    - include-me-dir/**
+  #  include:
+  #    - include-me.js
+  #    - include-me-dir/**
   exclude:
-    - client/**
+    - src/**
+
 
 functions:
   hello:
     handler: lambda/handler.hello
-    name: 'helloworld-${self:provider.stage}'
     events:
-     - http:
-         path: /
-         method: get
+      - http:
+          path: /
+          method: get
   catmemes:
     handler: lambda/handler.catMemes
     name: 'hellocats-${self:provider.stage}'
     events:
-     - http:
-         path: /cats
-         method: get
+      - http:
+          path: /cats
+          method: get
   shakespeareQuotes:
     handler: lambda/handler.shakespeareQuotes
     name: 'shakespeare-${self:provider.stage}'
     events:
-     - http:
+      - http:
           path: /shakespeareQuotes
           method: get
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
-#    events:
-#      - http:
-#          path: users/create
-#          method: get
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)

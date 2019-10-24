@@ -32,12 +32,15 @@ module.exports.catMemes = async event=> {
     }
 
 
-// This function invokes queryShakespeare (awaiting it), then returns a message along with the query results
+// This function invokes queryShakespeare (awaiting it), then returns a message along with the query results (an array of words with associated wordcounts)
 module.exports.shakespeareQuotes = async event=> {
   const query = await shakespeare.queryShakespeare();
-  console.log(query, "This is a query maybe")
       return {
         statusCode: 200,
+        // This header is needed for CORS from localhost. Possibly not necessary once deployed with frontend and backend on the same domain, impact.connectourkids.org
+        headers: {
+          "Access-Control-Allow-Origin": "*"
+        },
         body: JSON.stringify(
           {
             message: 'Look at all these chickens!',
