@@ -29,8 +29,10 @@ provider:
   profile: 138110379499_PowerUserAccess
   name: aws
   runtime: nodejs10.x
-# make stage dev-[your name]
-  stage: dev-desiree
+  
+  # make stage dev-[your name]
+  stage: dev-nisa
+
 
 # you can overwrite defaults here
 #  stage: dev
@@ -86,6 +88,7 @@ functions:
       - http:
           path: /shakespeareQuotes
           method: get
+
   # posts events to mixpanel
   mixpanelEvent:
     handler: lambda/handler.mixpanelEvent
@@ -102,6 +105,20 @@ functions:
       -http:
         path: /mixpanelUser
         method: post
+  gitHubBigQuery:
+    handler: lambda/handler.gitHubBigQuery
+    name: 'github-${self:provider.stage}'
+    events:
+      - http:
+          path: /commits
+          method: get
+  moonPhases:
+    handler: lambda/handler.moonPhases
+    name: 'moon-${self:provider.stage}'
+    events:
+      - http:
+          path: /moonPhases
+          method: get
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
