@@ -29,8 +29,9 @@ provider:
   profile: 138110379499_PowerUserAccess
   name: aws
   runtime: nodejs10.x
-# make stage dev-[your name]
-  stage: dev-desiree
+  
+  # make stage dev-[your name]
+  stage: dev-nisa
 
 
 # you can overwrite defaults here

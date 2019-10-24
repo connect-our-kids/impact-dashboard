@@ -84,7 +84,6 @@ module.exports.mixpanelUser = async event => {
       2
     )
   }
-}
 
 module.exports.gitHubBigQuery = async event => {
     const query = await gitHub.queryGitHub();
