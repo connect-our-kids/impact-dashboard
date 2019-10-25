@@ -10,7 +10,7 @@ import PersonalDashboard from './views/personal_dashboard/PersonalDashboard';
 import TeamDashboard from './views/team_dashboard/TeamDashboard';
 import PrivateRoute from './components/PrivateRoute'
 
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   useEffect(() => {
@@ -20,9 +20,11 @@ function App() {
     <div className="App">
       <NavBar/>
       <Profile/>
-      <Route exact path='/' component={PublicDashboard}/>
-      <PrivateRoute path='/team' component={TeamDashboard} />
-      <PrivateRoute path='/personal' component={PersonalDashboard}/>
+      <Switch>
+        <Route exact path='/' component={PublicDashboard}/>
+        <PrivateRoute path='/team' component={TeamDashboard} />
+        <PrivateRoute path='/personal' component={PersonalDashboard}/>
+      </Switch>
     </div>
   );
 }
