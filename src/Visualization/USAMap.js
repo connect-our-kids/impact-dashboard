@@ -111,6 +111,9 @@ class USAMaps extends Component {
       }, 
       "AK": {
         fill: "#E9F1FB"
+      }, 
+      "HI": {
+        fill: "#E9F1FB"
       },
       "KS": {
         fill: "#D4E4F9"
