@@ -5,7 +5,7 @@ header {
   }
   h2.header-callout {
     margin: 50px 0;
-    color: #6db9d0;
+    color: #158FB4;
     font-weight: 700;
     margin-left: 20rem;
   }
@@ -19,9 +19,7 @@ main {
       grid-template-columns: 1fr;
     }
     .metric {
-      background: gray;
       padding: 50px 0;
-      border: 1px solid black;
     }
     p {
       margin-bottom: 0;
@@ -29,8 +27,27 @@ main {
     .divider {
       width: 40px;
       height: 7px;
-      background: white;
       margin: 15px auto;
     }
+  }
+}
+
+// Individual metric styles
+.metric-0, .metric-4 {
+  background: #edf9fd;
+  .divider {
+    background: #4483a0;
+  }
+}
+.metric-1, .metric-5 {
+  background: #0f6580;
+  .divider {
+    background: #fff;
+  }
+}
+.metric-2, .metric-3 {
+  background: #a4e1f4;
+  .divider {
+    background: #4483a0;
   }
 }
