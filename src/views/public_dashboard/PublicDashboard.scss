@@ -3,7 +3,8 @@ header {
   h1 {
     color: #508db3;
   }
-  h2 {
+  h2.header-callout {
+    margin: 50px 0;
     color: #6db9d0;
     font-weight: 700;
     margin-left: 20rem;
@@ -24,6 +25,12 @@ main {
     }
     p {
       margin-bottom: 0;
+    }
+    .divider {
+      width: 40px;
+      height: 7px;
+      background: white;
+      margin: 15px auto;
     }
   }
 }
