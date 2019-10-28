@@ -37,7 +37,7 @@ const PublicDashboard = (props) => {
       <main>
         <div className="public-stats-grid">
           {/* provided words is not undefined (after the fetch above happens), map over the first 6 words, displaying a div with the wordcount and word */}
-          {words ? words.slice(0,6).map(word => <div className="metric">
+          {words ? words.slice(0,6).map((word, idx) => <div key={idx} className="metric">
             <b>{word.word_count}</b>
             <p>{word.word}</p>
           </div>) : 'Loading words'}

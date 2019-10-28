@@ -12,7 +12,7 @@ import TestTeamDash from './views/team_dashboard/TestTeamDash';
 import TeamDashboard from './views/team_dashboard/TeamDashboard';
 import PrivateRoute from './components/PrivateRoute'
 
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   useEffect(() => {
@@ -22,9 +22,17 @@ function App() {
     <div className="App">
       <NavBar/>
       <Profile/>
+<<<<<<< HEAD
       <Route exact path='/' component={PublicDashboard}/>
       <PrivateRoute path='/team' component={TestTeamDash} />
       <PrivateRoute path='/personal' component={TestPersonal}/>
+=======
+      <Switch>
+        <Route exact path='/' component={PublicDashboard}/>
+        <PrivateRoute path='/team' component={TeamDashboard} />
+        <PrivateRoute path='/personal' component={PersonalDashboard}/>
+      </Switch>
+>>>>>>> b0bad3775a21cd73560fa2644c56516a2f2c4a75
     </div>
   );
 }
