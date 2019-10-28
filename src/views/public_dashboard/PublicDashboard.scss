@@ -20,9 +20,13 @@ main {
     }
     .metric {
       padding: 50px 0;
-    }
-    p {
-      margin-bottom: 0;
+      b {
+        font-size: 32px;
+      }
+      p {
+        font-size: 22px;
+        margin-bottom: 0;
+      }
     }
     .divider {
       width: 40px;
@@ -41,6 +45,7 @@ main {
 }
 .metric-1, .metric-5 {
   background: #0f6580;
+  color: #fff;
   .divider {
     background: #fff;
   }
