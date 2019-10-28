@@ -30,7 +30,7 @@ provider:
   name: aws
   runtime: nodejs10.x
   # make stage dev-[your name]
-  stage: dev-nisa
+  stage: dev-ehalsmer
 
 # you can overwrite defaults here
 #  stage: dev
@@ -66,6 +66,11 @@ package:
 
 
 functions:
+  expressApp:
+    handler: index.expressHandler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
   hello:
     handler: lambda/handler.hello
     events:
