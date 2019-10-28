@@ -7,5 +7,30 @@ path {
   }
 
 .us-state-map{
-    width: 60%;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.holder{
+  display: flex;
+  flex-wrap: wrap;
+  // margin-top: -10px;
+  // margin-left: -10px;
+  @media (max-width: 637px) {
+    display: block;
+  }
+}
+
+.map, .pie{
+  width: calc(50% - 10px);
+  margin-left: 10px;
+  @media (max-width: 637px) {
+    width: calc(80% - 10px);
+  }
+}
+
+.map{
+  @media (max-width: 637px){
+    margin: 0 auto;
+  }
 }
