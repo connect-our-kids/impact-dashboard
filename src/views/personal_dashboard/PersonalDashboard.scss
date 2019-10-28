@@ -11,20 +11,44 @@ header {
   }
 }
 main {
-  .public-stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    @media (max-width: 637px) {
-      grid-template-columns: 1fr;
+  display: flex;
+  
+  .card1{
+    border: 1px solid black;
+    height: 15rem;
+    width: 25rem;
+    margin-right:1rem;
+    display: flex;
+    .right{
+        background-color: #158fb4;
+        border:1px solid black;
+        width: 7rem;
+      }
+  }
+
+  .card2{
+    border: 1px solid black;
+    height: 15rem;
+    width: 25rem;
+    margin-right:1rem;
+    display: flex;
+    .right{
+      background-color: #158fb4;
+      border:1px solid black;
+      width: 7rem;
     }
-    .metric {
-      background: gray;
-      padding: 50px 0;
-      border: 1px solid black;
-    }
-    p {
-      margin-bottom: 0;
+  }
+
+  .card3{
+    border: 1px solid black;
+    height: 15rem;
+    width: 25rem;
+    margin-right:1rem;
+    display: flex;
+    .right{
+      background-color: #158fb4;
+      border:1px solid black;
+      width: 7rem;
     }
   }
 }
