@@ -1,3 +1,4 @@
+////doughnut chart for visualization
 import React from 'react';
 import {Doughnut} from 'react-chartjs-2';
 import './pie.scss';
@@ -10,8 +11,8 @@ const data = {
 	datasets: [{
 		data: [328, 72],
 		backgroundColor: [
-		'#36A2EB',
-		'#FFCE56'
+		'#2D6ABA',
+		'#E3FCFE'
 		],
 		hoverBackgroundColor: [
 		'#ACE9F8',
@@ -21,8 +22,6 @@ const data = {
 };
 
 const option = {
-	// responsive: true,
-	// maintainAspectRatio: false,
 	tooltips: {
 	  callbacks: {
 		label: function(tooltipItem, data) {

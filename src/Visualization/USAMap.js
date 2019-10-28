@@ -32,17 +32,161 @@ class USAMaps extends Component {
         clickHandler: (event) => console.log('Custom handler for NJ', event.target.dataset)
       },
       "NY": {
-        fill: "lightblue"
+        fill: "#2D6ABA"
       },
       "VA": {
         fill: "teal"
+      },
+      "TX": {
+        fill: "#2D6ABA"
+      },
+      "FL": {
+        fill: "#2D6ABA"
+      },
+      "OR": {
+        fill: "#D4E4F9"
+      },
+      "NV": {
+        fill: "#D4E4F9"
+      },
+      "UT": {
+        fill: "#D4E4F9"
+      },
+      "OK": {
+        fill: "#D4E4F9"
+      },
+      "AR": {
+        fill: "#D4E4F9"
+      },
+      "LA": {
+        fill: "#D4E4F9"
+      },
+      "MS": {
+        fill: "#D4E4F9"
+      },
+      "AL": {
+        fill: "#D4E4F9"
+      },
+      "SC": {
+        fill: "#D4E4F9"
+      },
+      "KY": {
+        fill: "#D4E4F9"
+      },
+      "IA": {
+        fill: "#D4E4F9"
+      }, 
+      "WY": {
+        fill: "#E9F1FB"
+      }, 
+      "MT": {
+        fill: "#E9F1FB"
+      }, 
+      "ID": {
+        fill: "#E9F1FB"
+      }, 
+      "ND": {
+        fill: "#E9F1FB"
+      }, 
+      "SD": {
+        fill: "#E9F1FB"
+      }, 
+      "NE": {
+        fill: "#E9F1FB"
+      }, 
+      "NM": {
+        fill: "#E9F1FB"
+      }, 
+      "WV": {
+        fill: "#E9F1FB"
+      }, 
+      "ME": {
+        fill: "#E9F1FB"
+      }, 
+      "NH": {
+        fill: "#E9F1FB"
+      }, 
+      "VT": {
+        fill: "#E9F1FB"
+      }, 
+      "AK": {
+        fill: "#E9F1FB"
+      },
+      "KS": {
+        fill: "#D4E4F9"
+      }, 
+      "WA": {
+        fill: "#92C3E4"
+      }, 
+      "AZ": {
+        fill: "#92C3E4"
+      }, 
+      "CO": {
+        fill: "#92C3E4"
+      }, 
+      "WI": {
+        fill: "#92C3E4"
+      }, 
+      "MN": {
+        fill: "#92C3E4"
+      }, 
+      "IN": {
+        fill: "#92C3E4"
+      }, 
+      "TN": {
+        fill: "#92C3E4"
+      }, 
+      "RI": {
+        fill: "#92C3E4"
+      }, 
+      "CT": {
+        fill: "#92C3E4"
+      }, 
+      "MA": {
+        fill: "#92C3E4"
+      }, 
+      "NJ": {
+        fill: "#92C3E4"
+      }, 
+      "DE": {
+        fill: "#92C3E4"
+      }, 
+      "MD": {
+        fill: "#92C3E4"
+      }, 
+      "MO": {
+        fill: "#92C3E4"
+      },
+      "CA": {
+        fill: "#084168"
+      }, 
+      "PA":{
+        fill: "#408DC1"
+      }, 
+      "OH":{
+        fill: "#408DC1"
+      }, 
+      "IL":{
+        fill: "#408DC1"
+      },
+      "MI": {
+        fill: "#629CC2"
+      },
+      "NC": {
+        fill: "#629CC2"
+      },
+      "VA": {
+        fill: "#629CC2"
+      },
+      "GA": {
+        fill: "#629CC2"
       }
     };
   };
 
   render() {
     return (
-      <div className="App">
+      <div className="mapHolder">
         <USAMap customize={this.statesCustomConfig()} onHover={this.stateHover}  />
       </div>
     );
