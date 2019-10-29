@@ -2,11 +2,14 @@ header {
   text-align: left;
   h1 {
     color: #508db3;
+    text-align: center;
+    @media (max-width:637px){
+      text-align: center;
+    }
   }
   h2 {
     color: #6db9d0;
     font-weight: 700;
-    margin-left: 20rem;
   }
 }
 main {

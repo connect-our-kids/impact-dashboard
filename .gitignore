@@ -22,11 +22,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-yarn.lock
 
 #added secrets.js file to gitignore to hide credentials
 secrets.js
-package-lock.json
 
 # Serverless directories
 .serverless

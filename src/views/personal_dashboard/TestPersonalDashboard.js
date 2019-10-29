@@ -7,16 +7,16 @@ import { connect } from "react-redux";
 const PersonalDashboard = props => {
   const [moons, setMoons] = useState();
 
-  useEffect(() => {
-    fetch(
-      "https://bv9cpgqr4l.execute-api.us-east-1.amazonaws.com/dev-nisa/moonPhases")
-      .then(response => response.json())
-      .then(data => {
-        setMoons(data.query);
-        console.log(data.query, "data")
-      })
-      .catch(error => console.log(error));
-  }, []);
+  // useEffect(() => {
+  //   fetch(
+  //     "https://bv9cpgqr4l.execute-api.us-east-1.amazonaws.com/dev-nisa/moonPhases")
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setMoons(data.query);
+  //       console.log(data.query, "data")
+  //     })
+  //     .catch(error => console.log(error));
+  // }, []);
   return (
     <>
       <>
