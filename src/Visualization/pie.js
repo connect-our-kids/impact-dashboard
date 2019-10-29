@@ -4,12 +4,9 @@ import {Doughnut} from 'react-chartjs-2';
 import './pie.scss';
 
 const data = {
-	labels: [
-		'Connect Our Kids',
-		'USA'
-	],
 	datasets: [{
 		data: [328, 72],
+		borderWidth: 10,
 		backgroundColor: [
 		'#2D6ABA',
 		'#E3FCFE'
@@ -42,9 +39,10 @@ const option = {
 const PieChart = (props) => {
  return (
 	<div>
-	  <h2>Connect Our Kids Placement Rates Compared to National Average</h2>
+	  <h2>Successful placements:</h2>
 	  <Doughnut data={data} 
 	  	   options={option} />
+	  <h4>This is a description to be edited</h4>
 	</div>
   );
 }

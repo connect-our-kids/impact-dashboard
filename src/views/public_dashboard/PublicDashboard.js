@@ -52,26 +52,6 @@ const PublicDashboard = props => {
           <Button>Donate</Button>
         </a>
       </>
-
-      <div>
-        <p>
-          Clicked: {props.count} times
-          <button
-            onClick={() => {
-              props.increment();
-            }}
-          >
-            +
-          </button>
-          <button
-            onClick={() => {
-              props.decrement();
-            }}
-          >
-            -
-          </button>
-        </p>
-      </div>
       <div className="holder">
         <div className="map">
           <USAMaps />
