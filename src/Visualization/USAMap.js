@@ -190,6 +190,7 @@ class USAMaps extends Component {
   render() {
     return (
       <div className="mapHolder">
+        <h2>Map of users by state</h2>
         <USAMap customize={this.statesCustomConfig()} onHover={this.stateHover}  />
       </div>
     );
