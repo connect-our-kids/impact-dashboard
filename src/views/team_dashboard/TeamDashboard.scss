@@ -1,0 +1,28 @@
+header {
+    text-align: left;
+    h1 {
+      color: #508db3;
+    }
+    h2 {
+      font-weight: normal;
+    }
+  }
+  main {
+    .public-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      @media (max-width: 637px) {
+        grid-template-columns: 1fr;
+      }
+      .metric {
+        padding: 50px 0;
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .paragraph{
+    font-size: 20px;
+  }

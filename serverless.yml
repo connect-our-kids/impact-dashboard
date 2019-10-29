@@ -19,8 +19,14 @@ service: impact-dashboard
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
+plugins:
+  - serverless-plugin-include-dependencies
+
+
 
 provider:
+  # profile is for your powerUser credentials profile
+  profile: default
   name: aws
   runtime: nodejs10.x
   profile: mine

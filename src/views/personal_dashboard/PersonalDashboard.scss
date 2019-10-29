@@ -1,0 +1,81 @@
+///brought over scss styles to test personal dash
+header {
+  text-align: center;
+  height: 10rem;
+  margin-bottom: 5rem;
+  .calloutHeader {
+    color: #508db3;
+    line-height: 77px;
+    font-size: 48px;
+  }
+}
+.personalmain {
+  display: flex;
+    .card1{
+      border: 1px solid #E5E4E2;
+      height: 15rem;
+      width: 40rem;
+      margin-right:2rem;
+      display: flex;
+      justify-content: space-between;
+        .right{
+            background-color: #158fb4;
+            width: 7rem;
+            justify-content: center;
+            padding-top:4rem;
+          }
+          .left h3{
+           margin-top:4rem;
+           margin-left:2rem;
+           margin-bottom: 2rem;
+          }
+    }
+
+    .card2{
+      border: 1px solid #E5E4E2;
+      height: 15rem;
+      width: 40rem;
+      margin-right:2rem;
+      display: flex;
+      justify-content: space-between;
+        .right{
+          background-color: #158fb4;
+          border:1px solid  #E5E4E2;
+          width: 7rem;
+          padding-top:4rem;
+        }
+        .left h3{
+          margin-top: 4rem;
+          margin-left: 1rem;
+          margin-bottom: 2rem;
+        } 
+    }
+
+    .card3{
+      border: 1px solid #E5E4E2;
+      height: 15rem;
+      width: 40rem;
+      display: flex;
+      justify-content: space-between;
+        .right{
+          background-color: #158fb4;
+          border:1px solid black;
+          width: 7rem;
+          padding-top:4rem;
+        }
+        .left h3{
+          margin-top: 4rem;
+          margin-left: 2rem;
+          margin-bottom: 2rem;
+        }
+    }
+}
+
+.bottomtext{
+  margin-left: 19rem;
+  width: 34rem;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.5px;
+  margin-top: 4rem;
+}
