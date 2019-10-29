@@ -1,54 +1,85 @@
 ///brought over scss styles to test personal dash
 header {
-  text-align: left;
+  text-align: center;
+  height: 10rem;
+  margin-bottom: 5rem;
   h1 {
     color: #508db3;
-  }
-  h2 {
-    color: #6db9d0;
-    font-weight: 700;
-    margin-left: 20rem;
+    line-height: 77px;
+    font-size: 48px;
+    margin-left:20rem;
   }
 }
 main {
   display: flex;
-  
-  .card1{
-    border: 1px solid black;
-    height: 15rem;
-    width: 25rem;
-    margin-right:1rem;
-    display: flex;
-    .right{
-        background-color: #158fb4;
-        border:1px solid black;
-        width: 7rem;
-      }
-  }
-
-  .card2{
-    border: 1px solid black;
-    height: 15rem;
-    width: 25rem;
-    margin-right:1rem;
-    display: flex;
-    .right{
-      background-color: #158fb4;
-      border:1px solid black;
-      width: 7rem;
+  // width: 80rem;
+    .card1{
+      border: 1px solid black;
+      height: 15rem;
+      width: 30rem;
+      margin-right:2rem;
+      display: flex;
+      justify-content: space-between;
+        .right{
+            background-color: #158fb4;
+            border:1px solid black;
+            width: 7rem;
+            justify-content: center;
+            padding-top:4rem;
+          }
+          .left h3{
+           margin-top:4rem;
+           margin-left:2rem;
+           margin-bottom: 2rem;
+          }
     }
-  }
 
-  .card3{
-    border: 1px solid black;
-    height: 15rem;
-    width: 25rem;
-    margin-right:1rem;
-    display: flex;
-    .right{
-      background-color: #158fb4;
-      border:1px solid black;
-      width: 7rem;
+    .card2{
+      border: 1px solid black;
+      height: 15rem;
+      width: 30rem;
+      margin-right:2rem;
+      display: flex;
+      justify-content: space-between;
+        .right{
+          background-color: #158fb4;
+          border:1px solid black;
+          width: 7rem;
+          padding-top:4rem;
+        }
+        .left h3{
+          margin-top: 4rem;
+          margin-left: 1rem;
+          margin-bottom: 2rem;
+        } 
     }
-  }
+
+    .card3{
+      border: 1px solid black;
+      height: 15rem;
+      width: 30rem;
+      display: flex;
+      justify-content: space-between;
+
+        .right{
+          background-color: #158fb4;
+          border:1px solid black;
+          width: 7rem;
+          padding-top:4rem;
+        }
+        .left h3{
+          margin-top: 4rem;
+          margin-left: 2rem;
+          margin-bottom: 2rem;
+        }
+    }
+}
+
+.text{
+  margin-left: 19rem;
+  width: 34rem;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
 }
