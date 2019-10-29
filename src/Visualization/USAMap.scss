@@ -1,0 +1,42 @@
+path {
+    pointer-events: all;
+  }
+  path:hover {
+    opacity: 0.50;
+    cursor: pointer;
+  }
+
+.us-state-map{
+    width: 100%;
+}
+
+.mapH1{
+ margin: 0 auto;
+ font-size: 24px;
+}
+
+///div css to bring visualizations in a row
+
+.holder{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  // margin-left: -10px;
+  @media (max-width: 637px) {
+    display: block;
+  }
+}
+
+.map, .pie{
+  width: calc(50% - 10px);
+  margin-left: 10px;
+  @media (max-width: 637px) {
+    width: calc(80% - 10px);
+  }
+}
+
+.map{
+  @media (max-width: 637px){
+    margin: 0 auto;
+  }
+}
