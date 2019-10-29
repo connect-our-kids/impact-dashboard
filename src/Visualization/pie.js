@@ -69,7 +69,7 @@ const PieChart = (props) => {
 	  <h2>Successful placements:</h2>
 	  <Doughnut data={data} 
 	  	   options={option} />
-	  <h4>This is a description to be edited</h4>
+	  <h3>Of all kids we work with are successfully placed</h3>
 	</div>
   );
 }
