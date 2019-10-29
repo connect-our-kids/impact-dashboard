@@ -36,14 +36,14 @@ const tempData = [
   const PublicDashboard = props => {
     const Button = styled.button`
     height: 3rem;
-    width: 7rem;
+    padding: 0 70px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 3rem;
     background-color: #1d8eb6;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
   `;
 
     const [words, setWords] = useState();
@@ -76,7 +76,7 @@ const tempData = [
           </div>
         </main>
 
-        <h2 className="header-callout">Check out how our efforts are making an impact:</h2>
+        <h2 className="header-callout">This is how our efforts are making an impact.</h2>
 
         <Button>
           Donate
