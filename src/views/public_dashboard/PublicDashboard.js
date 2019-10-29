@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './PublicDashboard.scss';
 import { increment, decrement } from '../../redux/actions/index';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 const tempData = [
@@ -44,7 +44,7 @@ const PublicDashboard = (props) => {
   const [words, setWords] = useState()
 
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch('https://wp4hb8gbwh.execute-api.us-east-1.amazonaws.com/dev-ehalsmert/shakespeareQuotes')
       .then(response => response.json())
       .then(data => {
@@ -55,10 +55,6 @@ const PublicDashboard = (props) => {
 
   return (
     <>
-    <>
-      <header>
-        <h2 className="header-callout">Check out how our efforts are making an impact:</h2>
-      </header>
       <main>
         <div className="public-stats-grid">
           {/* provided words is not undefined (after the fetch above happens), map over the first 6 words, displaying a div with the wordcount and word */}
@@ -66,42 +62,31 @@ const PublicDashboard = (props) => {
             <b>{word.word_count}</b>
             <p>{word.word}</p>
           </div>) : 'Loading words'} */}
-          { tempData.map((el, idx) => (
+          {tempData.map((el, idx) => (
             <div key={idx} className={`metric metric-${idx}`}>
               <b>{el.value}</b>
-              <div className="divider"/>
+              <div className="divider" />
               <p>{el.metric}</p>
             </div>
-          )) }
+          ))}
         </div>
       </main>
 
+      <h2 className="header-callout">Check out how our efforts are making an impact:</h2>
+      
       <Button>
-          Donate
+        Donate
       </Button>
-    </>
 
-    
-        <div>
-            <p>
-            Clicked: {props.count} times
-            <button onClick={() => {props.increment() }}>
-                +
-            </button>
-            <button onClick={() => {props.decrement() }}>
-                -
-            </button>
-            </p>
-        </div>
-        </>
+    </>
   )
 }
 
 
 const mapStateToProps = (state) => {
   return {
-      count: state.count
+    count: state.count
   };
 };
 
-export default connect(mapStateToProps, {increment, decrement })(PublicDashboard);
+export default connect(mapStateToProps, { increment, decrement })(PublicDashboard);
