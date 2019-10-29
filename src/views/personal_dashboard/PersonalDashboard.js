@@ -4,13 +4,15 @@ import styled from 'styled-components';
 
 export default function PersonalDashboard() {
     
+
+    //NEED TO FIX BUTTON TO BE IN THE MIDDLE OF PAGE W/O DOING MARGIN-LEFT
     const Button = styled.button`
     height: 3rem;
     width: 10rem;
     background-color: #1d8eb6;
     color: white;
     font-size: 20px;
-    margin-left: 28rem;
+    align-items: center;
     margin-top: 1rem;
     `;
 
@@ -20,7 +22,7 @@ export default function PersonalDashboard() {
             <h1 className='calloutHeader'>Sam Wilsons Impact</h1>
             <Button>Share My Impact</Button>
         </header>
-        <main>
+        <div className='personalmain'>
             <div className='card1'>
                 <div className='left'>
                     <h3>Children Served</h3>
@@ -56,7 +58,7 @@ export default function PersonalDashboard() {
                     <img src='/Badge3.svg'></img>
                 </div>
             </div>
-        </main>
+        </div>
 
         <div className='bottomtext'>
             <p>Thank you for being a super hero to kids in foster care. Your work is important and worth sharing. Now you can share your impact with the world. Encourage your colleagues to do the same! </p>
