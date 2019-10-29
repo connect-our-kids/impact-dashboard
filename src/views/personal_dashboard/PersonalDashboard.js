@@ -10,14 +10,14 @@ export default function PersonalDashboard() {
     background-color: #1d8eb6;
     color: white;
     font-size: 20px;
-    margin-left: 33rem;
+    margin-left: 28rem;
     margin-top: 1rem;
     `;
 
     return (
         <>
         <header>
-            <h1>Sam Wilsons Impact</h1>
+            <h1 className='calloutHeader'>Sam Wilsons Impact</h1>
             <Button>Share My Impact</Button>
         </header>
         <main>
@@ -26,7 +26,6 @@ export default function PersonalDashboard() {
                     <h3>Children Served</h3>
                     <p> Your total:</p>
                     <p>Next Threshold:</p>
-
                 </div>
                
                 <div className='right'>
@@ -39,11 +38,10 @@ export default function PersonalDashboard() {
                     <h3>Connections Discovered</h3>
                     <p> Your total:</p>
                     <p>Next Threshold:</p>
-
                 </div>
                
                 <div className='right'>
-                <img src='/Badge2.svg'></img>
+                    <img src='/Badge2.svg'></img>
                 </div>
             </div>
 
@@ -60,7 +58,7 @@ export default function PersonalDashboard() {
             </div>
         </main>
 
-        <div className='text'>
+        <div className='bottomtext'>
             <p>Thank you for being a super hero to kids in foster care. Your work is important and worth sharing. Now you can share your impact with the world. Encourage your colleagues to do the same! </p>
         </div>
         </>

@@ -3,26 +3,23 @@ header {
   text-align: center;
   height: 10rem;
   margin-bottom: 5rem;
-  h1 {
+  .calloutHeader {
     color: #508db3;
     line-height: 77px;
     font-size: 48px;
-    margin-left:20rem;
   }
 }
 main {
   display: flex;
-  // width: 80rem;
     .card1{
       border: 1px solid #E5E4E2;
       height: 15rem;
-      width: 30rem;
+      width: 40rem;
       margin-right:2rem;
       display: flex;
       justify-content: space-between;
         .right{
             background-color: #158fb4;
-           
             width: 7rem;
             justify-content: center;
             padding-top:4rem;
@@ -37,7 +34,7 @@ main {
     .card2{
       border: 1px solid #E5E4E2;
       height: 15rem;
-      width: 30rem;
+      width: 40rem;
       margin-right:2rem;
       display: flex;
       justify-content: space-between;
@@ -57,10 +54,9 @@ main {
     .card3{
       border: 1px solid #E5E4E2;
       height: 15rem;
-      width: 30rem;
+      width: 40rem;
       display: flex;
       justify-content: space-between;
-
         .right{
           background-color: #158fb4;
           border:1px solid black;
@@ -75,11 +71,11 @@ main {
     }
 }
 
-.text{
+.bottomtext{
   margin-left: 19rem;
   width: 34rem;
   font-size: 18px;
   line-height: 25px;
   letter-spacing: 0.5px;
-  margin-top: 20px;
+  margin-top: 4rem;
 }
