@@ -46,7 +46,7 @@ const tempData = [
     font-size: 18px;
   `;
 
-    const [words, setWords] = useState();
+    // const [words, setWords] = useState();
 
     useEffect(() => {
       // fetch('https://wp4hb8gbwh.execute-api.us-east-1.amazonaws.com/dev-ehalsmert/shakespeareQuotes')
