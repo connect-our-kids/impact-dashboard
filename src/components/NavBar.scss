@@ -25,7 +25,10 @@ nav {
   border-bottom: 1px solid #808080;
   li {
     list-style-type: none;
-    margin: 0 15px;
+    margin: 0 80px;
+    @media (max-width: 637px) {
+      margin: 0 15px;
+    }
     a {
       color: #aaa9ad;
       font-weight: bold;
@@ -38,5 +41,6 @@ nav {
   ul {
     display: flex;
     justify-content: center;
+    padding: 0;
   }
 }
