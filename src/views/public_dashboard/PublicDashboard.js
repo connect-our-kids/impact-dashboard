@@ -18,14 +18,14 @@ const PublicDashboard = props => {
 
   const [words, setWords] = useState();
 
-  // useEffect(()=>{
-  //   fetch('https://wp4hb8gbwh.execute-api.us-east-1.amazonaws.com/dev-ehalsmert/shakespeareQuotes')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       setWords(data.query)
-  //     })
-  //     .catch(error => console.log(error))
-  // }, [])
+  useEffect(()=>{
+    fetch('https://wp4hb8gbwh.execute-api.us-east-1.amazonaws.com/dev-ehalsmert/shakespeareQuotes')
+      .then(response => response.json())
+      .then(data => {
+        setWords(data.query)
+      })
+      .catch(error => console.log(error))
+  }, [])
 
   return (
     <>
