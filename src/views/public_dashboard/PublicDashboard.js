@@ -37,6 +37,9 @@ const tempData = [
     const Button = styled.button`
     height: 3rem;
     width: 7rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     margin-top: 3rem;
     background-color: #1d8eb6;
     color: white;
@@ -46,12 +49,12 @@ const tempData = [
     const [words, setWords] = useState();
 
     useEffect(() => {
-      fetch('https://wp4hb8gbwh.execute-api.us-east-1.amazonaws.com/dev-ehalsmert/shakespeareQuotes')
-        .then(response => response.json())
-        .then(data => {
-          setWords(data.query)
-        })
-        .catch(error => console.log(error))
+      // fetch('https://wp4hb8gbwh.execute-api.us-east-1.amazonaws.com/dev-ehalsmert/shakespeareQuotes')
+      //   .then(response => response.json())
+      //   .then(data => {
+      //     setWords(data.query)
+      //   })
+      //   .catch(error => console.log(error))
     }, [])
 
     return (
