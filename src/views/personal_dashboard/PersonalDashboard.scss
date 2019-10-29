@@ -14,7 +14,7 @@ main {
   display: flex;
   // width: 80rem;
     .card1{
-      border: 1px solid black;
+      border: 1px solid #E5E4E2;
       height: 15rem;
       width: 30rem;
       margin-right:2rem;
@@ -22,7 +22,7 @@ main {
       justify-content: space-between;
         .right{
             background-color: #158fb4;
-            border:1px solid black;
+           
             width: 7rem;
             justify-content: center;
             padding-top:4rem;
@@ -35,7 +35,7 @@ main {
     }
 
     .card2{
-      border: 1px solid black;
+      border: 1px solid #E5E4E2;
       height: 15rem;
       width: 30rem;
       margin-right:2rem;
@@ -43,7 +43,7 @@ main {
       justify-content: space-between;
         .right{
           background-color: #158fb4;
-          border:1px solid black;
+          border:1px solid  #E5E4E2;
           width: 7rem;
           padding-top:4rem;
         }
@@ -55,7 +55,7 @@ main {
     }
 
     .card3{
-      border: 1px solid black;
+      border: 1px solid #E5E4E2;
       height: 15rem;
       width: 30rem;
       display: flex;
