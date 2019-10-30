@@ -67,7 +67,8 @@ package:
 
 functions:
   expressApp:
-    handler: index.expressHandler
+    handler: server.expressHandler
+    name: 'expressApp-${self:provider.stage}'
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
