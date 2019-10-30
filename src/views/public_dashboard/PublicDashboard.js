@@ -50,7 +50,7 @@ const tempData = [
     // console.log('Data fetched: ', data)
     useEffect(() => {
       //// at end of url, try /api/shakespeareQuotes, /api/commits, or /api/moonPhases
-      // fetch('https://vjq0rnedic.execute-api.us-east-1.amazonaws.com/dev-ehalsmer/api/moonPhases')
+      // fetch('https://vjq0rnedic.execute-api.us-east-1.amazonaws.com/dev-ehalsmer/api/shakespeareQuotes')
         // .then(response => response.json())
         // .then(data => {
           // setData(data.query)
