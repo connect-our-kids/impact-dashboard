@@ -1,21 +1,38 @@
 ///brought over scss styles to test personal dash
 header {
   text-align: center;
-  height: 10rem;
+  height: 13rem;
   margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .calloutHeader {
     color: #508db3;
     line-height: 77px;
     font-size: 48px;
+    display: flex;
+    justify-content: center;
+  }
+    //NEED TO FIX BUTTON TO BE IN THE MIDDLE OF PAGE W/O DOING MARGIN-LEFT
+  .share-button{
+    height: 3rem;
+    width: 10rem;
+    background-color: #1d8eb6;
+    color: white;
+    font-size: 20px;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
   }
 }
 .personalmain {
   display: flex;
+  justify-content: center;
     .card1{
       border: 1px solid #E5E4E2;
       height: 15rem;
-      width: 40rem;
-      margin-right:2rem;
+      width: 22rem;
+      margin-right:1rem;
       display: flex;
       justify-content: space-between;
         .right{
@@ -34,13 +51,12 @@ header {
     .card2{
       border: 1px solid #E5E4E2;
       height: 15rem;
-      width: 40rem;
-      margin-right:2rem;
+      width: 22rem;
+      margin-right:1rem;
       display: flex;
       justify-content: space-between;
         .right{
           background-color: #158fb4;
-          border:1px solid  #E5E4E2;
           width: 7rem;
           padding-top:4rem;
         }
@@ -54,12 +70,11 @@ header {
     .card3{
       border: 1px solid #E5E4E2;
       height: 15rem;
-      width: 40rem;
+      width: 22rem;
       display: flex;
       justify-content: space-between;
         .right{
           background-color: #158fb4;
-          border:1px solid black;
           width: 7rem;
           padding-top:4rem;
         }
@@ -72,10 +87,14 @@ header {
 }
 
 .bottomtext{
-  margin-left: 19rem;
-  width: 34rem;
   font-size: 18px;
   line-height: 25px;
   letter-spacing: 0.5px;
   margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  p {
+    width:34rem;
+    max-width: 34rem;
+  }
 }

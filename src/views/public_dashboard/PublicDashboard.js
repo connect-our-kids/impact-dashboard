@@ -79,9 +79,9 @@ const tempData = [
 
         <h2 className="header-callout">This is how our efforts are making an impact.</h2>
 
-        <Button>
-          Donate
-      </Button>
+        <button className='donate-button'>
+          <a href='https://www.connectourkids.org/'>Donate</a>
+      </button>
         <div className="holder">
           <div className="map">
             <USAMaps />
