@@ -1,26 +1,12 @@
 import React from 'react'
 import './PersonalDashboard.scss'
-import styled from 'styled-components';
 
 export default function PersonalDashboard() {
-    
-
-    //NEED TO FIX BUTTON TO BE IN THE MIDDLE OF PAGE W/O DOING MARGIN-LEFT
-    const Button = styled.button`
-    height: 3rem;
-    width: 10rem;
-    background-color: #1d8eb6;
-    color: white;
-    font-size: 20px;
-    align-items: center;
-    margin-top: 1rem;
-    `;
-
     return (
         <>
         <header>
             <h1 className='calloutHeader'>Sam Wilsons Impact</h1>
-            <Button>Share My Impact</Button>
+            <button className='share-button'>Share My Impact</button>
         </header>
         <div className='personalmain'>
             <div className='card1'>
@@ -31,7 +17,7 @@ export default function PersonalDashboard() {
                 </div>
                
                 <div className='right'>
-                    <img src='Badge1.svg'></img>
+                    <img src='Badge1.svg' alt='children served icon'></img>
                 </div>
             </div>
 
@@ -43,7 +29,7 @@ export default function PersonalDashboard() {
                 </div>
                
                 <div className='right'>
-                    <img src='/Badge2.svg'></img>
+                    <img src='/Badge2.svg' alt='connections discovered icon'></img>
                 </div>
             </div>
 
@@ -55,7 +41,7 @@ export default function PersonalDashboard() {
                 </div>
                
                 <div className='right'>
-                    <img src='/Badge3.svg'></img>
+                    <img src='/Badge3.svg' alt='engagemnets events icon'></img>
                 </div>
             </div>
         </div>
