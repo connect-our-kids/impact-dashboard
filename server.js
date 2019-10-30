@@ -26,6 +26,13 @@ server.use('/api/shakespeareQuotes', shakespeareRouter) // aka public dash data
 server.use('/api/moonPhases', moonPhasesRouter) // team dash data
 server.use('/api/commits', commitsRouter) // personal dash data
 
+// For when we have the real data:
+/*
+server.use('/api/public', )
+server.use('/api/team', authenticate, teamRouter)
+server.use('/api/personal', authenticate, personalRouter)
+*/
+
 // sanity check endpoint:
 server.get('/api', function (req, res) {
   res.send('Hello World from express, in server.js')
