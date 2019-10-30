@@ -45,11 +45,11 @@ const tempData = [
     color: white;
     font-size: 18px;
   `;
-
+    //// Data fetching. Currently commented out to display more realistic fake numbers but it does work
     // const [data, setData] = useState();
     // console.log('Data fetched: ', data)
     useEffect(() => {
-      // at end of url, try /api/shakespeareQuotes, /api/commits, or /api/moonPhases
+      //// at end of url, try /api/shakespeareQuotes, /api/commits, or /api/moonPhases
       // fetch('https://vjq0rnedic.execute-api.us-east-1.amazonaws.com/dev-ehalsmer/api/moonPhases')
         // .then(response => response.json())
         // .then(data => {

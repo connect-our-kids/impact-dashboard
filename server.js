@@ -1,3 +1,4 @@
+// Main server file which creates an express server, wraps it in serverless to be deployed as lambda function expressHandler
 require('dotenv').config()
 
 // helmet and cors not installed yet, but we may want to consider them
@@ -23,7 +24,7 @@ const commitsRouter = require('./routers/commits')
 
 server.use('/api/shakespeareQuotes', shakespeareRouter) // aka public dash data
 // TODO insert authenticate as middleware for the following two routes:
-server.use('/api/moonPhases', moonPhasesRouter) // team dash data
+server.use('/api/moonPhases', authenticate, moonPhasesRouter) // team dash data
 server.use('/api/commits', commitsRouter) // personal dash data
 
 // For when we have the real data:

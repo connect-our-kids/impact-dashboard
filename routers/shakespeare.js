@@ -1,3 +1,4 @@
+// router for /api/shakespeareQuotes, returns data from queryShakespeare
 const express = require('express');
 const data = require('../models/queryShakespeare');
 

@@ -1,3 +1,5 @@
+// router for /api/moonPhases, returning data fetched by queryMoonPhase
+
 const express = require('express');
 const data = require('../models/queryMoonPhase');
 
