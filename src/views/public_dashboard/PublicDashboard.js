@@ -46,15 +46,16 @@ const tempData = [
     font-size: 18px;
   `;
 
-    // const [words, setWords] = useState();
-
+    // const [data, setData] = useState();
+    // console.log('Data fetched: ', data)
     useEffect(() => {
-      // fetch('https://wp4hb8gbwh.execute-api.us-east-1.amazonaws.com/dev-ehalsmert/shakespeareQuotes')
-      //   .then(response => response.json())
-      //   .then(data => {
-      //     setWords(data.query)
-      //   })
-      //   .catch(error => console.log(error))
+      // at end of url, try /api/shakespeareQuotes, /api/commits, or /api/moonPhases
+      // fetch('https://vjq0rnedic.execute-api.us-east-1.amazonaws.com/dev-ehalsmer/api/moonPhases')
+        // .then(response => response.json())
+        // .then(data => {
+          // setData(data.query)
+        // })
+        // .catch(error => console.log(error))
     }, [])
 
     return (
