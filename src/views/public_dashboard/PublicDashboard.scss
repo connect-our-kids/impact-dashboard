@@ -1,13 +1,9 @@
-header {
-  text-align: left;
-  h1 {
-    color: #508db3;
-  }
-  h2 {
-    color: #6db9d0;
-    font-weight: 700;
-    margin-left: 20rem;
-  }
+h2.header-callout {
+  margin: 50px 0 0 0;
+  color: #158FB4;
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
 }
 main {
   .public-stats-grid {
@@ -18,12 +14,41 @@ main {
       grid-template-columns: 1fr;
     }
     .metric {
-      background: gray;
       padding: 50px 0;
-      border: 1px solid black;
+      b {
+        font-size: 32px;
+      }
+      p {
+        font-size: 25px;
+        margin: 0 auto;
+        max-width: 170px;
+      }
     }
-    p {
-      margin-bottom: 0;
+    .divider {
+      width: 40px;
+      height: 7px;
+      margin: 15px auto;
     }
+  }
+}
+
+// Individual metric styles
+.metric-0, .metric-4 {
+  background: #edf9fd;
+  .divider {
+    background: #4483a0;
+  }
+}
+.metric-1, .metric-5 {
+  background: #0f6580;
+  color: #fff;
+  .divider {
+    background: #fff;
+  }
+}
+.metric-2, .metric-3 {
+  background: #a4e1f4;
+  .divider {
+    background: #4483a0;
   }
 }

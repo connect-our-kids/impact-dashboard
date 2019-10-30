@@ -2,7 +2,6 @@ header {
     text-align: left;
     h1 {
       color: #508db3;
-      margin-left: 30rem;
     }
     h2 {
       font-weight: normal;
@@ -16,9 +15,7 @@ header {
         grid-template-columns: 1fr;
       }
       .metric {
-        background: gray;
         padding: 50px 0;
-        border: 1px solid black;
       }
       p {
         margin-bottom: 0;
