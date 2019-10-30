@@ -1,10 +1,13 @@
 const express = require('express');
-// TODO import shakespeare data model
+const data = require('../models/queryShakespeare');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.status(200).json({message: "Shakespeare router is up!"})
+router.get('/', async (req, res) => {
+    // res.status(200).json({message: "Shakespeare router is up!"}) // initial router test succeeded
+    const query = await data.queryShakespeare();
+    res.status(200).json({message: 'Look at all these express chickens!', query})
 })
+
 
 module.exports = router;
