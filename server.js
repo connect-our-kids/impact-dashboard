@@ -1,7 +1,7 @@
 // Main server file which creates an express server, wraps it in serverless to be deployed as lambda function expressHandler
 require('dotenv').config()
 
-// helmet and cors not installed yet, but we may want to consider them
+// helmet not installed yet, but we may want to consider it
 // const helmet = require("helmet");
 const cors = require("cors");
 
