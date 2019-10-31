@@ -22,6 +22,8 @@ function App() {
       <NavBar/>
       <Switch>
         <Route exact path='/' component={PublicDashboard}/>
+        <Route exact path='/test' component={PublicDashboard}/>
+
         <PrivateRoute path='/team' component={TeamDashboard} />
         <PrivateRoute path='/personal' component={PersonalDashboard}/>
       </Switch>
