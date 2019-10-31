@@ -1,9 +1,7 @@
 import React from 'react';
  
 import './TeamDashboard.scss';
-import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { increment, decrement } from '../../redux/actions/index';
 import Pie from "../../Visualization/pie";
 import DataGrid from "../../components/DataGrid";
  
@@ -20,9 +18,7 @@ export default function TeamDashboard(){
   color: white;
   font-size: 20px;
 `;
- 
 
- 
 return (
   <>
   <div>
