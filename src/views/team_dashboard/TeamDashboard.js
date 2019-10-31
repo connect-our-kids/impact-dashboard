@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { increment, decrement } from '../../redux/actions/index';
 import Pie from "../../Visualization/pie";
+import DataGrid from "../../components/DataGrid";
  
 export default function TeamDashboard(){
  
@@ -20,47 +21,15 @@ export default function TeamDashboard(){
   font-size: 20px;
 `;
  
-const tempData = [
-  {
-    metric: "Children Served",
-    value: "3,236"
-  },
-  {
-    metric: "Successful Placement Ratio",
-    value: "70%"
-  },
-  {
-    metric: "Connections Discovered",
-    value: "44,234"
-  },
-  {
-    metric: "Kinship Search Users",
-    value: "865"
-  },
-  {
-    metric: "Permanent Placements",
-    value: "2,634"
-  },
-  {
-    metric: "Average Days To Placement",
-    value: "20"
-  },
-]
+
  
 return (
   <>
-    <main>
-      <div className="public-stats-grid">
-        {tempData.map((el, idx) => (
-          <div key={idx} className={`metric-${idx}`}>
-            <b>{el.value}</b>
-            <div className="divider" />
-            <p>{el.metric}</p>
-          </div>
-        ))}
-      </div>
-    </main>
- 
+  <div>
+  <DataGrid />
+  </div>
+
+ <div className="middle-section">
     <h2 className="header-text"> Our Team's Impact</h2>
  
     <Button>
@@ -69,7 +38,9 @@ return (
  
   <h3>Here's how your team is doing <br>
   </br> when it comes to placing children.</h3>
-  
+  </div>
+
+ 
   <div className="charts">
       <div className="pie">
         <Pie />
