@@ -21,54 +21,59 @@ service: impact-dashboard
 # frameworkVersion: "=X.X.X"
 plugins:
   - serverless-plugin-include-dependencies
-
-
+  - serverless-apigw-binary
+  - serverless-apigwy-binary
+  - serverless-associate-waf
 
 provider:
   # profile is for your powerUser credentials profile
-  profile: default
+  profile: 138110379499_PowerUserAccess
   name: aws
   runtime: nodejs10.x
-  profile: mine
+  stage: dev-sean
 
-  functions:
-    hello:
-      handler: handler.hello
-    ui:
-      handler: lambda/ui.universal
-      events:
-        - http: ANY /
-        - http: ANY {proxy+}
 
-# you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
+package:
+  include:
+    - build/**
 
-# you can add statements to the Lambda function's IAM Role here
-#  iamRoleStatements:
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:ListBucket"
-#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:PutObject"
-#      Resource:
-#        Fn::Join:
-#          - ""
-#          - - "arn:aws:s3:::"
-#            - "Ref" : "ServerlessDeploymentBucket"
-#            - "/*"
+custom:
+  apigwBinary:
+    types:
+      - '*/*'
 
-# you can define service wide environment variables here
-#  environment:
-#    variable1: value1
+functions:
+  ui:
+    handler: lambda/ui.universal
+    events:
+      - http: ANY /
+      - http: ANY {proxy+}
+  catmemes:
+    handler: lambda/handler.catMemes
+    name: 'hellocats-${self:provider.stage}'
+    events:
+      - http:
+          path: /cats
+          method: get
+  shakespeareQuotes:
+    handler: lambda/handler.shakespeareQuotes
+    name: 'shakespeare-${self:provider.stage}'
+    events:
+      - http:
+          path: /shakespeareQuotes
+          method: get
+  gitHubBigQuery:
+    handler: lambda/handler.gitHubBigQuery
+    name: 'github-${self:provider.stage}'
+    events:
+      - http:
+          path: /commits
+          method: get
+  moonPhases:
+    handler: lambda/handler.moonPhases
+    name: 'moon-${self:provider.stage}'
+    events:
+      - http:
+          path: /moonPhases
+          method: get
 
-# you can add packaging information here
-#package:
-#  include:
-#    - include-me.js
-#    - include-me-dir/**
-#  exclude:
-#    - exclude-me.js
-#    - exclude-me-dir/**
