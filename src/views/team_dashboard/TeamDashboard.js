@@ -67,7 +67,8 @@ return (
       Share My Impact
   </Button>
  
-  <h3>Here's how your team is doing when it comes to placing children.</h3>
+  <h3>Here's how your team is doing <br>
+  </br> when it comes to placing children.</h3>
   
   <div className="charts">
       <div className="pie">
