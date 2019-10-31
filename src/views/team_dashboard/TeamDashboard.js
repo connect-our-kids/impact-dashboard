@@ -2,7 +2,7 @@ import React from 'react';
  
 import './TeamDashboard.scss';
 import styled from 'styled-components';
-import Pie from "../../Visualization/pie";
+import Pie from "../../Visualization/pie-td";
 import DataGrid from "../../components/DataGrid";
  
 export default function TeamDashboard(){
