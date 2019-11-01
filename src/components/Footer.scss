@@ -1,0 +1,15 @@
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  p, a {
+    color: #aaa9ad;
+  }
+  a {
+    text-decoration: none;
+  }
+  li {
+    list-style-type: none;
+    display: inline;
+    margin: 0 20px;
+  }
+}

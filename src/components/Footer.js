@@ -1,11 +1,15 @@
 import React from 'react';
 
+import './Footer.scss';
+
 const Footer = () => (
   <div className="footer-container">
-    <p>© {new Date().getFullYear()} Connect Our Kids</p>
-    <a href="#">Terms and Conditions</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Contact Support</a>
+    <p className="copyright">© {new Date().getFullYear()} Connect Our Kids</p>
+    <ul>
+      <li><a href="#">Terms and Conditions</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Contact Support</a></li>
+    </ul>
   </div>
 )
 
