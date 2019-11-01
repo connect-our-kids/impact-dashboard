@@ -1,15 +1,39 @@
 .footer-container {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 20px;
+  @media (max-width: 740px) {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  @media (max-width: 450px) {
+    background-color: #e5e4e2;
+  }
   p, a {
     color: #aaa9ad;
+    @media (max-width: 450px) {
+      color: black;
+    }
+  }
+  .copyright {
+    margin-bottom: 0;
   }
   a {
     text-decoration: none;
+  }
+  a:hover {
+    color: black;
+    text-decoration: underline;
+  }
+  ul {
+    padding: 0;
   }
   li {
     list-style-type: none;
     display: inline;
     margin: 0 20px;
+    @media (max-width: 450px) {
+      display: block;
+    }
   }
 }
