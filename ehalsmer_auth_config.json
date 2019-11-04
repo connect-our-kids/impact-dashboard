@@ -1,4 +1,5 @@
 {
   "domain": "dev-69nrm8mx.auth0.com",
-  "clientId": "JvlOT0Pm6jCf6Wl1XsB3cMqqyFU526E0"
+  "clientId": "JvlOT0Pm6jCf6Wl1XsB3cMqqyFU526E0",
+  "audience": "https://dev-69nrm8mx.auth0.com/api/v2/"
 }
