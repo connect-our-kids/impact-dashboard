@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './PublicDashboard.scss';
 import { increment, decrement } from '../../redux/actions/index';
 import { connect } from 'react-redux';
-import styled from 'styled-components';
 import USAMaps from "../../Visualization/USAMap";
 import Pie from "../../Visualization/pie";
 
@@ -34,17 +33,6 @@ const tempData = [
 ]
 
   const PublicDashboard = props => {
-    const Button = styled.button`
-    height: 3rem;
-    padding: 0 70px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 3rem;
-    background-color: #1d8eb6;
-    color: white;
-    font-size: 18px;
-  `;
     //// Data fetching. Currently commented out to display more realistic fake numbers but it does work
     // const [data, setData] = useState();
     // console.log('Data fetched: ', data)
