@@ -21,8 +21,8 @@ service: impact-dashboard
 # frameworkVersion: "=X.X.X"
 plugins:
   - serverless-plugin-include-dependencies
-
-
+  - serverless-offline
+  - serverless-mocha-plugin 
 
 provider:
   # profile is for your powerUser credentials profile
@@ -30,7 +30,7 @@ provider:
   name: aws
   runtime: nodejs10.x
   # make stage dev-[your name]
-  stage: dev-ehalsmer
+  stage: dev-nisa
 
 # you can overwrite defaults here
 #  stage: dev
@@ -106,6 +106,13 @@ functions:
       - http:
           path: /moonPhases
           method: get
+  testing:
+    handler: lambda/handler.testing
+    name: 'testing-${self:provider.stage}'
+    events:
+      - http:
+          path: hello
+          method: post
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
