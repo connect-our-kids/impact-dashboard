@@ -4,35 +4,38 @@ import '../../components/DataGrid.scss';
 import { increment, decrement } from '../../redux/actions/index';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import DataGrid from '../../components/DataGrid';
+import {publicData} from '../../mockdata.js';
 import USAMaps from "../../Visualization/USAMap";
 import Pie from "../../Visualization/pie";
 
-const tempData = [
-  {
-    metric: "Children Served",
-    value: "5,236"
-  },
-  {
-    metric: "Successful Placement Ratio",
-    value: "82%"
-  },
-  {
-    metric: "Connections Discovered",
-    value: "64,234"
-  },
-  {
-    metric: "Kinship Search Users",
-    value: "1,865"
-  },
-  {
-    metric: "Permanent Placements",
-    value: "4,634"
-  },
-  {
-    metric: "Average Days To Placement",
-    value: "34"
-  },
-]
+// commented out to pass data into the component through props
+// const tempData = [
+//   {
+//     metric: "Children Served",
+//     value: "5,236"
+//   },
+//   {
+//     metric: "Successful Placement Ratio",
+//     value: "82%"
+//   },
+//   {
+//     metric: "Connections Discovered",
+//     value: "64,234"
+//   },
+//   {
+//     metric: "Kinship Search Users",
+//     value: "1,865"
+//   },
+//   {
+//     metric: "Permanent Placements",
+//     value: "4,634"
+//   },
+//   {
+//     metric: "Average Days To Placement",
+//     value: "34"
+//   },
+// ]
 
   const PublicDashboard = props => {
     const Button = styled.button`
@@ -61,14 +64,16 @@ const tempData = [
 
     return (
       <>
-        <main>
-          <div className="metricGrid">
+        <DataGrid data={publicData}/>
+        {/* commented out to pass data into the component through props */}
+        {/* <main>
+          <div className="metricGrid"> */}
             {/* provided words is not undefined (after the fetch above happens), map over the first 6 words, displaying a div with the wordcount and word */}
             {/* {words ? words.slice(0,6).map((word, idx) => <div key={idx} className="metric">
             <b>{word.word_count}</b>
             <p>{word.word}</p>
           </div>) : 'Loading words'} */}
-            {tempData.map((el, idx) => (
+            {/* {tempData.map((el, idx) => (
               <div key={idx} className={`metric metric-${idx}`}>
                 <div className="metricGrid__bold">{el.value}</div>
                 <div className="metricGrid__divider" />
@@ -76,7 +81,7 @@ const tempData = [
               </div>
             ))}
           </div>
-        </main>
+        </main> */}
 
         <h2 className="header-callout">This is how our efforts are making an impact.</h2>
 

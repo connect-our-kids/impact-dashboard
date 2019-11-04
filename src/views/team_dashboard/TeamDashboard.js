@@ -4,6 +4,7 @@ import './TeamDashboard.scss';
 import styled from 'styled-components';
 import Pie from "../../Visualization/pie-td";
 import DataGrid from "../../components/DataGrid";
+import {teamData} from "../../mockdata.js";
  
 export default function TeamDashboard(){
  
@@ -22,7 +23,8 @@ export default function TeamDashboard(){
 return (
   <>
   <div>
-  <DataGrid />
+    {/* passed team data into the data grid through props */}
+  <DataGrid data={teamData}/>
   </div>
 
  <div className="middle-section">
