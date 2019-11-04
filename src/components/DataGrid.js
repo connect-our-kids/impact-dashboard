@@ -2,7 +2,6 @@ import React from 'react';
 import './DataGrid.scss';
 
 export default function DataGrid(props){
-console.log (props.data)
 
 // commented out to pass data into the component through props
 // const tempData = [
