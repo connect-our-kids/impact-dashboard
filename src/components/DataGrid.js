@@ -31,18 +31,16 @@ const tempData = [
 ]
 
 return (
-    <>
-      <main>
-        <div className="public-stats-grid">
-          {tempData.map((el, idx) => (
-            <div key={idx} className={`metric metric-${idx}`}>
-              <b>{el.value}</b>
-              <div className="divider" />
-              <p>{el.metric}</p>
-            </div>
-          ))}
+  <main>
+    <div className="metricGrid">
+      {tempData.map((el, idx) => (
+        <div key={idx} className={`metric metric-${idx}`}>
+          <div className="metricGrid__bold">{el.value}</div>
+          <div className="metricGrid__divider" />
+          <p className="metricGrid__title">{el.metric}</p>
         </div>
-      </main>
-    </>
+      ))}
+    </div>
+  </main>
   )
 }

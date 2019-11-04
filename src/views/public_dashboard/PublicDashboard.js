@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './PublicDashboard.scss';
+import '../../components/DataGrid.scss';
 import { increment, decrement } from '../../redux/actions/index';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
@@ -61,7 +62,7 @@ const tempData = [
     return (
       <>
         <main>
-          <div className="public-stats-grid">
+          <div className="metricGrid">
             {/* provided words is not undefined (after the fetch above happens), map over the first 6 words, displaying a div with the wordcount and word */}
             {/* {words ? words.slice(0,6).map((word, idx) => <div key={idx} className="metric">
             <b>{word.word_count}</b>
@@ -69,9 +70,9 @@ const tempData = [
           </div>) : 'Loading words'} */}
             {tempData.map((el, idx) => (
               <div key={idx} className={`metric metric-${idx}`}>
-                <b>{el.value}</b>
-                <div className="divider" />
-                <p>{el.metric}</p>
+                <div className="metricGrid__bold">{el.value}</div>
+                <div className="metricGrid__divider" />
+                <p className="metricGrid__title">{el.metric}</p>
               </div>
             ))}
           </div>
