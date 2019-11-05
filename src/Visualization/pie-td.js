@@ -33,15 +33,15 @@ const data = {
 	datasets: [{
 		data: [328, 72],
 		backgroundColor: [
-		'#2D6ABA',
-		'#E3FCFE'
+		'#158FB4',
+		'#EDF9FD'
 		],
 		hoverBackgroundColor: [
-		'#ACE9F8',
-		'#F0F8AC'
+		'#0F6580',
+		'#A4E1F4'
 		]
 	}],
-	text: '82%'
+	text: '71%'
 };
 
 //boilerplate for data to be turned into percents

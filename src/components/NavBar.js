@@ -7,12 +7,10 @@ import { useAuth0 } from "../auth0-wrapper";
 import './NavBar.scss';
 
 const LoggedInNav = () => (
-  <div className="logged-in-nav-container">
-    <div className="logged-in-nav">
-      <ul>
-        <li><NavLink to="/personal">My Achievements</NavLink></li>
-        <li><NavLink to="/team">My Team</NavLink></li>
-      </ul>
+  <div className="subNav">
+    <div className="subNav__menu">
+        <NavLink to="/personal" className="subNav__link">My Achievements</NavLink>
+        <NavLink to="/team" className="subNav__link">My Team</NavLink>
     </div>
   </div>
 )
@@ -22,11 +20,11 @@ const NavBar = () => {
 
   return (
     <>
-      <nav>
-        <NavLink to="/"><img src={process.env.PUBLIC_URL + '/logo.png'} width="300" alt="Connect Our Kids Logo" /></NavLink>
-        <div className="menu">
+      <nav className="nav">
+        <NavLink to="/"><img src={process.env.PUBLIC_URL + '/logo.png'} width="300" alt="Connect Our Kids Logo" className="nav__logo" /></NavLink>
+        <div className="nav__menu">
           {!isAuthenticated && (
-            <button className="btn login-btn"
+            <button className="nav__btn nav__btn--login"
               onClick={() => {
                   // login_request()
                   loginWithRedirect({})
@@ -38,7 +36,7 @@ const NavBar = () => {
             </button>
           )}
 
-          {isAuthenticated && <button className="btn logout-btn" onClick={() => logout()}>Log out</button>}
+          {isAuthenticated && <button className="nav__btn nav__btn--logout" onClick={() => logout()}>Log out</button>}
         </div>
       </nav>
       {isAuthenticated && <LoggedInNav/>}

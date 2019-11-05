@@ -28,13 +28,13 @@ class USAMaps extends Component {
   statesCustomConfig = () => {
     return {
       "NY": {
-        fill: "#2D6ABA"
+        fill: "#158FB4"
       },
       "TX": {
-        fill: "#2D6ABA"
+        fill: "#158FB4"
       },
       "FL": {
-        fill: "#2D6ABA"
+        fill: "#158FB4"
       },
       "OR": {
         fill: "#D4E4F9"
@@ -154,7 +154,7 @@ class USAMaps extends Component {
         fill: "#92C3E4"
       },
       "CA": {
-        fill: "#084168"
+        fill: "#0F6580"
       }, 
       "PA":{
         fill: "#408DC1"
