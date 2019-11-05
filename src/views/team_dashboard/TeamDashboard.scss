@@ -1,73 +1,77 @@
-h2.header-text {
-  margin: 50px 0 0 0;
+.team__header{
+  margin: 60px 50px 50px 50px;
   color: #158FB4;
   font-size: 42px;
   font-weight: 700;
   text-align: center;
-  margin-bottom: -40px;
+  // margin-bottom: -40px;
 }
-main {
-  .public-stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    @media (max-width: 637px) {
-      grid-template-columns: 1fr;
-    }
-    .metric {
-      padding: 50px 0;
-      b {
-        font-size: 32px;
-      }
-      p {
-        font-size: 25px;
-        margin: 0 auto;
-        max-width: 170px;
-      }
-    }
-    .divider {
-      width: 40px;
-      height: 7px;
-      margin: 15px auto;
-    }
-  }
+
+//commented out because styling is already in the DataGrid.scss file
+// main {
+//   .public-stats-grid {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     grid-template-rows: 1fr 1fr;
+//     @media (max-width: 637px) {
+//       grid-template-columns: 1fr;
+//     }
+//     .metric {
+//       padding: 50px 0;
+//       b {
+//         font-size: 32px;
+//       }
+//       p {
+//         font-size: 25px;
+//         margin: 0 auto;
+//         max-width: 170px;
+//       }
+//     }
+//     .divider {
+//       width: 40px;
+//       height: 7px;
+//       margin: 15px auto;
+//     }
+//   }
+// }
+.team__section--middle{
+  margin-bottom: 50px;
 }
-.middle-section{
-h3{
+// // Metric styles
+// .metric-0, .metric-4 {
+//   background: #edf9fd;
+//   .divider {
+//     background: #4483a0;
+//   }
+// }
+// .metric-1, .metric-5 {
+//   background: #0f6580;
+//   color: #fff;
+//   .divider {
+//     background: #fff;
+//   }
+// }
+// .metric-2, .metric-3 {
+//   background: #a4e1f4;
+//   .divider {
+//     background: #4483a0;
+//   }
+// }
+.team__impact{
   font-size: 30px;
   font-weight: bold;
 }
-}
-// Metric styles
-.metric-0, .metric-4 {
-  background: #edf9fd;
-  .divider {
-    background: #4483a0;
-  }
-}
-.metric-1, .metric-5 {
-  background: #0f6580;
-  color: #fff;
-  .divider {
-    background: #fff;
-  }
-}
-.metric-2, .metric-3 {
-  background: #a4e1f4;
-  .divider {
-    background: #4483a0;
-  }
-}
- 
-.charts{
-.pie{
-  position: relative;
-  top: 50%;
-  left: 50%;
-  margin-left: -200px;
-  width: 400px;
-  margin-top: -200px;
-  height: 400px;
-  padding-top: 250px;
-  }
+.team__charts{
+  display: flex;
+  justify-content: center;
+  .team__pie{
+    // position: relative;
+    // top: 50%;
+    // left: 50%;
+    // margin-left: -200px;
+    width: 400px;
+    // margin-top: -200px;
+    height: 300px;
+    // padding-top: 250px;
+    }
 }
