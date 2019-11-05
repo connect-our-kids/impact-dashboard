@@ -22,9 +22,9 @@ function App() {
       <NavBar/>
       <Switch>
         <Route exact path='/' component={PublicDashboard}/>
-        <Route path= '/external' component={ExternalApi}/>
         <PrivateRoute path='/team' component={TeamDashboard} />
         <PrivateRoute path='/personal' component={PersonalDashboard}/>
+        <PrivateRoute path='/external' component={ExternalApi}/>
       </Switch>
       <Footer />
     </div>

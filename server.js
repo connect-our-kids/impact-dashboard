@@ -26,7 +26,14 @@ const commitsRouter = require('./routers/commits')
 
 // API endpoints
 
+// sanity check endpoint:
+server.get('/api', function (req, res) {
+  res.send('Hello World from express, in server.js')
+})
+
 // Set up Auth0 configuration
+// currently set to ehalsmer's auth0. May be replaced with either production auth0 or Matt's - 
+// check that config agrees in React app (auth_config.json and index.js import)
 const authConfig = {
   domain: "dev-69nrm8mx.auth0.com",
   audience: "https://dev-69nrm8mx.auth0.com/api/"
@@ -48,28 +55,26 @@ const checkJwt = jwt({
 });
 
 // Define an endpoint that must be called with an access token
+// All we need to do to add authentication to an endpoint is insert checkJwt as middleware:
 server.get("/api/external", checkJwt, (req, res) => {
   res.send({
     msg: "Your Access Token was successfully validated!"
   });
 });
 
+// Test routes still available:
 server.use('/api/shakespeareQuotes', shakespeareRouter) // aka public dash data
-// TODO insert authenticate as middleware for the following two routes:
 server.use('/api/moonPhases', moonPhasesRouter) // team dash data
 server.use('/api/commits', commitsRouter) // personal dash data
 
-// For when we have the real data:
+// Planned endpoints for when we have the real data:
 /*
 server.use('/api/public', )
-server.use('/api/team', authenticate, teamRouter)
-server.use('/api/personal', authenticate, personalRouter)
+server.use('/api/team', checkJwt, teamRouter)
+server.use('/api/personal', checkJwt, personalRouter)
 */
 
-// sanity check endpoint:
-server.get('/api', function (req, res) {
-  res.send('Hello World from express, in server.js')
-})
+
 
 
 

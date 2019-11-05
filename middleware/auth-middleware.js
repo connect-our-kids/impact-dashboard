@@ -6,7 +6,8 @@ const jwksRsa = require("jwks-rsa");
 
 // Set up Auth0 configuration
 const authConfig = {
-  // currently set to Eleasah's test auth0. See also ehalsmer_auth_config.json
+  // currently set to Eleasah's test auth0. See also ehalsmer_auth_config.json. 
+  // For production, change to Impact dashboard's domain and audience. 
   domain: "dev-69nrm8mx.auth0.com",
   audience: "https://dev-69nrm8mx.auth0.com/api/v2/" 
 };
