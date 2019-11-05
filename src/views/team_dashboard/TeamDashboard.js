@@ -4,6 +4,7 @@ import './TeamDashboard.scss';
 import styled from 'styled-components';
 import Pie from "../../Visualization/pie-td";
 import DataGrid from "../../components/DataGrid";
+import {teamData} from "../../mockdata.js";
  
 export default function TeamDashboard(){
  
@@ -13,7 +14,7 @@ export default function TeamDashboard(){
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 3rem;
+  // margin-top: 1rem;
   background-color: #1d8eb6;
   color: white;
   font-size: 20px;
@@ -21,27 +22,29 @@ export default function TeamDashboard(){
 
 return (
   <>
-  <div>
-  <DataGrid />
-  </div>
+    <div>
+      {/* passed team data into the data grid through props */}
+      <DataGrid data={teamData}/>
+    </div>
 
- <div className="middle-section">
-    <h2 className="header-text"> Our Team's Impact</h2>
- 
-    <Button>
-      Share My Impact
-  </Button>
- 
-  <h3>Here's how your team is doing <br>
-  </br> when it comes to placing children.</h3>
-  </div>
+    <div className="team">
+      <section className="team__section--middle">
+        <h2 className="team__header"> Our Team's Impact</h2>
+  
+        <Button> Share My Impact </Button>
+      </section>
 
- 
-  <div className="charts">
-      <div className="pie">
-        <Pie />
-      </div>
-      </div>
+      <section className="team__section--bottom">
+        <h3 className="team__impact">Here's how your team is doing <br>
+        </br> when it comes to placing children.</h3>
+  
+        <div className="team__charts">
+          <div className="team__pie">
+            <Pie />
+          </div>
+        </div>
+      </section>
+    </div>
   </>
 )
 }

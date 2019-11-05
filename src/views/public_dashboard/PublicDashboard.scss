@@ -1,68 +1,75 @@
-h2.header-callout {
-  margin: 50px 0 0 0;
+.public__callout {
+  margin: 60px 50px 50px 50px;
   color: #158FB4;
   font-size: 42px;
   font-weight: 700;
   text-align: center;
 }
-.donate-button{
-  height: 3rem;
-  padding: 0 70px;
+
+.public__donate {
+  height: 40px;
+  padding: 15px 50px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 3rem;
+  margin: 60px 0;
   background-color: #1d8eb6;
   color: white;
   font-size: 18px;
-  a:visited{
-    color:#fff;
-  }
-}
-main {
-  .public-stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    @media (max-width: 637px) {
-      grid-template-columns: 1fr;
-    }
-    .metric {
-      padding: 50px 0;
-      b {
-        font-size: 32px;
-      }
-      p {
-        font-size: 25px;
-        margin: 0 auto;
-        max-width: 170px;
-      }
-    }
-    .divider {
-      width: 40px;
-      height: 7px;
-      margin: 15px auto;
-    }
-  }
+  text-decoration: none;
 }
 
-// Individual metric styles
-.metric-0, .metric-4 {
-  background: #edf9fd;
-  .divider {
-    background: #4483a0;
-  }
+.public__donate:visited{
+  color:#fff;
 }
-.metric-1, .metric-5 {
-  background: #0f6580;
-  color: #fff;
-  .divider {
-    background: #fff;
-  }
-}
-.metric-2, .metric-3 {
-  background: #a4e1f4;
-  .divider {
-    background: #4483a0;
-  }
-}
+
+// Commented this out and 
+// used the grid component instead for uniformity
+
+// main {
+//   .public-stats-grid {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     grid-template-rows: 1fr 1fr;
+//     @media (max-width: 637px) {
+//       grid-template-columns: 1fr;
+//     }
+//     .metric {
+//       padding: 50px 0;
+//       b {
+//         font-size: 32px;
+//       }
+//       p {
+//         font-size: 25px;
+//         margin: 0 auto;
+//         max-width: 170px;
+//       }
+//     }
+//     .divider {
+//       width: 40px;
+//       height: 7px;
+//       margin: 15px auto;
+//     }
+//   }
+// }
+
+// // Individual metric styles
+// .metric-0, .metric-4 {
+//   background: #edf9fd;
+//   .divider {
+//     background: #4483a0;
+//   }
+// }
+// .metric-1, .metric-5 {
+//   background: #0f6580;
+//   color: #fff;
+//   .divider {
+//     background: #fff;
+//   }
+// }
+// .metric-2, .metric-3 {
+//   background: #a4e1f4;
+//   .divider {
+//     background: #4483a0;
+//   }
+// }

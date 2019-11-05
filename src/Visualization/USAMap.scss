@@ -18,18 +18,18 @@ path {
 
 ///div css to bring visualizations in a row
 
-.holder{
+.public__visuals{
   display: flex;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin: 30px auto;
+  margin: 80px auto;
   // margin-left: -10px;
   @media (max-width: 637px) {
     display: block;
   }
 }
 
-.map, .pie{
+.public__map, .public__pie{
   width: calc(50% - 10px);
   margin-left: 10px;
   @media (max-width: 637px) {
@@ -37,7 +37,7 @@ path {
   }
 }
 
-.map{
+.public__map{
   @media (max-width: 637px){
     margin: 0 auto;
   }
