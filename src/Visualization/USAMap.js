@@ -27,15 +27,8 @@ class USAMaps extends Component {
   /* optional customization of filling per state and calling custom callbacks per state */
   statesCustomConfig = () => {
     return {
-      "NJ": {
-        fill: "navy",
-        clickHandler: (event) => console.log('Custom handler for NJ', event.target.dataset)
-      },
       "NY": {
         fill: "#158FB4"
-      },
-      "VA": {
-        fill: "teal"
       },
       "TX": {
         fill: "#158FB4"

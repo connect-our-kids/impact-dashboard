@@ -31,8 +31,11 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "serverless-http": "^2.3.0",
+    "serverless-mocha-plugin": "^1.11.0",
+    "serverless-offline": "^5.12.0",
     "serverless-plugin-include-dependencies": "^3.2.1",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.0",
+    "supertest": "^4.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -56,5 +59,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nyc": "^14.1.1"
   }
 }
