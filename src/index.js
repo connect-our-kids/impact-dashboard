@@ -36,6 +36,7 @@ ReactDOM.render(
       client_id={config.clientId}
       redirect_uri={window.location.origin}
       onRedirectCallback={onRedirectCallback}
+      audience='https://dev-69nrm8mx.auth0.com/api/v2/'
     >
       <Router>
         <App />
