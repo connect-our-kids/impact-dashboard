@@ -83,15 +83,15 @@ import Pie from "../../Visualization/pie";
           </div>
         </main> */}
 
-        <h2 className="callout">This is how our efforts are making an impact.</h2>
+        <h2 className="public__callout">This is how our efforts are making an impact.</h2>
 
-        <a href='https://www.connectourkids.org/' className="donate">Donate</a>
+        <a href='https://www.connectourkids.org/' className="public__donate">Donate</a>
       
-        <div className="visuals">
-          <div className="map">
+        <div className="public__visuals">
+          <div className="public__map">
             <USAMaps />
           </div>
-          <div className="pie">
+          <div className="public__pie">
             <Pie />
           </div>
         </div>
