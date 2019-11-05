@@ -95,3 +95,17 @@ module.exports.moonPhases = async event => {
         )
     }
 }
+////for unit testing/integration testing
+module.exports.testing = async (event, context) => {
+  let body = {};
+  if (event.body) {
+    body = JSON.parse(event.body)
+  }
+
+  const name = body.name || 'world'
+
+  return {
+    statusCode: 200,
+    body: `Hello, ${name}`,
+  };
+};

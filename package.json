@@ -26,15 +26,17 @@
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
-    "react-share": "^3.0.1",
     "react-simple-maps": "^0.12.1",
     "react-social-sharing": "^3.0.1",
     "react-usa-map": "^1.4.0",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "serverless-http": "^2.3.0",
+    "serverless-mocha-plugin": "^1.11.0",
+    "serverless-offline": "^5.12.0",
     "serverless-plugin-include-dependencies": "^3.2.1",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.0",
+    "supertest": "^4.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -58,5 +60,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nyc": "^14.1.1"
   }
 }

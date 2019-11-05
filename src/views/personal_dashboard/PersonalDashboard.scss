@@ -1,94 +1,69 @@
 ///brought over scss styles to test personal dash
-header {
+.personal {
   text-align: center;
   height: 13rem;
   margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  .calloutHeader {
-    color: #508db3;
-    line-height: 77px;
-    font-size: 48px;
-    display: flex;
-    justify-content: center;
+  .personal__title {
+    margin: 60px 50px 40px 50px;
+    color: #158fb4;
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
   }
-    //NEED TO FIX BUTTON TO BE IN THE MIDDLE OF PAGE W/O DOING MARGIN-LEFT
-  .share-button{
-    height: 3rem;
-    width: 10rem;
+  //NEED TO FIX BUTTON TO BE IN THE MIDDLE OF PAGE W/O DOING MARGIN-LEFT
+  .personal__share {
+    height: 40px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0;
     background-color: #1d8eb6;
     color: white;
-    font-size: 20px;
-    margin-top: 1rem;
-    display: flex;
-    align-items: center;
+    font-size: 18px;
+    text-decoration: none;
   }
 }
-.personalmain {
+.personal__main {
   display: flex;
   justify-content: center;
-    .card1{
-      border: 1px solid #E5E4E2;
-      height: 15rem;
-      width: 22rem;
-      margin-right:1rem;
+  text-align: left;
+  .personal__card {
+    border: 1px solid #e5e4e2;
+    height: 15rem;
+    width: 22rem;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    .personal__card--right {
+      background-color: #158fb4;
+      width: 7rem;
       display: flex;
-      justify-content: space-between;
-        .right{
-            background-color: #158fb4;
-            width: 7rem;
-            // padding-top:4rem;
-            display: flex;
-            // justify-content: center;
-            flex-direction: column;
-          }
-          .left h3{
-           margin-top:4rem;
-           margin-left:2rem;
-           margin-bottom: 2rem;
-          }
+      flex-direction: column;
     }
-
-    .card2{
-      border: 1px solid #E5E4E2;
-      height: 15rem;
-      width: 22rem;
-      margin-right:1rem;
-      display: flex;
-      justify-content: space-between;
-        .right{
-          background-color: #158fb4;
-          width: 7rem;
-          padding-top:4rem;
-        }
-        .left h3{
-          margin-top: 4rem;
-          margin-left: 1rem;
-          margin-bottom: 2rem;
-        } 
+    img.badgeIcon {
+      justify-self: center;
     }
-
-    .card3{
-      border: 1px solid #E5E4E2;
-      height: 15rem;
-      width: 22rem;
-      display: flex;
-      justify-content: space-between;
-        .right{
-          background-color: #158fb4;
-          width: 7rem;
-          padding-top:4rem;
-        }
-        .left h3{
-          margin-top: 4rem;
-          margin-left: 2rem;
-          margin-bottom: 2rem;
-        }
+    img.shareIcon {
+      justify-self: flex-end;
     }
+    .personal__card--left h3 {
+      margin-top: 4rem;
+      margin-left: 1rem;
+      margin-bottom: 2rem;
+    }
+    .personal__card--left p {
+      margin-left: 1rem;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
 }
 
-.bottomtext{
+.personal__bottomtext {
   font-size: 18px;
   line-height: 25px;
   letter-spacing: 0.5px;
@@ -96,7 +71,7 @@ header {
   display: flex;
   justify-content: center;
   p {
-    width:34rem;
-    max-width: 34rem;
+    width: 40rem;
+    max-width: 40rem;
   }
 }
