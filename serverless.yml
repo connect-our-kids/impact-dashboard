@@ -30,7 +30,7 @@ provider:
   name: aws
   runtime: nodejs10.x
   # make stage dev-[your name]
-  stage: dev-ehalsmer
+  stage: dev-ehalsmer-staging
 
 # you can overwrite defaults here
 #  stage: dev

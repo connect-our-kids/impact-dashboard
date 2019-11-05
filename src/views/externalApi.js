@@ -16,7 +16,7 @@ const ExternalApi = () => {
       const token = await getTokenSilently();
       console.log('TOKEN', token)
       // /api/external is a test endpoint protected by auth0. change endpoint url here once backend is deployed to production
-      const response = await fetch("https://vjq0rnedic.execute-api.us-east-1.amazonaws.com/dev-ehalsmer/api/external", {
+      const response = await fetch("https://qj4yakzfni.execute-api.us-east-1.amazonaws.com/dev-ehalsmer-staging/api/external", {
         headers: {
           Authorization: `Bearer ${token}`
         }

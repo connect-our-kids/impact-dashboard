@@ -36,7 +36,7 @@ server.get('/api', function (req, res) {
 // check that config agrees in React app (auth_config.json and index.js import)
 const authConfig = {
   domain: "dev-69nrm8mx.auth0.com",
-  audience: "https://dev-69nrm8mx.auth0.com/api/"
+  audience: "https://dev-69nrm8mx.auth0.com/api/v2/"
 };
 
 // Define middleware that validates incoming bearer tokens
