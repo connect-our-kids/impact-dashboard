@@ -6,14 +6,14 @@ export default function PersonalDashboard() {
         <>
         <header>
             <h1 className='calloutHeader'>Sam Wilsons Impact</h1>
-            <button className='share-button'>Share My Impact</button>
+            <a className='share-button'>Share My Impact</a>
         </header>
         <div className='personalmain'>
             <div className='card1'>
                 <div className='left'>
                     <h3>Children Served</h3>
-                    <p> Your total:</p>
-                    <p>Next Threshold:</p>
+                    <p> Your total: <strong>500</strong></p>
+                    <p>Next Threshold: <strong>700</strong></p>
                 </div>
                
                 <div className='right'>
@@ -24,8 +24,8 @@ export default function PersonalDashboard() {
             <div className='card2'>
                 <div className='left'>
                     <h3>Connections Discovered</h3>
-                    <p> Your total:</p>
-                    <p>Next Threshold:</p>
+                    <p> Your total: <strong>100</strong></p>
+                    <p>Next Threshold: <strong>700</strong></p>
                 </div>
                
                 <div className='right'>
@@ -36,8 +36,8 @@ export default function PersonalDashboard() {
             <div className='card3'>
                 <div className='left'>
                     <h3>Engagements Events</h3>
-                    <p> Your total:</p>
-                    <p>Next Threshold:</p>
+                    <p> Your total: <strong>20</strong></p>
+                    <p>Next Threshold: <strong>70</strong></p>
                 </div>
                
                 <div className='right'>
@@ -47,7 +47,7 @@ export default function PersonalDashboard() {
         </div>
 
         <div className='bottomtext'>
-            <p>Thank you for being a super hero to kids in foster care. Your work is important and worth sharing. Now you can share your impact with the world. Encourage your colleagues to do the same! </p>
+            <p><strong>Thank you</strong> for being a super hero to kids in foster care. Your work is important and worth sharing. Now you can <strong>share your impact</strong> with the world. Encourage your colleagues to do the same! </p>
         </div>
         </>
     )
