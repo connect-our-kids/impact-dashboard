@@ -57,6 +57,7 @@ export default function PersonalDashboard() {
                
                 <div className='right'>
                     <img src='/Badge3.svg' alt='engagemnets events icon'></img>
+                    <img src="icons8-share.svg" />
                 </div>
             </div>
         </div>
@@ -67,12 +68,6 @@ export default function PersonalDashboard() {
             <Facebook link="https://google.com" small />
             <Twitter link="https://google.com" small />
             <Linkedin link="https://google.com" small />
-        </div>
-        <div className="sharing">
-            <h2>React Share</h2>
-            <FacebookShareButton url="https://google.com" quote="This is a quote" hashtag="#test" ><FacebookIcon/></FacebookShareButton>
-            <TwitterShareButton url="https://google.com" title="Tweet title here" via="Connect Our Kids Impact" hashtags="test"><TwitterIcon/></TwitterShareButton>
-            <LinkedinShareButton url="https://google.com"><LinkedinIcon/></LinkedinShareButton>
         </div>
 
         <div className='bottomtext'>

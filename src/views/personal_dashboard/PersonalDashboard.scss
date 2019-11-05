@@ -38,8 +38,10 @@ header {
         .right{
             background-color: #158fb4;
             width: 7rem;
-            justify-content: center;
-            padding-top:4rem;
+            // padding-top:4rem;
+            display: flex;
+            // justify-content: center;
+            flex-direction: column;
           }
           .left h3{
            margin-top:4rem;
