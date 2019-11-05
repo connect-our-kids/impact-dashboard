@@ -27,9 +27,7 @@ const NavBar = () => {
             <button className="nav__btn nav__btn--login"
               onClick={() => {
                   // login_request()
-                  loginWithRedirect({
-                    redirect_uri: "http://localhost:3000/test"
-                  })
+                  loginWithRedirect({})
                   //having an error populate when log in is clicked
                 }
               }
