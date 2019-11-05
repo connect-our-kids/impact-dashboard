@@ -21,8 +21,8 @@ export default function PersonalDashboard() {
                 </div>
                
                 <div className='personal__card--right'>
-                    <img className="badgeIcon" src='Badge1.svg' alt='children served icon'></img>
-                    <img className="shareIcon" src="icons8-share.svg" />
+                    <img className="badgeIcon" src='Badge1.svg' alt='children served icon'/>
+                    <div className="shareIcon"><img src="icons8-share.svg" alt="Share Icon" title="Share" /></div>
                 </div>
             </div>
 
@@ -34,8 +34,8 @@ export default function PersonalDashboard() {
                 </div>
                
                 <div className='personal__card--right'>
-                    <img className="badgeIcon" src='/Badge2.svg' alt='connections discovered icon'></img>
-                    <img className="shareIcon" src="icons8-share.svg" />
+                    <img className="badgeIcon" src='/Badge2.svg' alt='connections discovered icon'/>
+                    <div className="shareIcon"><img src="icons8-share.svg" alt="Share Icon" title="Share"/></div>
                 </div>
             </div>
 
@@ -47,8 +47,8 @@ export default function PersonalDashboard() {
                 </div>
                
                 <div className='personal__card--right'>
-                    <img className="badgeIcon" src='/Badge3.svg' alt='engagemnets events icon'></img>
-                    <img className="shareIcon" src="icons8-share.svg" />
+                    <img className="badgeIcon" src='/Badge3.svg' alt='engagemnets events icon'/>
+                    <div className="shareIcon"><img src="icons8-share.svg" alt="Share Icon" title="Share" /></div>
                 </div>
             </div>
         </div>
