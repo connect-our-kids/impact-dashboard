@@ -18,11 +18,11 @@ path {
 
 ///div css to bring visualizations in a row
 
-.holder{
+.visuals{
   display: flex;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin: 30px auto;
+  margin: 80px auto;
   // margin-left: -10px;
   @media (max-width: 637px) {
     display: block;

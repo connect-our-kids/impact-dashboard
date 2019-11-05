@@ -1,7 +1,9 @@
 .nav {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  margin: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
   align-items: center;
   .nav__btn {
     color: #212529;
