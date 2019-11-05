@@ -57,6 +57,10 @@ Take note of the secrets.js file, which is in the gitignore file so that keys ar
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Testing protected endpoints
+
+Currently /api/external is protected by checkJwt middleware. To test this from the frontend with the ExternalApi component, go to index.js in the src folder, comment out line 8, and uncomment lines 9 and 41
+
 ## Available Scripts
 
 In the project directory, you can run:
