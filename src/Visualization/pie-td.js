@@ -1,7 +1,7 @@
-////doughnut chart for visualization
+////Pie Chart for Team Dashboard page, slightly different styling
 import React from 'react';
 import {Doughnut, Chart} from 'react-chartjs-2';
-import './pie.scss';
+import './pie-td.scss';
 
 
 ///needed to be left to var instead of let so I could get my text below to show "82%"
@@ -41,7 +41,7 @@ const data = {
 		'#A4E1F4'
 		]
 	}],
-	text: '82%'
+	text: '71%'
 };
 
 //boilerplate for data to be turned into percents
@@ -66,10 +66,9 @@ const option = {
 const PieChart = (props) => {
  return (
 	<div>
-	  <h2>Successful placements:</h2>
 	  <Doughnut data={data} 
 	  	   options={option} />
-	  <h3>Of all kids we work with are successfully placed</h3>
+	  <p>Of all kids we work with are successfully placed</p>
 	</div>
   );
 }

@@ -4,10 +4,9 @@ import './App.css';
 import './index.scss';
 
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import PublicDashboard from './views/public_dashboard/PublicDashboard';
 import PersonalDashboard from './views/personal_dashboard/PersonalDashboard';
-import TestPersonal from './views/personal_dashboard/TestPersonalDashboard';
-import TestTeamDash from './views/team_dashboard/TestTeamDash';
 import TeamDashboard from './views/team_dashboard/TeamDashboard';
 import PrivateRoute from './components/PrivateRoute'
 
@@ -26,6 +25,7 @@ function App() {
         <PrivateRoute path='/team' component={TeamDashboard} />
         <PrivateRoute path='/personal' component={PersonalDashboard}/>
       </Switch>
+      <Footer />
     </div>
   );
 }

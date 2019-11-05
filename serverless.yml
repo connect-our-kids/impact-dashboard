@@ -24,6 +24,8 @@ plugins:
   - serverless-apigw-binary
   - serverless-apigwy-binary
   - serverless-associate-waf
+  - serverless-offline
+  - serverless-mocha-plugin 
 
 provider:
   # profile is for your powerUser credentials profile
@@ -48,6 +50,13 @@ functions:
     events:
       - http: ANY /
       - http: ANY {proxy+}
+  expressApp:
+    handler: server.expressHandler
+    name: 'expressApp-${self:provider.stage}'
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
+
   catmemes:
     handler: lambda/handler.catMemes
     name: 'hellocats-${self:provider.stage}'
@@ -76,4 +85,13 @@ functions:
       - http:
           path: /moonPhases
           method: get
+
+  testing:
+    handler: lambda/handler.testing
+    name: 'testing-${self:provider.stage}'
+    events:
+      - http:
+          path: hello
+          method: post
+
 

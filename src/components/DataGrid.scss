@@ -1,0 +1,48 @@
+main {
+  .metricGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    @media (max-width: 637px) {
+      grid-template-columns: 1fr;
+    }
+    .metric {
+      padding: 50px 0;
+      .metricGrid__bold {
+        font-size: 32px;
+        font-weight: bold;
+      }
+      .metricGrid__title {
+        font-size: 25px;
+        margin: 0 auto;
+        max-width: 170px;
+      }
+    }
+    .metricGrid__divider {
+      width: 40px;
+      height: 7px;
+      margin: 15px auto;
+    }
+  }
+}
+
+// Individual metric styles
+.metric-0, .metric-4 {
+  background: #edf9fd;
+  .metricGrid__divider {
+    background: #4483a0;
+  }
+}
+.metric-1, .metric-5 {
+  background: #0f6580;
+  color: #fff;
+  .metricGrid__divider {
+    background: #fff;
+  }
+}
+.metric-2, .metric-3 {
+  background: #a4e1f4;
+  .metricGrid__divider {
+    background: #4483a0;
+  }
+}
