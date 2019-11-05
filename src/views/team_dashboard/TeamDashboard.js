@@ -31,7 +31,7 @@ return (
       <section className="team__section--middle">
         <h2 className="team__header"> Our Team's Impact</h2>
   
-        <Button> Share My Impact </Button>
+        {/* <Button> Share My Impact </Button> */}
       </section>
 
       <section className="team__section--bottom">
