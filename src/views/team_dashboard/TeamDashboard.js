@@ -28,19 +28,27 @@ const screenshot = (e) => {
   });
 }
 
-const download_img = (e) => {
-  html2canvas(document.body, { onclone: (document) => {
+const download_img = async (e) => {
+  await html2canvas(document.querySelector('#capture'), {
+    windowWidth: 1800,
+    windowHeight: 1377,
+    onclone: (document) => {
     document.querySelector('#print-button').style.display = 'none'
-    document.querySelector('nav').style.display = 'none'
-    document.querySelector('.subNav__menu').style.display = 'none'
-    document.querySelector('footer').style.display = 'none'
+    // document.querySelector('nav').style.display = 'none'
+    // document.querySelector('.subNav__menu').style.display = 'none'
+    // document.querySelector('footer').style.display = 'none'
     }})
     .then(function(canvas) {
-      let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-      var link = document.createElement('a');
-      link.download = "my-image.png";
-      link.href = image;
-      link.click();
+      let image = canvas.toDataURL("image/png");
+      // var link = document.createElement('a');
+      // link.download = "my-image.png";
+      // link.href = image;
+      // link.click();
+      const pdf = new jsPdf({
+        unit: 'px'
+      })
+      pdf.addImage(image, 'png', 0, 0, 473, 300)
+      pdf.save('your-filename.pdf')
   });
 }
 
@@ -56,8 +64,8 @@ const download_img = (e) => {
 // }
 
 return (
-  <>
-    <div id="capture">
+  <div id="capture">
+    <div>
       {/* passed team data into the data grid through props */}
       <DataGrid data={teamData}/>
     </div>
@@ -80,6 +88,6 @@ return (
         </div>
       </section>
     </div>
-  </>
+  </div>
 )
 }
