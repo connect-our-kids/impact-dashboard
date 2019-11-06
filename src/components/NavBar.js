@@ -5,6 +5,7 @@ import { useAuth0 } from "../auth0-wrapper";
 
 // import { login_request } from '../actions/index';
 import './NavBar.scss';
+const redirectURI = window.location.origin + '/dev-sean/';
 
 const LoggedInNav = () => (
   <div className="subNav">
@@ -27,7 +28,7 @@ const NavBar = () => {
             <button className="nav__btn nav__btn--login"
               onClick={() => {
                   // login_request()
-                  loginWithRedirect({redirect_uri:'https://546mmxlxp5.execute-api.us-east-1.amazonaws.com/dev-sean/'})
+                  loginWithRedirect()
                   //having an error populate when log in is clicked
                 }
               }
@@ -36,7 +37,7 @@ const NavBar = () => {
             </button>
           )}
 
-          {isAuthenticated && <button className="nav__btn nav__btn--logout" onClick={() => logout()}>Log out</button>}
+            {isAuthenticated && <button className="nav__btn nav__btn--logout" onClick={() => logout({returnTo: redirectURI})}>Log out</button>}
         </div>
       </nav>
       {isAuthenticated && <LoggedInNav/>}
