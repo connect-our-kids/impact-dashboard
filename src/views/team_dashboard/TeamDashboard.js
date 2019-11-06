@@ -29,12 +29,18 @@ const screenshot = (e) => {
 }
 
 const download_img = (e) => {
-  html2canvas(document.body).then(function(canvas) {
-    let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-    var link = document.createElement('a');
-    link.download = "my-image.png";
-    link.href = image;
-    link.click();
+  html2canvas(document.body, { onclone: (document) => {
+    document.querySelector('#print-button').style.display = 'none'
+    document.querySelector('nav').style.display = 'none'
+    document.querySelector('.subNav__menu').style.display = 'none'
+    document.querySelector('footer').style.display = 'none'
+    }})
+    .then(function(canvas) {
+      let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+      var link = document.createElement('a');
+      link.download = "my-image.png";
+      link.href = image;
+      link.click();
   });
 }
 
@@ -60,7 +66,7 @@ return (
       <section className="team__section--middle">
         <h2 className="team__header"> Our Team's Impact</h2>
   
-        <Button onClick={download_img}> Share My Impact </Button>
+        <Button id="print-button" onClick={download_img}> Share My Impact </Button>
       </section>
 
       <section className="team__section--bottom">
