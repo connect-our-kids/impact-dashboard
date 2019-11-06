@@ -21,47 +21,27 @@ export default function TeamDashboard(){
   font-size: 20px;
 `;
 
-
-const screenshot = (e) => {
-  html2canvas(document.body).then(function(canvas) {
-    document.body.appendChild(canvas);
-  });
-}
-
 const download_img = async (e) => {
+  // const logoCanvas = await html2canvas(document.querySelector('.nav__logo'));
   await html2canvas(document.querySelector('#capture'), {
     windowWidth: 1800,
     windowHeight: 1377,
     onclone: (document) => {
     document.querySelector('#print-button').style.display = 'none'
-    // document.querySelector('nav').style.display = 'none'
-    // document.querySelector('.subNav__menu').style.display = 'none'
-    // document.querySelector('footer').style.display = 'none'
     }})
     .then(function(canvas) {
+      // let logo = document.querySelector('.nav__logo')
+      // let logo = logoCanvas.toDataURL("image/png");
       let image = canvas.toDataURL("image/png");
-      // var link = document.createElement('a');
-      // link.download = "my-image.png";
-      // link.href = image;
-      // link.click();
       const pdf = new jsPdf({
-        unit: 'px'
+        unit: 'px',
+        orientation: 'landscape'
       })
-      pdf.addImage(image, 'png', 0, 0, 473, 300)
-      pdf.save('your-filename.pdf')
+      // pdf.addImage(logo, 'png', 0, 0, 300, 70)
+      pdf.addImage(image, 'png', 0, 0, 670, 450)
+      pdf.save('myteam.pdf')
   });
 }
-
-// function printPDF () {
-//   const domElement = document.getElementsByClassName('nav')
-//   html2canvas(domElement)
-//   .then((canvas) => {
-//       const img = canvas.toDataURL('image/png')
-//       const pdf = new jsPdf()
-//       pdf.addImage(img, 'JPEG', 0, 0, 500, 500)
-//       pdf.save('your-filename.pdf')
-// })
-// }
 
 return (
   <div id="capture">
