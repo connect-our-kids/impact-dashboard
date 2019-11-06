@@ -1,5 +1,6 @@
 import React from 'react';
- 
+import html2canvas from 'html2canvas'
+import jsPdf from 'jspdf'
 import './TeamDashboard.scss';
 import styled from 'styled-components';
 import Pie from "../../Visualization/pie-td";
@@ -20,9 +21,37 @@ export default function TeamDashboard(){
   font-size: 20px;
 `;
 
+
+const screenshot = (e) => {
+  html2canvas(document.body).then(function(canvas) {
+    document.body.appendChild(canvas);
+  });
+}
+
+const download_img = (e) => {
+  html2canvas(document.body).then(function(canvas) {
+    let image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    var link = document.createElement('a');
+    link.download = "my-image.png";
+    link.href = image;
+    link.click();
+  });
+}
+
+// function printPDF () {
+//   const domElement = document.getElementsByClassName('nav')
+//   html2canvas(domElement)
+//   .then((canvas) => {
+//       const img = canvas.toDataURL('image/png')
+//       const pdf = new jsPdf()
+//       pdf.addImage(img, 'JPEG', 0, 0, 500, 500)
+//       pdf.save('your-filename.pdf')
+// })
+// }
+
 return (
   <>
-    <div>
+    <div id="capture">
       {/* passed team data into the data grid through props */}
       <DataGrid data={teamData}/>
     </div>
@@ -31,7 +60,7 @@ return (
       <section className="team__section--middle">
         <h2 className="team__header"> Our Team's Impact</h2>
   
-        <Button> Share My Impact </Button>
+        <Button onClick={download_img}> Share My Impact </Button>
       </section>
 
       <section className="team__section--bottom">
