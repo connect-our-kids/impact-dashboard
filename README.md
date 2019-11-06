@@ -57,6 +57,13 @@ Take note of the secrets.js file, which is in the gitignore file so that keys ar
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Deploying React App to AWS Lambda Function
+1. Inside to ```src/index.js```. 
+2. In ```<Auth0Provider>```, there is a prop called redirect_uri. Change the part after window.location.origin to your staging name
+3. In the ```src/components``` folder, you will find a Navbar.js file. Near the top of this file is a variable called redirectURI. Set this equal to the same thing as the prop in ```<Auth0Provider>```
+4. Run this command (Windows): ```set PUBLIC_URL=https://546mmxlxp5.execute-api.us-east-1.amazonaws.com/dev-sean/&& yarn build && serverless deploy```
+   * Make sure to change the PUBLIC_URL to whatever your url is
+
 ## Testing protected endpoints
 
 Currently /api/external is protected by checkJwt middleware. To test this from the frontend with the ExternalApi component, go to index.js in the src folder, comment out line 8, and uncomment lines 9 and 41
