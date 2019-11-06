@@ -1,3 +1,5 @@
+const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware');
+
 const express = require('express');
 const path = require('path');
 
@@ -21,5 +23,7 @@ app.get('*', (req, res) => {
 //app.listen(port);
 
 //console.log('App is listening on port ' + port);
+app.use(awsServerlessExpressMiddleware.eventContext());
+
 
 module.exports = app;

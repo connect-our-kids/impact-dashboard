@@ -27,7 +27,7 @@ const NavBar = () => {
             <button className="nav__btn nav__btn--login"
               onClick={() => {
                   // login_request()
-                  loginWithRedirect({})
+                  loginWithRedirect({redirect_uri:'https://546mmxlxp5.execute-api.us-east-1.amazonaws.com/dev-sean/'})
                   //having an error populate when log in is clicked
                 }
               }

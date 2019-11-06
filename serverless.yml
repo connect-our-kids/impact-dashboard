@@ -48,8 +48,8 @@ functions:
   ui:
     handler: lambda/ui.universal
     events:
-      - http: ANY /
       - http: ANY {proxy+}
+      - http: ANY /
 #  expressApp:
 #    handler: server.expressHandler
 #    name: 'expressApp-${self:provider.stage}'

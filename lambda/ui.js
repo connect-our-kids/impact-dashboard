@@ -1,6 +1,5 @@
 const awsServerlessExpress = require('aws-serverless-express');
 const server = require('./server');
-const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware');
 
 const binaryMimeTypes = [
   'application/javascript',
@@ -22,7 +21,6 @@ const binaryMimeTypes = [
   'application/x-font-ttf'
 ];
 
-//server.use(awsServerlessExpressMiddleware.eventContext());
 
 const serverProxy = awsServerlessExpress.createServer(server, null, binaryMimeTypes);
 module.exports.universal = (event, context) => awsServerlessExpress.proxy(serverProxy, event, context);
