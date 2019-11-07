@@ -74,7 +74,7 @@ import Pie from "../../Visualization/pie";
 
         <h2 className="public__callout">This is how our efforts are making an impact.</h2>
 
-        <a href='https://www.connectourkids.org/' className="public__donate">Donate</a>
+        <a href='https://www.connectourkids.org/donate' className="public__donate">Donate</a>
       
         <div className="public__visuals">
           <div className="public__map">
