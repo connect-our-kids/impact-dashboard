@@ -5,7 +5,7 @@ import { useAuth0 } from "../auth0-wrapper";
 
 // import { login_request } from '../actions/index';
 import './NavBar.scss';
-const redirectURI = window.location.origin + '/dev-sean/';
+const redirectURI = window.location.origin;
 
 const LoggedInNav = () => (
   <div className="subNav">
