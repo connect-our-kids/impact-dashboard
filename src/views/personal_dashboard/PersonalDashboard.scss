@@ -8,12 +8,12 @@
   align-items: center;
   .personal__title {
     margin: 60px 50px 40px 50px;
-    color: #158fb4;
+    color: #158FB4;
     font-size: 42px;
     font-weight: 700;
     text-align: center;
   }
-  //NEED TO FIX BUTTON TO BE IN THE MIDDLE OF PAGE W/O DOING MARGIN-LEFT
+    //NEED TO FIX BUTTON TO BE IN THE MIDDLE OF PAGE W/O DOING MARGIN-LEFT
   .personal__share {
     height: 40px;
     padding: 15px 30px;
@@ -31,45 +31,83 @@
   display: flex;
   justify-content: center;
   text-align: left;
-  .personal__card {
-    border: 1px solid #e5e4e2;
-    height: 15rem;
-    width: 22rem;
-    margin-right: 1rem;
-    display: flex;
-    justify-content: space-between;
-    .personal__card--right {
-      background-color: #158fb4;
-      width: 7rem;
+    .personal__card1{
+      border: 1px solid #E5E4E2;
+      height: 15rem;
+      width: 22rem;
+      margin-right:1rem;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
+      justify-content: space-between;
+        .personal__card1--right{
+            background-color: #158fb4;
+            width: 7rem;
+            justify-content: center;
+            padding-top:4rem;
+            text-align: center;
+          }
+          .personal__card1--left h3{
+           margin-top:4rem;
+           margin-left:1rem;
+           margin-bottom: 2rem;
+          }
+          .personal__card1--left p{
+            margin-left: 1rem;
+            margin-top: 0;
+            margin-bottom: 0;
+          }
     }
-    div.shareIcon {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      img {
-        display: block;
-        margin: 10px auto;
-        cursor: pointer;
-      }
+
+    .personal__card2{
+      border: 1px solid #E5E4E2;
+      height: 15rem;
+      width: 22rem;
+      margin-right:1rem;
+      display: flex;
+      justify-content: space-between;
+        .personal__card2--right{
+          background-color: #158fb4;
+          width: 7rem;
+          padding-top:4rem;
+          text-align: center;
+        }
+        .personal__card2--left h3{
+          margin-top: 4rem;
+          margin-left: 1rem;
+          margin-bottom: 2rem;
+        } 
+        .personal__card2--left p{
+          margin-left: 1rem;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
     }
-    .personal__card--left h3 {
-      margin-top: 4rem;
-      margin-left: 1rem;
-      margin-bottom: 2rem;
+
+    .personal__card3{
+      border: 1px solid #E5E4E2;
+      height: 15rem;
+      width: 22rem;
+      display: flex;
+      justify-content: space-between;
+        .personal__card3--right{
+          background-color: #158fb4;
+          width: 7rem;
+          padding-top:4rem;
+          text-align: center;
+        }
+        .personal__card3--left h3{
+          margin-top: 4rem;
+          margin-left: 1rem;
+          margin-bottom: 2rem;
+        }
+        .personal__card3--left p{
+          margin-left: 1rem;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
     }
-    .personal__card--left p {
-      margin-left: 1rem;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
 }
 
-.personal__bottomtext {
+.personal__bottomtext{
   font-size: 18px;
   line-height: 25px;
   letter-spacing: 0.5px;
@@ -77,12 +115,70 @@
   display: flex;
   justify-content: center;
   p {
-    width: 40rem;
+    width:40rem;
     max-width: 40rem;
   }
 }
+////social sharing on Personal dash scss
+.personal__card3--shareicon{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 6rem;
+  margin-right: .5rem;
+}
 
-// Set Modal size
-.Modal {
-  width: 200px;
+.personal__card3--p{
+  font-weight: bolder;
+  font-size:1.1rem;
+  margin: 0 auto;
+  padding-right: 5px;
+}
+
+.personal__card3--share{
+  width: 1.3rem;
+  height:1.3rem;
+}
+
+.personal__card2--shareicon{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 6rem;
+  margin-right: .5rem;
+}
+
+.personal__card2--p{
+  font-weight: bold;
+  font-size:1.1rem;
+  margin: 0 auto;
+  padding-right: 5px;
+}
+
+.personal__card2--share{
+  width: 1.3rem;
+  height:1.3rem;
+}
+
+.personal__card1--shareicon{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 6rem;
+  margin-right: .5rem;
+}
+
+.personal__card1--p{
+  font-weight: bold;
+  font-size:1.1rem;
+  margin: 0 auto;
+  padding-right: 5px;
+}
+
+.personal__card1--share{
+  width: 1.3rem;
+  height:1.3rem;
 }

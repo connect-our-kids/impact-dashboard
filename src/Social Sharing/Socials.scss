@@ -1,0 +1,56 @@
+///modal/ social scss
+.Modal {
+    width: 200px;
+    max-width: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+    border-radius: 6px;
+    position: absolute;
+    background: black;
+    color: white;
+    top: 32%;
+    left: 30%;
+    transform: translate(-35%, -50%);
+  } 
+  
+  .modal-close{
+    width: 8rem;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1.9rem;
+    background-color: white;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  .social__sharing{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .socials_name{
+    color: white;
+    font-size: 1.2rem;
+  }
+  
+  .social__media--buttonFB{
+    margin-top: 20px;
+  }
+  
+  .social__media--button,.social__media--buttonFB{
+    justify-content: space-evenly;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+  }
+  
+  .socials_name, .social__media--button, .social__media--buttonFB{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 auto;
+  }
