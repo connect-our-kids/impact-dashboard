@@ -21,6 +21,13 @@
   .nav__btn:focus {
     text-decoration: underline;
   }
+  .nav__menu {
+    display: flex;
+  }
+  img.nav__avatar {
+    border-radius: 50%;
+    margin-right: 10px;
+  }
 }
 
 .subNav__menu {
