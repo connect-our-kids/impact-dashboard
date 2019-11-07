@@ -37,7 +37,7 @@ ReactDOM.render(
       redirect_uri={window.location.origin}
       onRedirectCallback={onRedirectCallback}
     >
-      <Router basename='/dev-sean/'>
+      <Router>
         <App />
       </Router>
     </Auth0Provider>

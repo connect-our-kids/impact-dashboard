@@ -5,7 +5,7 @@
     padding-top: 10px;
     padding-left: 10px;
     border-radius: 6px;
-    position: absolute;
+    position: fixed;
     background: black;
     color: white;
     top: 49%;
@@ -33,7 +33,7 @@
   }
   .socials_name{
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   
   .social__media--buttonFB{

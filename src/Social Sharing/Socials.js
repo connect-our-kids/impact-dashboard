@@ -25,7 +25,7 @@ export default function Socials(props) {
         >
           <p className="socials_name">Facebook</p>
           <FacebookIcon
-            size={30}
+            size={31}
             round={true}
             logoFillColor={"black"}
             iconBgStyle={{ fill: "white" }}
@@ -42,7 +42,7 @@ export default function Socials(props) {
           <p className="socials_name">Linkedin</p>
 
           <LinkedinIcon
-            size={30}
+            size={31}
             round={true}
             logoFillColor={"black"}
             iconBgStyle={{ fill: "white" }}
@@ -58,7 +58,7 @@ export default function Socials(props) {
         >
           <p className="socials_name">Twitter</p>
           <TwitterIcon
-            size={30}
+            size={31}
             round={true}
             logoFillColor={"black"}
             iconBgStyle={{ fill: "white" }}

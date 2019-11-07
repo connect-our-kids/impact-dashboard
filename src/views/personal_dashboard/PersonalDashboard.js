@@ -43,7 +43,7 @@ export default function PersonalDashboard() {
           </div>
 
           <div className="personal__card1--right">
-            <img src="Badge1.svg" alt="children served icon"></img>
+            <img src="/Badge1.svg" alt="children served icon"></img>
             <div className="personal__card1--shareicon">
               <p className="personal__card1--p">Share</p>
               <img
