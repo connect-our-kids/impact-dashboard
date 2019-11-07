@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./PersonalDashboard.scss";
 import Modal from "react-modal";
 import Socials from "../../Social Sharing/Socials";
-import ShareIcon from "../../Social Sharing/share.png";
+import ShareIcon from "../../Social Sharing/entypo-share.svg";
 
 export default function PersonalDashboard() {
   const [isOpen, setIsOpen] = useState(false);

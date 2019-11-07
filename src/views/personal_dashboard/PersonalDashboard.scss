@@ -126,7 +126,7 @@
   justify-content: center;
   align-items: flex-end;
   margin-top: 6rem;
-  margin-right: .5rem;
+  margin-left: 1rem;
 }
 
 .personal__card3--p{
@@ -137,8 +137,8 @@
 }
 
 .personal__card3--share{
-  width: 1.3rem;
-  height:1.3rem;
+    margin: 0 auto;
+
 }
 
 .personal__card2--shareicon{
@@ -147,7 +147,7 @@
   justify-content: center;
   align-items: flex-end;
   margin-top: 6rem;
-  margin-right: .5rem;
+  margin-left: 1rem;
 }
 
 .personal__card2--p{
@@ -158,8 +158,8 @@
 }
 
 .personal__card2--share{
-  width: 1.3rem;
-  height:1.3rem;
+  margin: 0 auto;
+
 }
 
 .personal__card1--shareicon{
@@ -168,7 +168,7 @@
   justify-content: center;
   align-items: flex-end;
   margin-top: 6rem;
-  margin-right: .5rem;
+  margin-left: 1rem;
 }
 
 .personal__card1--p{
@@ -179,6 +179,5 @@
 }
 
 .personal__card1--share{
-  width: 1.3rem;
-  height:1.3rem;
+  margin: 0 auto;
 }
