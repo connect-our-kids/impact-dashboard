@@ -19,10 +19,12 @@ export default function PersonalDashboard() {
         parentSelector={() => document.body}
         className="Modal"
       >
+        <h3 className="modal__h3">Share Badge</h3>
+        <p className="modal__p">Which sharing platform would you like to use?</p>
         <Socials url="www.connectourkid.org"
                   text="Check out this website to learn more about this organization" />
         <button className="modal-close" onClick={toggleModal}>
-          Close
+         <strong>X</strong>
         </button>
       </Modal>
       <header className="personal">

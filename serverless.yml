@@ -29,10 +29,10 @@ plugins:
 
 provider:
   # profile is for your powerUser credentials profile
-  profile: 138110379499_PowerUserAccess
+  profile: default
   name: aws
   runtime: nodejs10.x
-  stage: dev-sean
+  stage: dev-nisa
 
 
 package:
@@ -85,7 +85,6 @@ functions:
       - http:
           path: /moonPhases
           method: get
-
   testing:
     handler: lambda/handler.testing
     name: 'testing-${self:provider.stage}'
@@ -93,5 +92,12 @@ functions:
       - http:
           path: hello
           method: post
+  Badge1:
+    handler: lambda/handler.Badge1
+    name: 'Badge1-${self:provider.stage}'
+    events:
+      - http:
+          path: /Badge1
+          method: get
 
 

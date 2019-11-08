@@ -1,56 +1,57 @@
 ///modal/ social scss
 .Modal {
-    width: 200px;
+    width: 19rem;
+    height: 14rem;
     max-width: 100%;
-    padding-top: 10px;
-    padding-left: 10px;
-    border-radius: 6px;
     position: fixed;
-    background: black;
-    color: white;
+    border: 1px solid lightgray;
+    background: white;
+    color: black;
     top: 49%;
     left: 50%;
+    outline: none;
     transform: translate(-50%, -50%);
   } 
   
   .modal-close{
-    width: 8rem;
-    height: 25px;
-    border: none;
-    border-radius: 5px;
+    width: 1.4rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    border:2px solid black;
     cursor: pointer;
-    margin: 1.9rem;
     background-color: white;
     color: black;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: 1rem;
+    float: right;
+    display: flex;
+    transform: translate(-10%, -655%);
+    outline: none;
   }
+
+  .modal__h3{
+    font-size: 1.2rem;
+    margin: 0 auto;
+    margin: 15px 5px 5px 8px;
+    padding: 5px 5px 5px 5px;
+  }
+
+  .modal__p{
+    font-size: 1.05rem;
+    text-align: left;
+    padding: 5px 5px 5px 5px;
+    margin: 0 auto;
+    margin: 10px 10px 10px 10px;
+  }
+
   .social__sharing{
     display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  .socials_name{
-    color: white;
-    font-size: 1.3rem;
-  }
-  
-  .social__media--buttonFB{
-    margin-top: 20px;
-  }
-  
-  .social__media--button,.social__media--buttonFB{
+    flex-direction: row;
     justify-content: space-evenly;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
+    max-width: 100%;
+    transform: translate(-2%, 100%);
+  }
+
+  .social__media--button, .social__media--buttonFB{
+    outline: none;
   }
   
-  .socials_name, .social__media--button, .social__media--buttonFB{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0 auto;
-  }
