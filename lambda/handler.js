@@ -114,36 +114,31 @@ module.exports.Badge1 = (event, context, callback) => {
   <html>
     <style>
       h1 { color: #73757d; }
-      .personal__main {
+      div.personal__main {
         display: flex;
         justify-content: center;
-        text-align: left;
-      }
-      .personal__card1{
+        text-align: left}
+      div.personal__card1{
         border: 1px solid #E5E4E2;
         height: 15rem;
         width: 22rem;
         margin-right:1rem;
         display: flex;
-        justify-content: space-between;
-      }
-      .personal__card1--right{
+        justify-content: space-between}
+      div.personal__card1--right{
         background-color: #158fb4;
         width: 7rem;
         justify-content: center;
         padding-top:4rem;
-        text-align: center;
-      }
-      .personal__card1--left h3{
+        text-align: center}
+      div.personal__card1--left h3{
         margin-top:4rem;
         margin-left:1rem;
-        margin-bottom: 2rem;
-      }
-      .personal__card1--left p{
+        margin-bottom: 2rem}
+      div.personal__card1--left p{
         margin-left: 1rem;
         margin-top: 0;
-        margin-bottom: 0;
-      }
+        margin-bottom: 0}
     </style>
     <body>
     <div className='personal__main'>

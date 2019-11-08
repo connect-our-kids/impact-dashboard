@@ -50,7 +50,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start2": "node bin/www",
-    "build:dev": "serverless deploy && yarn start"
+    "build:dev": "serverless deploy && yarn start",
+    "build:deploy": "yarn build && serverless deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -68,6 +69,7 @@
     ]
   },
   "devDependencies": {
-    "nyc": "^14.1.1"
+    "nyc": "^14.1.1",
+    "serverless-dotenv-plugin": "^2.1.1"
   }
 }

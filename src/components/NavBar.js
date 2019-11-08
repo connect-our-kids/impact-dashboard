@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth0 } from "../auth0-wrapper";
-// import { connect } from 'react-redux';
+
 
 // import { login_request } from '../actions/index';
 import './NavBar.scss';
-const redirectURI = window.location.origin;
+import { redirectUri } from '../index';
 
 const LoggedInNav = () => (
   <div className="subNav">
@@ -37,7 +37,7 @@ const NavBar = () => {
             </button>
           )}
 
-            {isAuthenticated && <button className="nav__btn nav__btn--logout" onClick={() => logout({returnTo: redirectURI})}>Log out</button>}
+            {isAuthenticated && <button className="nav__btn nav__btn--logout" onClick={() => logout({returnTo: redirectUri})}>Log out</button>}
         </div>
       </nav>
       {isAuthenticated && <LoggedInNav/>}
