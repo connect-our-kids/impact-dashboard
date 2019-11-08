@@ -4772,10 +4772,20 @@ dotenv-expand@5.1.0:
   resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-5.1.0.tgz#3fbaf020bfd794884072ea26b1e9791d45a629f0"
   integrity sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==
 
+dotenv-expand@^4.0.1:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-4.2.0.tgz#def1f1ca5d6059d24a766e587942c21106ce1275"
+  integrity sha1-3vHxyl1gWdJKdm5YeULCEQbOEnU=
+
 dotenv@6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.2.0.tgz#941c0410535d942c8becf28d3f357dbd9d476064"
   integrity sha512-HygQCKUBSFl8wKQZBSemMywRWcEDNidvNbjGVyZu3nbZ8qq9ubiPoGLMdRDpfSrpkkm9BXYFkpKxxFX38o/76w==
+
+dotenv@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
+  integrity sha1-hk7xN5rO1Vzm+V3r7NzhefegzR0=
 
 dotenv@^8.2.0:
   version "8.2.0"
@@ -11582,6 +11592,15 @@ serverless-associate-waf@^1.1.1:
   integrity sha512-EhztkxKfGGqwuzGUqYToQyket2VNhK9T1FSh7EQDllNq4dI+v28EVM/lIzHYIEzVq7Mwka0KjYH1kJ8PL81W/A==
   dependencies:
     chalk "^2.4.2"
+
+serverless-dotenv-plugin@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/serverless-dotenv-plugin/-/serverless-dotenv-plugin-2.1.1.tgz#73f4638f71811a065ee51e2b363f2157327afabc"
+  integrity sha512-T08fI0XoWGMKfs1KEpYrFwG/6A+qR2UZyANgchV7jJAhRhCtO0my1oMTLovyone5UHXOwTojrwUw3pm8NYa3rg==
+  dependencies:
+    chalk "^2.1.0"
+    dotenv "^4.0.0"
+    dotenv-expand "^4.0.1"
 
 serverless-http@^2.3.0:
   version "2.3.0"

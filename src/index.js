@@ -16,8 +16,14 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import thunk from 'redux-thunk';
 import reducer from './redux/reducers/index'
 
-
 import * as serviceWorker from './serviceWorker';
+
+export let redirectUri = window.location.origin;
+let baseName = "/";
+if (process.env.NODE_ENV === 'production') {
+  redirectUri = `${window.location.origin}/${process.env.REACT_APP_STAGE}/`;
+  baseName = `/${process.env.REACT_APP_STAGE}/`;
+}
 
 const onRedirectCallback = appState => {
   window.history.replaceState(
@@ -36,11 +42,11 @@ ReactDOM.render(
     <Auth0Provider
       domain={config.domain}
       client_id={config.clientId}
-      redirect_uri={window.location.origin+'/dev-sean/'}
+      redirect_uri={redirectUri}
       onRedirectCallback={onRedirectCallback}
       // audience={config.audience}
     >
-      <Router basename='/dev-sean/'>
+      <Router basename={baseName}>
         <App />
       </Router>
     </Auth0Provider>

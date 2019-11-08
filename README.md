@@ -58,11 +58,12 @@ Take note of the secrets.js file, which is in the gitignore file so that keys ar
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # Deploying React App to AWS Lambda Function
-1. Inside to ```src/index.js```. 
-2. In ```<Auth0Provider>```, there is a prop called redirect_uri. Change the part after window.location.origin to your staging name
-3. In the ```src/components``` folder, you will find a Navbar.js file. Near the top of this file is a variable called redirectURI. Set this equal to the same thing as the prop in ```<Auth0Provider>```
-4. Run this command (Windows): ```set PUBLIC_URL=https://546mmxlxp5.execute-api.us-east-1.amazonaws.com/dev-sean/&& yarn build && serverless deploy```
-   * Make sure to change the PUBLIC_URL to whatever your url is
+1. Create an `.env` file in root directory.
+2. Set `AWS_PROFILE` to the aws profile that you want to use for deployment (should be in `.aws/credentials`).
+3. Set `REACT_APP_STAGE`, should only contain text and dashes.
+4. Set `PUBLIC_URL` to be the stage name wrapped in slashes. Format here is important and required for assets to be loaded properly in the built index.html file.
+5. Your `.env` file should now closely match `.env.sample`
+6. Run `yarn build:deploy`.
 
 ## Testing protected endpoints
 
