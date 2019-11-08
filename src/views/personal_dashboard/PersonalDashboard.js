@@ -27,7 +27,6 @@ export default function PersonalDashboard() {
       </Modal>
       <header className="personal">
         <h1 className="personal__title">Sam Wilsons Impact</h1>
-        <a className="personal__share">Share My Impact</a>
       </header>
       <div className="personal__main">
         <div className="personal__card1">
