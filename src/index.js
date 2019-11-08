@@ -16,11 +16,11 @@ import reducer from './redux/reducers/index'
 
 import * as serviceWorker from './serviceWorker';
 
-export const redirectUri = window.location.origin;
-const baseName = '/';
-if (process.env.NODE_ENV === 'aws') {
-  const redirectUri = `${window.location.origin}/${process.env.PUBLIC_URL}/`;
-  const baseName = `/${process.env.PUBLIC_URL}/`;
+export let redirectUri = window.location.origin;
+let baseName = "/";
+if (process.env.NODE_ENV === 'production') {
+  redirectUri = `${window.location.origin}/${process.env.REACT_APP_STAGE}/`;
+  baseName = `/${process.env.REACT_APP_STAGE}/`;
 }
 
 const onRedirectCallback = appState => {
