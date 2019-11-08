@@ -18,9 +18,9 @@ import * as serviceWorker from './serviceWorker';
 
 export const redirectUri = window.location.origin;
 const baseName = '/';
-if (process.env.NODE_ENV === 'production') {
-  const redirectUri = window.location.origin + '/dev-sean/';
-  const baseName = '/dev-sean/';
+if (process.env.NODE_ENV === 'aws') {
+  const redirectUri = `${window.location.origin}/${process.env.PUBLIC_URL}/`;
+  const baseName = `/${process.env.PUBLIC_URL}/`;
 }
 
 const onRedirectCallback = appState => {

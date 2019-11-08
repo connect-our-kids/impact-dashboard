@@ -29,10 +29,10 @@ plugins:
 
 provider:
   # profile is for your powerUser credentials profile
-  profile: 138110379499_PowerUserAccess
+  profile: ${env:PROFILE}
   name: aws
   runtime: nodejs10.x
-  stage: dev-sean
+  stage: ${env:PUBLIC_URL}
 
 
 package:

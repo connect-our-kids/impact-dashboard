@@ -48,7 +48,7 @@
     "eject": "react-scripts eject",
     "start2": "node bin/www",
     "build:dev": "serverless deploy && yarn start",
-    "build:deploy": "cross-env NODE_ENV=production yarn build && serverless deploy"
+    "build:deploy": "cross-env NODE_ENV=aws yarn build && serverless deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
