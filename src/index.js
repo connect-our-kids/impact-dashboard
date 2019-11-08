@@ -36,11 +36,11 @@ ReactDOM.render(
     <Auth0Provider
       domain={config.domain}
       client_id={config.clientId}
-      redirect_uri={window.location.origin}
+      redirect_uri={window.location.origin+'/dev-sean/'}
       onRedirectCallback={onRedirectCallback}
       // audience={config.audience}
     >
-      <Router>
+      <Router basename='/dev-sean/'>
         <App />
       </Router>
     </Auth0Provider>
