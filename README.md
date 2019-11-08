@@ -58,8 +58,12 @@ Take note of the secrets.js file, which is in the gitignore file so that keys ar
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # Deploying React App to AWS Lambda Function
-1. Create .env file in root directory with your aws profile and stage name (see env.sample)
-2. Run `yarn build:deploy`
+1. Create an `.env` file in root directory.
+2. Set `AWS_PROFILE` to the aws profile that you want to use for deployment (should be in `.aws/credentials`).
+3. Set `REACT_APP_STAGE`, should only contain text and dashes.
+4. Set `PUBLIC_URL` to be the stage name wrapped in slashes. Format here is important and required for assets to be loaded properly in the built index.html file.
+5. Your `.env` file should now closely match `.env.sample`
+6. Run `yarn build:deploy`.
 
 ## Testing protected endpoints
 
