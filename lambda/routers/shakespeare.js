@@ -1,6 +1,6 @@
 // router for /api/shakespeareQuotes, returns data from queryShakespeare
 const express = require('express');
-const data = require('../models/queryShakespeare');
+const data = require('../dataQueries/queryShakespeare');
 
 const router = express.Router();
 

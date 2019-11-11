@@ -1,7 +1,7 @@
 // router for /api/commits, returns data fetched by queryGitHub function in models
 
 const express = require('express');
-const data = require('../models/queryGitHub');
+const data = require('../dataQueries/queryGitHub');
 
 const router = express.Router();
 

@@ -30,11 +30,11 @@ plugins:
 
 provider:
   # profile is for your powerUser credentials profile
+
   profile: ${env:AWS_PROFILE}
   name: aws
   runtime: nodejs10.x
   stage: ${env:REACT_APP_STAGE}
-
 
 package:
   include:
@@ -51,48 +51,51 @@ functions:
     events:
       - http: ANY {proxy+}
       - http: ANY /
-#  expressApp:
-#    handler: server.expressHandler
-#    name: 'expressApp-${self:provider.stage}'
-#    events:
-#      - http: ANY /
-#      - http: 'ANY {proxy+}'
 
-  catmemes:
-    handler: lambda/handler.catMemes
-    name: 'hellocats-${env:REACT_APP_STAGE}'
-    events:
-      - http:
-          path: /cats
-          method: get
-  shakespeareQuotes:
-    handler: lambda/handler.shakespeareQuotes
-    name: 'shakespeare-${env:REACT_APP_STAGE}'
-    events:
-      - http:
-          path: /shakespeareQuotes
-          method: get
-  gitHubBigQuery:
-    handler: lambda/handler.gitHubBigQuery
-    name: 'github-${env:REACT_APP_STAGE}'
-    events:
-      - http:
-          path: /commits
-          method: get
-  moonPhases:
-    handler: lambda/handler.moonPhases
-    name: 'moon-${env:REACT_APP_STAGE}'
-    events:
-      - http:
-          path: /moonPhases
-          method: get
+  # expressApp:
+  #   handler: server.expressHandler
+  #   name: 'expressApp-${self:provider.stage}'
+  #   events:
+  #     - http:
+  #         path: /api
+  #         method: get
+      # - http: 'ANY {proxy+}'
 
-  testing:
-    handler: lambda/handler.testing
-    name: 'testing-${env:REACT_APP_STAGE}'
-    events:
-      - http:
-          path: hello
-          method: post
+  # catmemes:
+  #   handler: lambda/handler.catMemes
+  #   name: 'hellocats-${env:REACT_APP_STAGE}'
+  #   events:
+  #     - http:
+  #         path: /cats
+  #         method: get
+  # shakespeareQuotes:
+  #   handler: lambda/handler.shakespeareQuotes
+  #   name: 'shakespeare-${env:REACT_APP_STAGE}'
+  #   events:
+  #     - http:
+  #         path: /shakespeareQuotes
+  #         method: get
+  # gitHubBigQuery:
+  #   handler: lambda/handler.gitHubBigQuery
+  #   name: 'github-${env:REACT_APP_STAGE}'
+  #   events:
+  #     - http:
+  #         path: /commits
+  #         method: get
+  # moonPhases:
+  #   handler: lambda/handler.moonPhases
+  #   name: 'moon-${env:REACT_APP_STAGE}'
+  #   events:
+  #     - http:
+  #         path: /moonPhases
+  #         method: get
+
+  # testing:
+  #   handler: lambda/handler.testing
+  #   name: 'testing-${env:REACT_APP_STAGE}'
+  #   events:
+  #     - http:
+  #         path: hello
+  #         method: post
 
 

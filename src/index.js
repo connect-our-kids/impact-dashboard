@@ -6,6 +6,8 @@ import App from './App';
 //auth
 import { Auth0Provider } from "./auth0-wrapper";
 import config from './auth_config.json';
+// import config from './ehalsmer_auth_config.json';
+
 
 //redux/router
 import { Provider } from 'react-redux';
@@ -42,6 +44,7 @@ ReactDOM.render(
       client_id={config.clientId}
       redirect_uri={redirectUri}
       onRedirectCallback={onRedirectCallback}
+      // audience={config.audience}
     >
       <Router basename={baseName}>
         <App />

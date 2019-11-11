@@ -8,7 +8,8 @@ import Footer from './components/Footer';
 import PublicDashboard from './views/public_dashboard/PublicDashboard';
 import PersonalDashboard from './views/personal_dashboard/PersonalDashboard';
 import TeamDashboard from './views/team_dashboard/TeamDashboard';
-import PrivateRoute from './components/PrivateRoute'
+import PrivateRoute from './components/PrivateRoute';
+import ExternalApi from './views/externalApi';
 
 import { Route, Switch } from 'react-router-dom';
 
@@ -23,6 +24,7 @@ function App() {
         <Route exact path='/' component={PublicDashboard}/>
         <PrivateRoute path='/team' component={TeamDashboard} />
         <PrivateRoute path='/personal' component={PersonalDashboard}/>
+        <PrivateRoute path='/external' component={ExternalApi}/>
       </Switch>
       <Footer />
     </div>
