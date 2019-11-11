@@ -26,7 +26,7 @@ app.get('/test', (req, res) => {
 // Backend: 
 // Test routes still available:
 app.use('/api/shakespeareQuotes', shakespeareRouter) // aka public dash data
-app.use('/api/moonPhases', checkJwt, moonPhasesRouter) // team dash data
+app.use('/api/moonPhases', moonPhasesRouter) // team dash data
 app.use('/api/commits', commitsRouter) // personal dash data
 // Planned endpoints for when we have mock data:
 /*
