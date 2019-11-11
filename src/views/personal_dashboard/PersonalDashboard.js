@@ -1,7 +1,7 @@
 //added in modal for social sharing
 import React, { useState } from "react";
 import "./PersonalDashboard.scss";
-import Modal from "react-modal";
+import Modal from 'react-modal'
 import Socials from "../../Social Sharing/Socials";
 import ShareIcon from "../../Social Sharing/entypo-share.svg";
 
@@ -21,8 +21,8 @@ export default function PersonalDashboard() {
       >
         <h3 className="modal__h3">Share Badge</h3>
         <p className="modal__p">Which sharing platform would you like to use?</p>
-        <Socials url="www.connectourkid.org"
-                  text="Check out this website to learn more about this organization" />
+        <Socials url="www.connectourkids.org"
+                  text="https://bv9cpgqr4l.execute-api.us-east-1.amazonaws.com/dev-nisa/Badge1" />
         <button className="modal-close" onClick={toggleModal}>
          <strong>X</strong>
         </button>

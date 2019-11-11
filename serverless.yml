@@ -100,5 +100,26 @@ functions:
       - http:
           path: /Badge1
           method: get
+  Badge2:
+    handler: lambda/handler.Badge2
+    name: 'Badge2-${self:provider.stage}'
+    events:
+      - http:
+          path: /Badge2
+          method: get
+  Badge3:
+    handler: lambda/handler.Badge3
+    name: 'Badge3-${self:provider.stage}'
+    events:
+      - http:
+          path: /Badge3
+          method: get
+  Badges:
+    handler: lambda/handler.Badges
+    name: 'Badges-${self:provider.stage}'
+    events:
+      - http:
+          path: /Badges
+          method: get
 
 
