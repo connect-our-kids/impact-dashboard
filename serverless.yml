@@ -61,41 +61,41 @@ functions:
   #         method: get
       # - http: 'ANY {proxy+}'
 
-  catmemes:
-    handler: lambda/handler.catMemes
-    name: 'hellocats-${env:REACT_APP_STAGE}'
-    events:
-      - http:
-          path: /cats
-          method: get
-  shakespeareQuotes:
-    handler: lambda/handler.shakespeareQuotes
-    name: 'shakespeare-${env:REACT_APP_STAGE}'
-    events:
-      - http:
-          path: /shakespeareQuotes
-          method: get
-  gitHubBigQuery:
-    handler: lambda/handler.gitHubBigQuery
-    name: 'github-${env:REACT_APP_STAGE}'
-    events:
-      - http:
-          path: /commits
-          method: get
-  moonPhases:
-    handler: lambda/handler.moonPhases
-    name: 'moon-${env:REACT_APP_STAGE}'
-    events:
-      - http:
-          path: /moonPhases
-          method: get
+  # catmemes:
+  #   handler: lambda/handler.catMemes
+  #   name: 'hellocats-${env:REACT_APP_STAGE}'
+  #   events:
+  #     - http:
+  #         path: /cats
+  #         method: get
+  # shakespeareQuotes:
+  #   handler: lambda/handler.shakespeareQuotes
+  #   name: 'shakespeare-${env:REACT_APP_STAGE}'
+  #   events:
+  #     - http:
+  #         path: /shakespeareQuotes
+  #         method: get
+  # gitHubBigQuery:
+  #   handler: lambda/handler.gitHubBigQuery
+  #   name: 'github-${env:REACT_APP_STAGE}'
+  #   events:
+  #     - http:
+  #         path: /commits
+  #         method: get
+  # moonPhases:
+  #   handler: lambda/handler.moonPhases
+  #   name: 'moon-${env:REACT_APP_STAGE}'
+  #   events:
+  #     - http:
+  #         path: /moonPhases
+  #         method: get
 
-  testing:
-    handler: lambda/handler.testing
-    name: 'testing-${env:REACT_APP_STAGE}'
-    events:
-      - http:
-          path: hello
-          method: post
+  # testing:
+  #   handler: lambda/handler.testing
+  #   name: 'testing-${env:REACT_APP_STAGE}'
+  #   events:
+  #     - http:
+  #         path: hello
+  #         method: post
 
 

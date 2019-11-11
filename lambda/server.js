@@ -1,23 +1,42 @@
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware');
 
-const backend = require("./backendServer.js");
-// const cors = require("cors");
-// const jwt = require("express-jwt");
-// const jwksRsa = require("jwks-rsa");
-// const serverless = require('serverless-http');
+// const backend = require("./backendServer.js");
+// backend dependencies/middleware:
+const cors = require('cors');
+const checkJwt = require('./checkJwt');
+
+// backend routers
+const shakespeareRouter = require('./routers/shakespeare')
+const moonPhasesRouter = require('./routers/moonPhases')
+const commitsRouter = require('./routers/commits')
 
 const express = require('express');
 const path = require('path');
 
 const app = express();
+app.use(cors());
 
 app.use(express.static(path.join(process.cwd() + '/build')));
+
+// test endpoint
 app.get('/test', (req, res) => {
     res.json({message: "testing"})
 })
 
-app.use('/api', backend)
+// Backend: 
+// Test routes still available:
+app.use('/api/shakespeareQuotes', shakespeareRouter) // aka public dash data
+app.use('/api/moonPhases', checkJwt, moonPhasesRouter) // team dash data
+app.use('/api/commits', commitsRouter) // personal dash data
+// Planned endpoints for when we have mock data:
+/*
+server.use('/api/public', )
+server.use('/api/team', checkJwt, teamRouter)
+server.use('/api/personal', checkJwt, personalRouter)
+*/
 
+
+// React app is served on *: 
 app.get('*.*', express.static(path.join(process.cwd() + '/build'), {
     maxAge: '1y'
 }));
