@@ -8,7 +8,7 @@
 // Import the Google Cloud client library
 const {BigQuery} = require('@google-cloud/bigquery');
 
-const bigQueryCreds = require('../secrets')
+const bigQueryCreds = require('../../secrets')
 
 exports.queryShakespeare = async function () {
     // Queries a public Shakespeare dataset.

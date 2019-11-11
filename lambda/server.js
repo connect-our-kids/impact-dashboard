@@ -1,5 +1,11 @@
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware');
 
+const backend = require("./backendServer.js");
+// const cors = require("cors");
+// const jwt = require("express-jwt");
+// const jwksRsa = require("jwks-rsa");
+// const serverless = require('serverless-http');
+
 const express = require('express');
 const path = require('path');
 
@@ -9,6 +15,8 @@ app.use(express.static(path.join(process.cwd() + '/build')));
 app.get('/test', (req, res) => {
     res.json({message: "testing"})
 })
+
+app.use('/api', backend)
 
 app.get('*.*', express.static(path.join(process.cwd() + '/build'), {
     maxAge: '1y'

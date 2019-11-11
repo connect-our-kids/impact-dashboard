@@ -11,24 +11,24 @@ const jwt = require("express-jwt");
 const jwksRsa = require("jwks-rsa");
 
 // create server
-const server = express()
+const server = express.Router();
 
 // middleware
 
 server.use(cors(), express.json());
-const authenticate = require('./middleware/auth-middleware')
+// const authenticate = require('./middleware/auth-middleware')
 
 // import routers
 
-const shakespeareRouter = require('./lambda/routers/shakespeare')
-const moonPhasesRouter = require('./lambda/routers/moonPhases')
-const commitsRouter = require('./lambda/routers/commits')
+const shakespeareRouter = require('./routers/shakespeare')
+const moonPhasesRouter = require('./routers/moonPhases')
+const commitsRouter = require('./routers/commits')
 
 // API endpoints
 
 // sanity check endpoint:
 server.get('/', function (req, res) {
-  res.send('Hello World from express, in server.js')
+  res.send('Hello World from express, in backendServer.js')
 })
 
 // Set up Auth0 configuration
@@ -78,4 +78,4 @@ server.use('/personal', checkJwt, personalRouter)
 
 
 
-module.exports.expressHandler = serverless(server);
+module.exports = server;

@@ -51,12 +51,15 @@ functions:
     events:
       - http: ANY {proxy+}
       - http: ANY /
-#  expressApp:
-#    handler: server.expressHandler
-#    name: 'expressApp-${self:provider.stage}'
-#    events:
-#      - http: ANY /
-#      - http: 'ANY {proxy+}'
+
+  # expressApp:
+  #   handler: server.expressHandler
+  #   name: 'expressApp-${self:provider.stage}'
+  #   events:
+  #     - http:
+  #         path: /api
+  #         method: get
+      # - http: 'ANY {proxy+}'
 
   catmemes:
     handler: lambda/handler.catMemes
