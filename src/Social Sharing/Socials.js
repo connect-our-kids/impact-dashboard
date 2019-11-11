@@ -21,9 +21,11 @@ export default function Socials(props) {
       <div className="social_media">
         <FacebookShareButton
           url={props.url}
+          quote={props.text}
+          windowWidth={750}
+          windowHeight={600}
           className="social__media--buttonFB"
         >
-          {/* <p className="socials_name">Facebook</p> */}
           <FacebookIcon
             size={40}
             round={true}
@@ -33,11 +35,13 @@ export default function Socials(props) {
       <div className="social_media">
         <LinkedinShareButton
           url={props.url}
+          title={props.text}
           windowWidth={750}
           windowHeight={600}
+          ////unless you become a linkedin business partner, you can only share URL
+          // https://business.linkedin.com/marketing-solutions/marketing-partners/become-a-partner/marketing-developer-program
           className="social__media--button"
         >
-          {/* <p className="socials_name">Linkedin</p> */}
 
           <LinkedinIcon
             size={40}
@@ -48,11 +52,11 @@ export default function Socials(props) {
       <div className="social_media">
         <TwitterShareButton
           url={props.url}
+          title={props.text}
           windowWidth={750}
           windowHeight={600}
           className="social__media--button"
         >
-          {/* <p className="socials_name">Twitter</p> */}
           <TwitterIcon
             size={40}
             round={true}
@@ -62,13 +66,12 @@ export default function Socials(props) {
       <div className="social_media">
         <EmailShareButton
           url={props.url}
-          subject="Check out our organization"
+          text={props.text}
           body={`${props.url}`}
           windowWidth={750}
           windowHeight={600}
           className="social__media--button"
         >
-          {/* <p className="socials_name">Email</p> */}
           <EmailIcon
             size={40}
             round={true}

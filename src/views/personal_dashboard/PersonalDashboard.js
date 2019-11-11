@@ -22,11 +22,12 @@ export default function PersonalDashboard() {
         <h3 className="modal__h3">Share Badge</h3>
         <p className="modal__p">Which sharing platform would you like to use?</p>
         <Socials url="www.connectourkids.org"
-                  text="https://bv9cpgqr4l.execute-api.us-east-1.amazonaws.com/dev-nisa/Badge1" />
+                  text="Check out Connect Our Kids" />
         <button className="modal-close" onClick={toggleModal}>
          <strong>X</strong>
         </button>
       </Modal>
+ 
       <header className="personal">
         <h1 className="personal__title">Sam Wilsons Impact</h1>
       </header>
