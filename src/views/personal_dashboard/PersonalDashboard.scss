@@ -1,8 +1,8 @@
 ///brought over scss styles to test personal dash
 .personal {
   text-align: center;
-  height: 13rem;
-  margin-bottom: 5rem;
+  height: 10rem;
+  // margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,4 +118,66 @@
     width:40rem;
     max-width: 40rem;
   }
+}
+////social sharing on Personal dash scss
+.personal__card3--shareicon{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 6rem;
+  margin-left: 1rem;
+}
+
+.personal__card3--p{
+  font-weight: bolder;
+  font-size:1.1rem;
+  margin: 0 auto;
+  padding-right: 5px;
+}
+
+.personal__card3--share{
+    margin: 0 auto;
+
+}
+
+.personal__card2--shareicon{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 6rem;
+  margin-left: 1rem;
+}
+
+.personal__card2--p{
+  font-weight: bold;
+  font-size:1.1rem;
+  margin: 0 auto;
+  padding-right: 5px;
+}
+
+.personal__card2--share{
+  margin: 0 auto;
+
+}
+
+.personal__card1--shareicon{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 6rem;
+  margin-left: 1rem;
+}
+
+.personal__card1--p{
+  font-weight: bold;
+  font-size:1.1rem;
+  margin: 0 auto;
+  padding-right: 5px;
+}
+
+.personal__card1--share{
+  margin: 0 auto;
 }
