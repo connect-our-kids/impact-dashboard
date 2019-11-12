@@ -59,7 +59,14 @@
   }
 }
 
-img.nav_dropdownIcon {
+.nav__menu.open img.nav_dropdownIconOpen {
+  display: none;
+}
+.nav__menu.closed img.nav_dropdownIconClose {
+  display: none;
+}
+img.nav_dropdownIconOpen,
+img.nav_dropdownIconClose {
   width: 22px;
   height: 22px;
   margin-left: 25px;

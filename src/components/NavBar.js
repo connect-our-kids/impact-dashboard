@@ -40,7 +40,7 @@ const NavBar = () => {
     <>
       <nav className="nav">
         <Link to="/"><img src={process.env.PUBLIC_URL + '/logo.png'} width="300" alt="Connect Our Kids Logo" className="nav__logo" /></Link>
-        <div className="nav__menu">
+        <div className={`nav__menu${open ? " open" : " closed"}`}>
           {!isAuthenticated && (
             <button className="nav__btn nav__btn--login"
               onClick={() => {
@@ -57,7 +57,8 @@ const NavBar = () => {
             {isAuthenticated && user && (
               <>
                 <img className="nav__avatar" src={user.picture} alt="User avatar" width="32" />
-                <img className="nav_dropdownIcon" src={!open ? "arrow-down-sign-to-navigate.svg" : "close-button.svg"} alt="dropdown" onClick={() => setOpen(!open)} />
+                <img className="nav_dropdownIconOpen" src="arrow-down-sign-to-navigate.svg" alt="dropdown open" onClick={() => setOpen(true)} />
+                <img className="nav_dropdownIconClose" src="close-button.svg" alt="dropdown close" onClick={() => setOpen(false)} />
                 <LoggedInDropdown open={open}/>
               </>
             )}
