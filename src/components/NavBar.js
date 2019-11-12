@@ -16,9 +16,24 @@ const LoggedInNav = () => (
   </div>
 )
 
+const LoggedInDropdown = ({ open }) => {
+  const { logout } = useAuth0();
+  return (
+    <div className={`nav__loggedInDropdown${open ? " open" : ""}`}>
+      <ul>
+        <li><a href="https://search.connectourkids.org/">Account</a></li>
+        <li><a href="https://search.connectourkids.org/">Family Connections</a></li>
+        <li><a href="https://search.connectourkids.org/">People Search</a></li>
+        <li><button className="nav__btn nav__btn--logout" onClick={() => logout({returnTo: redirectURI})}>Log Out</button></li>
+      </ul>
+    </div>
+  )
+}
+
 const NavBar = () => {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
   const { user } = useContext(Auth0Context);
+  const [open, setOpen] = React.useState(false); // Used for displaying and hiding the dropdown
   console.log('user picture in NavBar.js', user);
 
   return (
@@ -42,7 +57,8 @@ const NavBar = () => {
             {isAuthenticated && user && (
               <>
                 <img className="nav__avatar" src={user.picture} alt="User avatar" width="32" />
-                <button className="nav__btn nav__btn--logout" onClick={() => logout({returnTo: redirectURI})}>Log out</button>
+                <img className="nav_dropdownIcon" src={!open ? "arrow-down-sign-to-navigate.svg" : "close-button.svg"} alt="dropdown" onClick={() => setOpen(!open)} />
+                <LoggedInDropdown open={open}/>
               </>
             )}
         </div>

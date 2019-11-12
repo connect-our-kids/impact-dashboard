@@ -6,8 +6,7 @@
   // grid-template-columns: 1fr 1fr;
   align-items: center;
   .nav__btn {
-    color: #212529;
-    font-size: 18px;
+    font-size: 16px;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -23,6 +22,8 @@
   }
   .nav__menu {
     display: flex;
+    align-items: center;
+    position: relative;
   }
   img.nav__avatar {
     border-radius: 50%;
@@ -55,5 +56,50 @@
   }
   .subNav__link.active {
     color: #158fb4;
+  }
+}
+
+img.nav_dropdownIcon {
+  width: 22px;
+  height: 22px;
+  margin-left: 25px;
+  z-index: 3;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.nav__loggedInDropdown {
+  display: none;
+  &.open {
+    display: block;
+  }
+  width: 175px;
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  background-color: #ffffff;
+  border: 1px solid rgb(211, 211, 211);
+  box-shadow: 0 0 5px rgba(212, 212, 212, 0.288);
+  ul {
+    margin: 0;
+    padding: 5px 20px;
+  }
+  li {
+    list-style-type: none;
+    text-align: left;
+    padding: 8px 0;
+    a {
+      font-size: 16px;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    a, button {
+      color: #158fb4;
+    }
+    &:last-child {
+      border-top: 1px solid rgb(212, 212, 212);
+    }
   }
 }
