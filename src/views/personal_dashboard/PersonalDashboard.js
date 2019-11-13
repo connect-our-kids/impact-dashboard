@@ -40,6 +40,7 @@ export default function PersonalDashboard() {
         isOpen={isOpen}
         parentSelector={() => document.body}
         className="Modal"
+        appElement={document.getElementById('root')}
       >
         <h3 className="modal__h3">Share Badge</h3>
         <p className="modal__p">Which sharing platform would you like to use?</p>
