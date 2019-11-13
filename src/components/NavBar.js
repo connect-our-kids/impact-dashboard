@@ -32,7 +32,6 @@ const NavBar = () => {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
   const { user } = useContext(Auth0Context);
   const [open, setOpen] = React.useState(false); // Used for displaying and hiding the dropdown
-  console.log('user picture in NavBar.js', user);
 
   return (
     <>
