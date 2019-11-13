@@ -65,61 +65,61 @@ functions:
       - http:
           path: /cats
           method: get
-  shakespeareQuotes:
-    handler: lambda/handler.shakespeareQuotes
-    name: 'shakespeare-${env:REACT_APP_STAGE}'
-    events:
-      - http:
-          path: /shakespeareQuotes
-          method: get
-  gitHubBigQuery:
-    handler: lambda/handler.gitHubBigQuery
-    name: 'github-${env:REACT_APP_STAGE}'
-    events:
-      - http:
-          path: /commits
-          method: get
-  moonPhases:
-    handler: lambda/handler.moonPhases
-    name: 'moon-${env:REACT_APP_STAGE}'
-    events:
-      - http:
-          path: /moonPhases
-          method: get
-  testing:
-    handler: lambda/handler.testing
-    name: 'testing-${env:REACT_APP_STAGE}'
-    events:
-      - http:
-          path: hello
-          method: post
-  Badge1:
-    handler: lambda/handler.Badge1
-    name: 'Badge1-${self:provider.stage}'
-    events:
-      - http:
-          path: /Badge1
-          method: get
-  Badge2:
-    handler: lambda/handler.Badge2
-    name: 'Badge2-${self:provider.stage}'
-    events:
-      - http:
-          path: /Badge2
-          method: get
-  Badge3:
-    handler: lambda/handler.Badge3
-    name: 'Badge3-${self:provider.stage}'
-    events:
-      - http:
-          path: /Badge3
-          method: get
-  Badges:
-    handler: lambda/handler.Badges
-    name: 'Badges-${self:provider.stage}'
-    events:
-      - http:
-          path: /Badges
-          method: get
+  # shakespeareQuotes:
+  #   handler: lambda/handler.shakespeareQuotes
+  #   name: 'shakespeare-${env:REACT_APP_STAGE}'
+  #   events:
+  #     - http:
+  #         path: /shakespeareQuotes
+  #         method: get
+  # gitHubBigQuery:
+  #   handler: lambda/handler.gitHubBigQuery
+  #   name: 'github-${env:REACT_APP_STAGE}'
+  #   events:
+  #     - http:
+  #         path: /commits
+  #         method: get
+  # moonPhases:
+  #   handler: lambda/handler.moonPhases
+  #   name: 'moon-${env:REACT_APP_STAGE}'
+  #   events:
+  #     - http:
+  #         path: /moonPhases
+  #         method: get
+  # testing:
+  #   handler: lambda/handler.testing
+  #   name: 'testing-${env:REACT_APP_STAGE}'
+  #   events:
+  #     - http:
+  #         path: hello
+  #         method: post
+  # Badge1:
+  #   handler: lambda/handler.Badge1
+  #   name: 'Badge1-${self:provider.stage}'
+  #   events:
+  #     - http:
+  #         path: /Badge1
+  #         method: get
+  # Badge2:
+  #   handler: lambda/handler.Badge2
+  #   name: 'Badge2-${self:provider.stage}'
+  #   events:
+  #     - http:
+  #         path: /Badge2
+  #         method: get
+  # Badge3:
+  #   handler: lambda/handler.Badge3
+  #   name: 'Badge3-${self:provider.stage}'
+  #   events:
+  #     - http:
+  #         path: /Badge3
+  #         method: get
+  # Badges:
+  #   handler: lambda/handler.Badges
+  #   name: 'Badges-${self:provider.stage}'
+  #   events:
+  #     - http:
+  #         path: /Badges
+  #         method: get
 
 
