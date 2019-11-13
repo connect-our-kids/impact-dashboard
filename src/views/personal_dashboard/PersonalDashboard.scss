@@ -71,6 +71,9 @@
           margin-right: 15px;
           display: flex;
           align-items: center;
+          &:focus {
+            outline: none;
+          }
         }
         img {
           margin-left: 7px;
