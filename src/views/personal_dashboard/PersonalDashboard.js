@@ -5,6 +5,29 @@ import Modal from 'react-modal'
 import Socials from "../../Social Sharing/Socials";
 import ShareIcon from "../../Social Sharing/entypo-share.svg";
 
+const Badge = ({ title, total, nextThreshold, icon, toggleModal }) => (
+  <div className="badge">
+    <div className="info">
+      <h3>{title}</h3>
+      <p>Your Total: <strong>{total}</strong></p>
+      <p>Next Threshold: <strong>{nextThreshold}</strong></p>
+    </div>
+    <div className="icon">
+      <img src={icon} alt="badge icon" />
+    </div>
+    <div className="personal__share">
+      <button onClick={toggleModal}>
+        <p>Share</p>
+        <img
+          src={ShareIcon}
+          alt="share icon"
+          title="Share"
+        ></img>
+      </button>
+    </div>
+  </div>
+)
+
 export default function PersonalDashboard() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleModal = () => {
@@ -21,94 +44,17 @@ export default function PersonalDashboard() {
         <h3 className="modal__h3">Share Badge</h3>
         <p className="modal__p">Which sharing platform would you like to use?</p>
         <Socials url="www.connectourkids.org"
-                  text="Check out Connect Our Kids" />
+          text="Check out Connect Our Kids" />
         <img src="close-button.svg" className="modal-close" alt="close modal" onClick={toggleModal} />
       </Modal>
- 
+
       <header className="personal">
         <h1 className="personal__title">Sam Wilsons Impact</h1>
       </header>
       <div className="personal__main">
-        <div className="personal__card1">
-          <div className="personal__card1--left">
-            <h3>Children Served</h3>
-            <p>
-              {" "}
-              Your total: <strong>500</strong>
-            </p>
-            <p>
-              Next Threshold: <strong>700</strong>
-            </p>
-          </div>
-
-          <div className="personal__card1--right">
-            <img src="/Badge1.svg" alt="children served icon"></img>
-            <div className="personal__card1--shareicon">
-              <p className="personal__card1--p">Share</p>
-              <img
-                src={ShareIcon}
-                alt="share icon"
-                className="personal__card1--share"
-                title="Share"
-                onClick={toggleModal}
-              ></img>
-            </div>
-          </div>
-        </div>
-
-        <div className="personal__card2">
-          <div className="personal__card2--left">
-            <h3>Connections Discovered</h3>
-            <p>
-              {" "}
-              Your total: <strong>100</strong>
-            </p>
-            <p>
-              Next Threshold: <strong>700</strong>
-            </p>
-          </div>
-
-          <div className="personal__card2--right">
-            <img src="/Badge2.svg" alt="connections discovered icon"></img>
-            <div className="personal__card2--shareicon">
-              <p className="personal__card2--p">Share</p>
-              <img
-                src={ShareIcon}
-                alt="share icon"
-                className="personal__card2--share"
-                title="Share"
-                onClick={toggleModal}
-              ></img>
-            </div>
-          </div>
-        </div>
-
-        <div className="personal__card3">
-          <div className="personal__card3--left">
-            <h3>Engagements Events</h3>
-            <p>
-              {" "}
-              Your total: <strong>20</strong>
-            </p>
-            <p>
-              Next Threshold: <strong>70</strong>
-            </p>
-          </div>
-
-          <div className="personal__card3--right">
-            <img src="/Badge3.svg" alt="engagemnets events icon"></img>
-            <div className="personal__card3--shareicon">
-              <p className="personal__card3--p">Share</p>
-              <img
-                src={ShareIcon}
-                alt="share icon"
-                className="personal__card3--share"
-                title="Share"
-                onClick={toggleModal}
-              ></img>
-            </div>
-          </div>
-        </div>
+        <Badge title="Children Served" total="500" nextThreshold="700" icon="Badge1.svg" toggleModal={toggleModal} />
+        <Badge title="Connections Discovered" total="100" nextThreshold="700" icon="Badge2.svg" toggleModal={toggleModal} />
+        <Badge title="Engagements Events" total="20" nextThreshold="70" icon="Badge3.svg" toggleModal={toggleModal} />
       </div>
 
       <div className="personal__bottomtext">

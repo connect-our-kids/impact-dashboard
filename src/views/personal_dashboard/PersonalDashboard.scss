@@ -30,79 +30,52 @@
   display: flex;
   justify-content: center;
   text-align: left;
-    .personal__card1{
-      border: 1px solid #E5E4E2;
-      height: 15rem;
+    .badge {
       width: 22rem;
-      margin-right:1rem;
-      display: flex;
-      justify-content: space-between;
-        .personal__card1--right{
-            background-color: #158fb4;
-            width: 7rem;
-            justify-content: center;
-            padding-top:4rem;
-            text-align: center;
-          }
-          .personal__card1--left h3{
-           margin-top:4rem;
-           margin-left:1rem;
-           margin-bottom: 2rem;
-          }
-          .personal__card1--left p{
-            margin-left: 1rem;
-            margin-top: 0;
-            margin-bottom: 0;
-          }
-    }
-
-    .personal__card2{
+      height: 18rem;
       border: 1px solid #E5E4E2;
-      height: 15rem;
-      width: 22rem;
-      margin-right:1rem;
+      margin: 0 10px;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
-        .personal__card2--right{
-          background-color: #158fb4;
-          width: 7rem;
-          padding-top:4rem;
-          text-align: center;
+      .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 11rem;
+        padding: 25px;
+      }
+      h3 {
+        margin: 0 0 35px 0;
+      }
+      p {
+        margin-top: 5px;
+        margin-bottom: 0;
+      }
+      .icon {
+        background: #158FB4;
+        padding: 0 13px;
+        img {
+          margin-top: 70px;
         }
-        .personal__card2--left h3{
-          margin-top: 4rem;
-          margin-left: 1rem;
-          margin-bottom: 2rem;
-        } 
-        .personal__card2--left p{
-          margin-left: 1rem;
-          margin-top: 0;
-          margin-bottom: 0;
+      }
+      .personal__share {
+        border-top: 1px solid #E5E4E2;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        button {
+          cursor: pointer;
+          background: none;
+          border: none;
+          margin-right: 15px;
+          display: flex;
+          align-items: center;
         }
-    }
-
-    .personal__card3{
-      border: 1px solid #E5E4E2;
-      height: 15rem;
-      width: 22rem;
-      display: flex;
-      justify-content: space-between;
-        .personal__card3--right{
-          background-color: #158fb4;
-          width: 7rem;
-          padding-top:4rem;
-          text-align: center;
+        img {
+          margin-left: 7px;
         }
-        .personal__card3--left h3{
-          margin-top: 4rem;
-          margin-left: 1rem;
-          margin-bottom: 2rem;
-        }
-        .personal__card3--left p{
-          margin-left: 1rem;
-          margin-top: 0;
-          margin-bottom: 0;
-        }
+      }
     }
 }
 
@@ -117,66 +90,4 @@
     width:40rem;
     max-width: 40rem;
   }
-}
-////social sharing on Personal dash scss
-.personal__card3--shareicon{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-  margin-top: 6rem;
-  margin-left: 1rem;
-}
-
-.personal__card3--p{
-  font-weight: bolder;
-  font-size:1.1rem;
-  margin: 0 auto;
-  padding-right: 5px;
-}
-
-.personal__card3--share{
-    margin: 0 auto;
-
-}
-
-.personal__card2--shareicon{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-  margin-top: 6rem;
-  margin-left: 1rem;
-}
-
-.personal__card2--p{
-  font-weight: bold;
-  font-size:1.1rem;
-  margin: 0 auto;
-  padding-right: 5px;
-}
-
-.personal__card2--share{
-  margin: 0 auto;
-
-}
-
-.personal__card1--shareicon{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-  margin-top: 6rem;
-  margin-left: 1rem;
-}
-
-.personal__card1--p{
-  font-weight: bold;
-  font-size:1.1rem;
-  margin: 0 auto;
-  padding-right: 5px;
-}
-
-.personal__card1--share{
-  margin: 0 auto;
 }
