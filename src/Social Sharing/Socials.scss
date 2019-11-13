@@ -14,17 +14,13 @@
   } 
 
   .modal-close{
-    width: 1.4rem;
-    height: 1.5rem;
-    border-radius: 100%;
-    border:2px solid black;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 25px;
+    background: white;
+    border-radius: 50%;
     cursor: pointer;
-    background-color: white;
-    color: black;
-    font-size: 1rem;
-    float: right;
-    display: flex;
-    transform: translate(-10%, -675%);
     outline: none;
   }
 

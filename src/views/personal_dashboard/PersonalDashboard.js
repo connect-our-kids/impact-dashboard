@@ -22,9 +22,7 @@ export default function PersonalDashboard() {
         <p className="modal__p">Which sharing platform would you like to use?</p>
         <Socials url="www.connectourkids.org"
                   text="Check out Connect Our Kids" />
-        <button className="modal-close" onClick={toggleModal}>
-         <strong>X</strong>
-        </button>
+        <img src="close-button.svg" className="modal-close" alt="close modal" onClick={toggleModal} />
       </Modal>
  
       <header className="personal">
