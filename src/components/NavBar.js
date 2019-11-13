@@ -19,8 +19,9 @@ const LoggedInDropdown = ({ open }) => {
   return (
     <div className={`nav__loggedInDropdown${open ? " open" : ""}`}>
       <ul>
-        <li><a href="https://search.connectourkids.org/">Account</a></li>
-        <li><a href="https://search.connectourkids.org/">Family Connections</a></li>
+        {/* Family Connections is not yet available but it should be added to this list when it comes out mid 2020 */}
+        {/* Also the account link below needs to be updated to point to the proper url for editing account information */}
+        <li><a href="https://connectourkids.org/">Account</a></li> 
         <li><a href="https://search.connectourkids.org/">People Search</a></li>
         <li><button className="nav__btn nav__btn--logout" onClick={() => logout({returnTo: redirectUri})}>Log Out</button></li>
       </ul>
