@@ -19,20 +19,22 @@ const personalServed = require('./personaldash/queryPersonalServed');
 const personalConnections = require('./personaldash/queryPersonalConnections');
 const personalEvents = require('./personaldash/queryPersonalEvents');
 
+module.exports.PersonalDash = async event => {
+  const queryPersonalServed = await personalServed.queryPersonalServed();
+  const queryPersonalConnections = await personalConnections.queryPersonalConnections();
+  const queryPersonalEvents = await personalEvents.queryPersonalEvents();
 
-// // This function invokes queryShakespeare (awaiting it), then returns a message along with the query results (an array of words with associated wordcounts)
-module.exports.publicChildren = async event => {
-  const query = await publicServed.queryChildrenServed();
+
   return {
     statusCode: 200,
-    // This header is needed for CORS from localhost. Possibly not necessary once deployed with frontend and backend on the same domain, impact.connectourkids.org
     headers: {
       "Access-Control-Allow-Origin": "*"
     },
     body: JSON.stringify(
       {
-        message: "Look at all these chickens!",
-        query,
+        Served: queryPersonalServed[0].f0_,
+        Connections: queryPersonalConnections[0].f0_,
+        Events: queryPersonalEvents[0].f0_,
         event
       },
       null,
@@ -40,6 +42,63 @@ module.exports.publicChildren = async event => {
     )
   };
 };
+
+
+module.exports.TeamDash = async event => {
+  const queryTeamServed = await teamServed.queryTeamChildrenServed();
+  const queryTeamPlacement = await teamPlacement.queryTeamSuccess() ;
+  const queryTeamConnections = await teamConnections.queryTeamConnection();
+  const queryTeamKinship = await teamKinship.queryTeamKindship() ;
+  const queryTeamAvg = await teamAVG.queryTeamAvgPlaced();
+
+  return {
+    statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
+    body: JSON.stringify(
+      {
+        Served: queryTeamServed[0].f0_,
+        Placement: queryTeamPlacement[0].f0_,
+        Connections: queryTeamConnections[0].f0_,
+        Kinship: queryTeamKinship[0].f0_,
+        Avg: queryTeamAvg[0].f0_,
+        event
+      },
+      null,
+      2
+    )
+  };
+};
+
+
+module.exports.publicDash = async event => {
+  const queryServed = await publicServed.queryChildrenServed();
+  const queryPlacement = await publicPlacement.querySuccessfulPlacement();
+  const queryConnections = await publicConnections.queryConnectionsDiscovered();
+  const queryKinship = await publicKinship.queryKinship();
+  const queryAvg = await publicAVG.queryAvgDayPlaced();
+
+  return {
+    statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
+    body: JSON.stringify(
+      {
+        Served: queryServed[0].f0_,
+        Placement: queryPlacement[0].f0_,
+        Connections: queryConnections[0].f0_,
+        Kinship: queryKinship[0].f0_,
+        Avg: queryAvg[0].f0_,
+        event
+      },
+      null,
+      2
+    )
+  };
+};
+
 
 // module.exports.Badge3 = (event, context, callback) => {
 //   const html = `

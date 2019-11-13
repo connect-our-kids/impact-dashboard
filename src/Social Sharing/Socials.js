@@ -52,7 +52,7 @@ export default function Socials(props) {
       <div className="social_media">
         <TwitterShareButton
           url={props.url}
-          title="check out this! https://bv9cpgqr4l.execute-api.us-east-1.amazonaws.com/dev-nisa/Badges "
+          title="check out this! www.connectourkids.org "
           windowWidth={750}
           windowHeight={600}
           className="social__media--button"

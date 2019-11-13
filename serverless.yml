@@ -58,12 +58,26 @@ functions:
 #      - http: ANY /
 #      - http: 'ANY {proxy+}'
 
-  publicChildren:
-    handler: lambda/handler.publicChildren
-    name: 'publicChildren-${env:REACT_APP_STAGE}'
+  publicDash:
+    handler: lambda/handler.publicDash
+    name: 'publicDash-${env:REACT_APP_STAGE}'
     events:
       - http:
-          path: /public-ChildrenServed
+          path: /public-Dash
+          method: get
+  TeamDash:
+    handler: lambda/handler.TeamDash
+    name: 'TeamDash-${env:REACT_APP_STAGE}'
+    events:
+      - http:
+          path: /Team-Dash
+          method: get
+  PersonalDash:
+    handler: lambda/handler.PersonalDash
+    name: 'PersonalDash-${env:REACT_APP_STAGE}'
+    events:
+      - http:
+          path: /personal-Dash
           method: get
   # Badge1:
   #   handler: lambda/handler.Badge1

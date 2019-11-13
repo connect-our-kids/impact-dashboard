@@ -3,8 +3,8 @@
     
     // Import the Google Cloud client library
     const { BigQuery } = require("@google-cloud/bigquery");
-    const bigQueryCreds = require('../secrets')
-    exports.queryGitHub =  async function() {
+    const bigQueryCreds = require('../../secrets')
+    exports.queryChildrenServed =  async function() {
       // Queries a public GitHub dataset.
     
       const projectId = "coki-impact";
@@ -22,14 +22,10 @@
     
       const options = {
         query: sqlQuery,
-        // Location must match that of the dataset(s) referenced in the query.
         location: "US"
       };
     
       // Run the query
       const [rows] = await bigqueryClient.query(options);
-    
-      // console.log('Rows:');
-      // rows.forEach(row => console.log(`${row.subject}: ${row.num_duplicates}`));
       return rows;
     }

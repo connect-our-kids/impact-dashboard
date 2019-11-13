@@ -3,8 +3,8 @@
     
     // Import the Google Cloud client library
     const { BigQuery } = require("@google-cloud/bigquery");
-    const bigQueryCreds = require('../secrets')
-    exports.queryGitHub =  async function() {
+    const bigQueryCreds = require('../../secrets')
+    exports.queryTeamSuccess =  async function() {
       // Queries a public GitHub dataset.
     
       const projectId = "coki-impact";
@@ -15,19 +15,18 @@
       });
     
       // The SQL query to run
-      const sqlQuery = `SELECT COUNT(*)
+      const sqlQuery = `SELECT (SELECT COUNT(*)
             FROM \`coki-impact.COKI_MOCK.cases\`
             WHERE child_status = 'placed'
-            AND team_id = 1
-            `;
-
-      const sqlQuery2 = `SELECT COUNT(*)
-            FROM \`coki-impact.COKI_MOCK.cases \`
-            WHERE team_id = 1
+            AND team_id = 1)
+            /
+            (SELECT COUNT(*)
+            FROM \`coki-impact.COKI_MOCK.cases\`
+            WHERE team_id = 1)
             `;
     
       const options = {
-        query: sqlQuery / sqlQuery2,
+        query: sqlQuery,
         // Location must match that of the dataset(s) referenced in the query.
         location: "US"
       };

@@ -3,8 +3,8 @@
     
     // Import the Google Cloud client library
     const { BigQuery } = require("@google-cloud/bigquery");
-    const bigQueryCreds = require('../secrets')
-    exports.queryGitHub =  async function() {
+    const bigQueryCreds = require('../../secrets')
+    exports.queryTeamConnection =  async function() {
       // Queries a public GitHub dataset.
     
       const projectId = "coki-impact";
