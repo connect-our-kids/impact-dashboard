@@ -25,14 +25,15 @@ plugins:
   - serverless-apigwy-binary
   - serverless-associate-waf
   - serverless-offline
-  - serverless-mocha-plugin 
+  - serverless-mocha-plugin
+  - serverless-dotenv-plugin
 
 provider:
   # profile is for your powerUser credentials profile
-  profile: 138110379499_PowerUserAccess
+  profile: ${env:AWS_PROFILE}
   name: aws
   runtime: nodejs10.x
-  stage: dev-sean
+  stage: ${env:REACT_APP_STAGE}
 
 
 package:
@@ -59,28 +60,28 @@ functions:
 
   catmemes:
     handler: lambda/handler.catMemes
-    name: 'hellocats-${self:provider.stage}'
+    name: 'hellocats-${env:REACT_APP_STAGE}'
     events:
       - http:
           path: /cats
           method: get
   shakespeareQuotes:
     handler: lambda/handler.shakespeareQuotes
-    name: 'shakespeare-${self:provider.stage}'
+    name: 'shakespeare-${env:REACT_APP_STAGE}'
     events:
       - http:
           path: /shakespeareQuotes
           method: get
   gitHubBigQuery:
     handler: lambda/handler.gitHubBigQuery
-    name: 'github-${self:provider.stage}'
+    name: 'github-${env:REACT_APP_STAGE}'
     events:
       - http:
           path: /commits
           method: get
   moonPhases:
     handler: lambda/handler.moonPhases
-    name: 'moon-${self:provider.stage}'
+    name: 'moon-${env:REACT_APP_STAGE}'
     events:
       - http:
           path: /moonPhases
@@ -88,7 +89,7 @@ functions:
 
   testing:
     handler: lambda/handler.testing
-    name: 'testing-${self:provider.stage}'
+    name: 'testing-${env:REACT_APP_STAGE}'
     events:
       - http:
           path: hello

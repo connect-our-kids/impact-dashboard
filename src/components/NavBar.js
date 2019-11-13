@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth0, Auth0Context } from "../auth0-wrapper";
-// import { connect } from 'react-redux';
 
-// import { login_request } from '../actions/index';
 import './NavBar.scss';
-const redirectURI = window.location.origin; // + '/dev-sean/';
+import { redirectUri } from '../index';
 
 const LoggedInNav = () => (
   <div className="subNav">
@@ -24,7 +22,7 @@ const LoggedInDropdown = ({ open }) => {
         <li><a href="https://search.connectourkids.org/">Account</a></li>
         <li><a href="https://search.connectourkids.org/">Family Connections</a></li>
         <li><a href="https://search.connectourkids.org/">People Search</a></li>
-        <li><button className="nav__btn nav__btn--logout" onClick={() => logout({returnTo: redirectURI})}>Log Out</button></li>
+        <li><button className="nav__btn nav__btn--logout" onClick={() => logout({returnTo: redirectUri})}>Log Out</button></li>
       </ul>
     </div>
   )
