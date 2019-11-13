@@ -58,41 +58,13 @@ functions:
 #      - http: ANY /
 #      - http: 'ANY {proxy+}'
 
-  catmemes:
-    handler: lambda/handler.catMemes
-    name: 'hellocats-${env:REACT_APP_STAGE}'
+  publicChildren:
+    handler: lambda/handler.publicChildren
+    name: 'publicChildren-${env:REACT_APP_STAGE}'
     events:
       - http:
-          path: /cats
+          path: /public-ChildrenServed
           method: get
-  # shakespeareQuotes:
-  #   handler: lambda/handler.shakespeareQuotes
-  #   name: 'shakespeare-${env:REACT_APP_STAGE}'
-  #   events:
-  #     - http:
-  #         path: /shakespeareQuotes
-  #         method: get
-  # gitHubBigQuery:
-  #   handler: lambda/handler.gitHubBigQuery
-  #   name: 'github-${env:REACT_APP_STAGE}'
-  #   events:
-  #     - http:
-  #         path: /commits
-  #         method: get
-  # moonPhases:
-  #   handler: lambda/handler.moonPhases
-  #   name: 'moon-${env:REACT_APP_STAGE}'
-  #   events:
-  #     - http:
-  #         path: /moonPhases
-  #         method: get
-  # testing:
-  #   handler: lambda/handler.testing
-  #   name: 'testing-${env:REACT_APP_STAGE}'
-  #   events:
-  #     - http:
-  #         path: hello
-  #         method: post
   # Badge1:
   #   handler: lambda/handler.Badge1
   #   name: 'Badge1-${self:provider.stage}'
