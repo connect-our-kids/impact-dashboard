@@ -48,7 +48,7 @@ const PublicDashboard = props => {
           },
           {
             metric: "Successful Placement Ratio",
-            value: parseFloat(data.Placement * 100).toFixed(0) // converts decimal to percent
+            value: parseFloat(data.Placement * 100).toFixed(0) + '%' // converts decimal to percent
           },
           {
             metric: "Connections Discovered",
