@@ -1,5 +1,5 @@
 //added in modal for social sharing
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./PersonalDashboard.scss";
 import Modal from 'react-modal'
 import Socials from "../../Social Sharing/Socials";
@@ -10,6 +10,19 @@ export default function PersonalDashboard() {
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
+
+  const [data, setData] = useState();
+  console.log('Data fetched: ', data)
+  useEffect(() => {
+    //// at end of url, try /api/shakespeareQuotes, /api/commits, or /api/moonPhases
+    fetch('https://bv9cpgqr4l.execute-api.us-east-1.amazonaws.com/dev-nisa/Personal-Dashboard-Metrics')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        setData(data)
+      })
+      .catch(error => console.log(error))
+  }, [])
   
 
   return (
@@ -37,7 +50,7 @@ export default function PersonalDashboard() {
             <h3>Children Served</h3>
             <p>
               {" "}
-              Your total: <strong>500</strong>
+              Your total: <strong>{data ? data.Served : 'Loading...'}</strong>
             </p>
             <p>
               Next Threshold: <strong>700</strong>
@@ -64,7 +77,7 @@ export default function PersonalDashboard() {
             <h3>Connections Discovered</h3>
             <p>
               {" "}
-              Your total: <strong>100</strong>
+              Your total: <strong>{data ? data.Connections : 'Loading...'}</strong>
             </p>
             <p>
               Next Threshold: <strong>700</strong>
@@ -91,7 +104,7 @@ export default function PersonalDashboard() {
             <h3>Engagements Events</h3>
             <p>
               {" "}
-              Your total: <strong>20</strong>
+              Your total: <strong>{data ? data.Events : 'Loading...'}</strong>
             </p>
             <p>
               Next Threshold: <strong>70</strong>
