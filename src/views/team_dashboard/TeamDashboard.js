@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
  
 import './TeamDashboard.scss';
 import styled from 'styled-components';
-import Pie from "../../Visualization/pie-td";
+import Pie from "../../Visualization/pie";
 import DataGrid from "../../components/DataGrid";
 import {teamData} from "../../mockdata.js";
  
