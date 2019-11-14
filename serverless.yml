@@ -58,26 +58,26 @@ functions:
 #      - http: ANY /
 #      - http: 'ANY {proxy+}'
 
-  publicDash:
-    handler: lambda/handler.publicDash
+  PublicDash:
+    handler: lambda/handler.PublicDash
     name: 'publicDash-${env:REACT_APP_STAGE}'
     events:
       - http:
-          path: /public-Dash
+          path: /Public-Dashboard-Metrics
           method: get
   TeamDash:
     handler: lambda/handler.TeamDash
     name: 'TeamDash-${env:REACT_APP_STAGE}'
     events:
       - http:
-          path: /Team-Dash
+          path: /Team-Dashboard-Metrics
           method: get
   PersonalDash:
     handler: lambda/handler.PersonalDash
     name: 'PersonalDash-${env:REACT_APP_STAGE}'
     events:
       - http:
-          path: /personal-Dash
+          path: /Personal-Dashboard-Metrics
           method: get
   # Badge1:
   #   handler: lambda/handler.Badge1

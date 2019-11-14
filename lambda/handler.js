@@ -72,7 +72,7 @@ module.exports.TeamDash = async event => {
 };
 
 
-module.exports.publicDash = async event => {
+module.exports.PublicDash = async event => {
   const queryServed = await publicServed.queryChildrenServed();
   const queryPlacement = await publicPlacement.querySuccessfulPlacement();
   const queryConnections = await publicConnections.queryConnectionsDiscovered();

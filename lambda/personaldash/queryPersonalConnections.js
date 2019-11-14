@@ -18,6 +18,7 @@
       const sqlQuery = `SELECT COUNT(*)
             FROM \`coki-impact.COKI_MOCK.people\`
             WHERE created_by_user_id = "sean@gmail.com"
+            LIMIT 20
             `;
 
       const options = {
