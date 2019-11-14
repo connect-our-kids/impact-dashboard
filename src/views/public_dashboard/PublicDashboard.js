@@ -38,11 +38,10 @@ import Pie from "../../Visualization/pie";
         value: ""
       },
     ]);
-    //// Data fetching. Currently commented out to display more realistic fake numbers but it does work
     console.log('Data fetched: ', data)
     useEffect(() => {
       //// at end of url, try /api/shakespeareQuotes, /api/commits, or /api/moonPhases
-      fetch('https://bv9cpgqr4l.execute-api.us-east-1.amazonaws.com/dev-nisa/public-Dash')
+      fetch('https://bv9cpgqr4l.execute-api.us-east-1.amazonaws.com/dev-nisa/Public-Dashboard-Metrics')
         .then(response => response.json())
         .then(data => {
           console.log(data)
