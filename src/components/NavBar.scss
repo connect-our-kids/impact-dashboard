@@ -39,21 +39,24 @@
 .subNav__menu {
   border-top: 1px solid #808080;
   border-bottom: 1px solid #808080;
-
   display: flex;
   justify-content: center;
   padding: 15px 0;
+  @media (max-width: 450px) {
+    padding: 10px 0;
+  }
   .subNav__link {
     list-style-type: none;
-    margin: 0 80px;
-
+    margin: 0 40px;
     color: #AAA9AD;
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
-
     @media (max-width: 637px) {
-      margin: 0 15px;
+      margin: 4px 10px;
+    }
+    @media (max-width: 450px) {
+      font-size: 15px;
     }
   }
   .subNav__link:hover{
