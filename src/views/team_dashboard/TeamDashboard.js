@@ -23,27 +23,27 @@ export default function TeamDashboard(){
 const [data, setData] = useState([
   {
     metric: "Children Served",
-    value: ""
+    value: "..."
   },
   {
     metric: "Successful Placement Ratio",
-    value: ""
+    value: "..."
   },
   {
     metric: "Connections Discovered",
-    value: ""
+    value: "..."
   },
   {
     metric: "Kinship Search Users",
-    value: ""
+    value: "..."
   },
   {
     metric: "Permanent Placements",
-    value: ""
+    value: "..."
   },
   {
     metric: "Average Days To Placement",
-    value: ""
+    value: "..."
   },
 ]);
 console.log('Data fetched: ', data)
@@ -103,7 +103,7 @@ return (
   
         <div className="team__charts">
           <div className="team__pie">
-            <Pie />
+          {data[1].value !== "..." ? <Pie percent={Number(data[1].value.slice(0,data[1].value.length-1))}/> : "Loading"}
           </div>
         </div>
       </section>

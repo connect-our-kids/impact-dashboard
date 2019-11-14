@@ -28,52 +28,53 @@ Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
   }
 });
 
-const data = {
-  datasets: [
-    {
-      data: [328, 72],
-      backgroundColor: ["#158FB4", "#EDF9FD"],
-      hoverBackgroundColor: ["#0F6580", "#A4E1F4"]
-    }
-  ],
-  text: "71%"
-};
 
-//boilerplate for data to be turned into percents
-const option = {
-  cutoutPercentage: 65,
-  legend: {
-    display: false
-  },
-  animation: {
-    animateRotate: false
-  },
-  tooltips: {
-    hover: {
-      mode: null
+
+const PieChart = (props) => {
+  const data = {
+    datasets: [
+      {
+        data: [props.percent, 100-props.percent],
+        backgroundColor: ["#158FB4", "#EDF9FD"],
+        hoverBackgroundColor: ["#0F6580", "#A4E1F4"]
+      }
+    ],
+    text: props.percent + '%'
+  };
+  
+  //boilerplate for data to be turned into percents
+  const option = {
+    cutoutPercentage: 65,
+    legend: {
+      display: false
     },
-    enabled: false,
+    animation: {
+      animateRotate: false
+    },
     tooltips: {
-      callbacks: {
-        label: function(tooltipItem, data) {
-          let dataset = data.datasets[tooltipItem.datasetIndex];
-          let meta = dataset._meta[Object.keys(dataset._meta)[0]];
-          let total = meta.total;
-          let currentValue = dataset.data[tooltipItem.index];
-          let percentage = parseFloat(
-            ((currentValue / total) * 100).toFixed(1)
-          );
-          return percentage + "%)";
-        },
-        title: function(tooltipItem, data) {
-          return data.labels[tooltipItem[0].index];
+      hover: {
+        mode: null
+      },
+      enabled: false,
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            let dataset = data.datasets[tooltipItem.datasetIndex];
+            let meta = dataset._meta[Object.keys(dataset._meta)[0]];
+            let total = meta.total;
+            let currentValue = dataset.data[tooltipItem.index];
+            let percentage = parseFloat(
+              ((currentValue / total) * 100).toFixed(1)
+            );
+            return percentage + "%)";
+          },
+          title: function(tooltipItem, data) {
+            return data.labels[tooltipItem[0].index];
+          }
         }
       }
     }
-  }
-};
-
-const PieChart = () => {
+  };
   return (
     <div>
       <Doughnut data={data} options={option} />
