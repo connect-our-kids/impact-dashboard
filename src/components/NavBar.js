@@ -8,6 +8,7 @@ import { redirectUri } from '../index';
 const LoggedInNav = () => (
   <div className="subNav">
     <div className="subNav__menu">
+        <NavLink to="/" exact className="subNav__link">Overall Impact</NavLink>
         <NavLink to="/personal" className="subNav__link">My Achievements</NavLink>
         <NavLink to="/team" className="subNav__link">My Team</NavLink>
     </div>
