@@ -1,13 +1,13 @@
-///extra data to use to distinguish between dashboards
+///Mock data to use to distinguish between dashboards
 "use strict";
     
     // Import the Google Cloud client library
     const { BigQuery } = require("@google-cloud/bigquery");
-    const bigQueryCreds = require('../secrets')
-    exports.queryGitHub =  async function() {
+    const bigQueryCreds = require('../../secrets')
+    exports.queryTeamChildrenServed =  async function() {
       // Queries a public GitHub dataset.
     
-      const projectId = "bigquerygithub-256021";
+      const projectId = "coki-impact";
       // Create a client
       const bigqueryClient = new BigQuery({
           projectId: projectId,
@@ -15,14 +15,14 @@
       });
     
       // The SQL query to run
-      const sqlQuery = `SELECT subject AS subject, COUNT(*) AS num_duplicates
-            FROM \`bigquery-public-data.github_repos.commits\`
-            GROUP BY subject 
-            ORDER BY num_duplicates 
-            DESC LIMIT 10`;
-    
+      const sqlQuery = `SELECT COUNT(*)
+            FROM \`coki-impact.COKI_MOCK.cases\`
+            WHERE child_status = 'placed'
+            AND team_id = 1
+            `;
+
       const options = {
-        query: sqlQuery,
+        query: sqlQuery ,
         // Location must match that of the dataset(s) referenced in the query.
         location: "US"
       };

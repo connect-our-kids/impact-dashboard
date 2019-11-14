@@ -52,7 +52,7 @@ export default function Socials(props) {
       <div className="social_media">
         <TwitterShareButton
           url={props.url}
-          title={props.text}
+          title="check out this! www.connectourkids.org "
           windowWidth={750}
           windowHeight={600}
           className="social__media--button"
