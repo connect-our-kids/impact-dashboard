@@ -30,16 +30,16 @@ const LoggedInDropdown = ({ open }) => {
   )
 }
 
-const MobileDropdown = ({ open }) => {
+const MobileDropdown = ({ open, setOpen }) => {
   const { logout } = useAuth0();
   return (
     <div className={`nav__mobile-dropdown${open ? " open" : ""}`}>
       <ul>
-        <li><NavLink to="/" exact className="subNav__link">National Numbers</NavLink></li>
-        <li><NavLink to="/personal" className="subNav__link">My Achievements</NavLink></li>
-        <li><NavLink to="/team" className="subNav__link">My Team</NavLink></li>
-        <li><a href="https://connectourkids.org/">Account</a></li>
-        <li><a href="https://search.connectourkids.org/">People Search</a></li>
+        <li><NavLink to="/" exact className="subNav__link" onClick={() => setOpen(false)} >National Numbers</NavLink></li>
+        <li><NavLink to="/personal" className="subNav__link" onClick={() => setOpen(false)} >My Achievements</NavLink></li>
+        <li><NavLink to="/team" className="subNav__link" onClick={() => setOpen(false)} >My Team</NavLink></li>
+        <li><a href="https://connectourkids.org/" onClick={() => setOpen(false)} >Account</a></li>
+        <li><a href="https://search.connectourkids.org/" onClick={() => setOpen(false)} >People Search</a></li>
         <li><button className="nav__btn nav__btn--logout" onClick={() => logout({returnTo: redirectUri})}>Log Out</button></li>
       </ul>
     </div>
@@ -54,7 +54,7 @@ const NavBar = () => {
   return (
     <>
       <nav className="nav">
-        <Link to="/"><img src={process.env.PUBLIC_URL + '/logo.png'} width="300" alt="Connect Our Kids Logo" className="nav__logo" /></Link>
+        <Link to="/" onClick={() => setOpen(false)}><img src={process.env.PUBLIC_URL + '/logo.png'} width="300" alt="Connect Our Kids Logo" className="nav__logo" /></Link>
         <div className="nav__mobile-menu">
 
         </div>
@@ -71,12 +71,12 @@ const NavBar = () => {
                 <img className="nav_dropdownIconOpen" src="arrow-down-sign-to-navigate.svg" alt="dropdown open" onClick={() => setOpen(true)} />
                 <img className="nav_dropdownIconClose" src="close-button.svg" alt="dropdown close" onClick={() => setOpen(false)} />
                 <img className="nav__mobile-menu-btn" src="menu-button.svg" alt="mobile menu" width="32" onClick={() => setOpen(!open)} />
-                <LoggedInDropdown open={open}/>
+                <LoggedInDropdown open={open} />
               </>
             )}
         </div>
       </nav>
-      <MobileDropdown open={open} />
+      <MobileDropdown open={open} setOpen={setOpen} />
       {isAuthenticated && <LoggedInNav/>}
     </>
   );

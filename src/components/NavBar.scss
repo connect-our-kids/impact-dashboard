@@ -36,6 +36,9 @@
   .nav__logo {
     width: 250px;
   }
+  .nav {
+    margin-left: 0;
+  }
 }
 
 .subNav__menu {
@@ -74,6 +77,9 @@
   img.nav_dropdownIconClose {
     display: none;
   }
+}
+img.nav_dropdownIconClose {
+  z-index: 1;
 }
 img.nav_dropdownIconOpen,
 img.nav_dropdownIconClose {
@@ -138,6 +144,7 @@ img.nav_dropdownIconClose {
   cursor: pointer;
 }
 .nav__mobile-dropdown {
+  z-index: 2;
   opacity: 0;
   transform: translateY(-100%);
   transition: all .5s ease-in-out;
