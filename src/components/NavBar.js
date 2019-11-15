@@ -54,7 +54,7 @@ const NavBar = () => {
   return (
     <>
       <nav className="nav">
-        <Link to="/"><img src={process.env.PUBLIC_URL + '/logo.png'} width="300" alt="Connect Our Kids Logo" className="nav__logo" /></Link>
+        <Link to="/" onClick={() => setOpen(false)}><img src={process.env.PUBLIC_URL + '/logo.png'} width="300" alt="Connect Our Kids Logo" className="nav__logo" /></Link>
         <div className="nav__mobile-menu">
 
         </div>
