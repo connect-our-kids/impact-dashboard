@@ -13,6 +13,9 @@
 .team__impact{
   font-size: 30px;
   font-weight: bold;
+  @media (max-width: 637px) {
+    font-size: 26px;
+  }
 }
 .team__charts{
   display: flex;
@@ -21,4 +24,10 @@
     width: 400px;
     height: 300px;
     }
+}
+
+@media (max-width: 637px) {
+  .public__visuals {
+    margin-top: 60px;
+  }
 }
