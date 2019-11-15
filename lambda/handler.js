@@ -19,6 +19,7 @@ const personalServed = require('./personaldash/queryPersonalServed');
 const personalConnections = require('./personaldash/queryPersonalConnections');
 const personalEvents = require('./personaldash/queryPersonalEvents');
 
+
 module.exports.PersonalDash = async event => {
   const queryPersonalServed = await personalServed.queryPersonalServed();
   const queryPersonalConnections = await personalConnections.queryPersonalConnections();
@@ -98,6 +99,32 @@ module.exports.PublicDash = async event => {
     )
   };
 };
+
+// module.exports.TeamReport = async event => {
+//   const doc = new PDFDocument;
+
+
+//   doc.pipe(fs.createWriteStream('/path/to/file.pdf')); // write to PDF
+//   doc.pipe(res);                                       // HTTP response
+
+// // add stuff to PDF here using methods described below...
+
+// // finalize the PDF and end the stream
+//   doc.end();
+//   return {
+//     statusCode: 200,
+//     headers: {
+//       "Access-Control-Allow-Origin": "*"
+//     },
+//     body: JSON.stringify(
+//       {
+//         message: 'Team PDF endpoint'
+//       },
+//       null,
+//       2
+//     )
+//   };
+// };
 
 
 // module.exports.Badge3 = (event, context, callback) => {
