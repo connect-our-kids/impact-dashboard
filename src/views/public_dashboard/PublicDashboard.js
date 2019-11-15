@@ -6,8 +6,10 @@ import DataGrid from '../../components/DataGrid';
 import { publicData } from '../../mockdata.js';
 import USAMaps from "../../Visualization/USAMap";
 import Pie from "../../Visualization/pie";
+import Loader from '../../components/Loader';
 
 const PublicDashboard = props => {
+  const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([
     {
       metric: "Children Served",
@@ -37,10 +39,12 @@ const PublicDashboard = props => {
   console.log('Data fetched: ', data)
   useEffect(() => {
     //// at end of url, try /api/shakespeareQuotes, /api/commits, or /api/moonPhases
+    setIsLoading(true);
     fetch('https://bv9cpgqr4l.execute-api.us-east-1.amazonaws.com/dev-nisa/Public-Dashboard-Metrics')
       .then(response => response.json())
       .then(data => {
         console.log(data)
+        setIsLoading(false);
         setData([
           {
             metric: "Children Served",
@@ -74,6 +78,7 @@ const PublicDashboard = props => {
   return (
     <>
       <DataGrid data={data} />
+      <Loader isLoading={isLoading} />
       <h2 className="public__callout">This is how our efforts are making an impact.</h2>
 
       <a href='https://www.connectourkids.org/donate' className="public__donate">Donate</a>
