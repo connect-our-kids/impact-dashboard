@@ -78,6 +78,9 @@
     display: none;
   }
 }
+img.nav_dropdownIconClose {
+  z-index: 1;
+}
 img.nav_dropdownIconOpen,
 img.nav_dropdownIconClose {
   width: 22px;
