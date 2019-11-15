@@ -83,6 +83,7 @@ const PublicDashboard = props => {
           <USAMaps />
         </div>
         <div className="public__pie">
+          <h2>Successful Placements:</h2>
           {data[1].value !== "..." ? <Pie percent={Number(data[1].value.slice(0,data[1].value.length-1))}/> : "Loading"}
         </div>
       </div>
