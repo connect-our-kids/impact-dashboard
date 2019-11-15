@@ -3,7 +3,9 @@ import './Loader.scss';
 
 const Loader = ({ isLoading }) => (
   <div className={`page-loader${isLoading ? " on" : " off"}`}>
-    <img src="loading.gif" alt="page loader animation"/>
+    <div className="gif-container">
+      <img src="loading.gif" alt="page loader animation" width="50" />
+    </div>
   </div>
 )
 
