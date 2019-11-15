@@ -141,6 +141,7 @@ img.nav_dropdownIconClose {
   cursor: pointer;
 }
 .nav__mobile-dropdown {
+  z-index: 2;
   opacity: 0;
   transform: translateY(-100%);
   transition: all .5s ease-in-out;
