@@ -7,7 +7,7 @@ header.personal {
   .personal__title {
     margin-left: 10px;
     margin-right: 10px;
-    color: #158FB4;
+    color: #158fb4;
     font-size: 42px;
     font-weight: 700;
     text-align: center;
@@ -18,71 +18,87 @@ header.personal {
   flex-wrap: wrap;
   justify-content: center;
   text-align: left;
-    .badge {
-      width: 22rem;
-      min-width: 300px;
-      height: 18rem;
-      border: 1px solid #E5E4E2;
-      margin: 10px;
+  .badge {
+    width: 23rem;
+    min-width: 300px;
+    height: 18rem;
+    border: 1px solid #e5e4e2;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media (max-width: 461px) {
+      width: 100%;
+      height: 16rem;
+    }
+    .info {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
+      height: 11rem;
+      padding: 25px;
       @media (max-width: 461px) {
-        width: 100%;
-        height: 16rem;
+        padding: 15px 0 0 10px;
       }
-      .info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 11rem;
-        padding: 25px;
+    }
+    h3 {
+      margin: 0 0 35px 0;
+    }
+    p {
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+    .icon {
+      display: flex;
+      align-items: center;
+      background: #158fb4;
+      padding: 0 13px;
+      img {
+        border: 4px solid;
+        border-radius: 50%;
         @media (max-width: 461px) {
-          padding: 15px 0 0 10px;
+          width: 65px;
         }
       }
-      h3 {
-        margin: 0 0 35px 0;
-      }
-      p {
-        margin-top: 5px;
-        margin-bottom: 0;
-      }
-      .icon {
-        background: #158FB4;
-        padding: 0 13px;
-        img {
-          margin-top: 70px;
-          @media (max-width: 461px) {
-            margin-top: 75px;
-            width: 65px;
-          }
-        }
-      }
-      .personal__share {
-        border-top: 1px solid #E5E4E2;
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        button {
-          cursor: pointer;
-          background: none;
-          border: none;
-          margin-right: 15px;
-          display: flex;
-          align-items: center;
-          &:focus {
-            outline: none;
-          }
-        }
-        img {
-          margin-left: 7px;
+      .icon-container {
+        position: relative;
+        &::before {
+          content: "";
+          width: 25px;
+          height: 25px;
+          position: absolute;
+          top: -1px;
+          left: -1px;
+          background-image: url('/mdi-star-four-points.svg');
+          background-position: center center;
+          background-repeat: no-repeat;
         }
       }
     }
+    .personal__share {
+      border-top: 1px solid #e5e4e2;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      button {
+        cursor: pointer;
+        background: none;
+        border: none;
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        &:focus {
+          outline: none;
+        }
+      }
+      img {
+        margin-left: 7px;
+      }
+    }
+  }
 }
 
-.personal__bottomtext{
+.personal__bottomtext {
   font-size: 18px;
   line-height: 25px;
   letter-spacing: 0.5px;
@@ -90,7 +106,36 @@ header.personal {
   display: flex;
   justify-content: center;
   p {
-    width:40rem;
+    width: 40rem;
     max-width: 40rem;
   }
+}
+
+// Colorize Different tier badges
+.badge.level-1 .icon img {
+  border-color: #212529;
+}
+.badge.level-2 .icon img {
+  border-color: #704C2F;
+}
+.badge.level-3 .icon img {
+  border-color: #AD3032;
+}
+.badge.level-4 .icon img {
+  border-color: #631588;
+}
+.badge.level-5 .icon img {
+  border-color: #2E3B8A;
+}
+.badge.level-6 .icon img {
+  border-color: #1F7218;
+}
+.badge.level-7 .icon img {
+  border-color: #DE633A;
+}
+.badge.level-7 .icon img {
+  border-color: #E8B923;
+}
+.badge.level-7 .icon img {
+  border-color: #E5E4E2;
 }
