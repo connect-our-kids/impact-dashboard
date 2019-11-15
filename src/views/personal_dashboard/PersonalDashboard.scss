@@ -1,49 +1,45 @@
 ///brought over scss styles to test personal dash
-.personal {
+header.personal {
   text-align: center;
-  height: 10rem;
-  // margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   .personal__title {
-    margin: 60px 50px 40px 50px;
+    margin-left: 10px;
+    margin-right: 10px;
     color: #158FB4;
     font-size: 42px;
     font-weight: 700;
     text-align: center;
   }
-    //NEED TO FIX BUTTON TO BE IN THE MIDDLE OF PAGE W/O DOING MARGIN-LEFT
-  .personal__share {
-    padding: 10px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0;
-    background-color: #1d8eb6;
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
-  }
 }
 .personal__main {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   text-align: left;
     .badge {
       width: 22rem;
+      min-width: 300px;
       height: 18rem;
       border: 1px solid #E5E4E2;
-      margin: 0 10px;
+      margin: 10px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      @media (max-width: 461px) {
+        width: 100%;
+        height: 16rem;
+      }
       .info {
         display: flex;
         flex-direction: column;
         justify-content: center;
         height: 11rem;
         padding: 25px;
+        @media (max-width: 461px) {
+          padding: 15px 0 0 10px;
+        }
       }
       h3 {
         margin: 0 0 35px 0;
@@ -57,6 +53,10 @@
         padding: 0 13px;
         img {
           margin-top: 70px;
+          @media (max-width: 461px) {
+            margin-top: 75px;
+            width: 65px;
+          }
         }
       }
       .personal__share {
@@ -86,7 +86,7 @@
   font-size: 18px;
   line-height: 25px;
   letter-spacing: 0.5px;
-  margin-top: 4rem;
+  margin: 3rem 15px;
   display: flex;
   justify-content: center;
   p {
