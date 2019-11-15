@@ -17,7 +17,11 @@ module.exports.pdf = async (event, context) => {
 
 
   // 1. (TODO) Get data
-
+  // const queryTeamServed = await teamServed.queryTeamChildrenServed();
+  // const queryTeamPlacement = await teamPlacement.queryTeamSuccess() ;
+  // const queryTeamConnections = await teamConnections.queryTeamConnection();
+  // const queryTeamKinship = await teamKinship.queryTeamKindship() ;
+  // const queryTeamAvg = await teamAVG.queryTeamAvgPlaced();
 
   // 2. Create html
   const html = `
@@ -39,7 +43,8 @@ module.exports.pdf = async (event, context) => {
     })
 
     const page = await browser.newPage()
-    page.setContent(html)
+    // page.setContent(html)
+    await page.goto('https://impact-dashboard.mjherich.now.sh/', {waitUntil: 'networkidle0'});
 
     // 4. Create pdf file with puppeteer
     const pdf = await page.pdf({
@@ -52,7 +57,7 @@ module.exports.pdf = async (event, context) => {
     const response = {
       headers: {
         'Content-type': 'application/pdf',
-        'content-disposition': 'attachment; filename=test.pdf'
+        'content-disposition': 'attachment; filename=TeamReport.pdf'
       },
       statusCode: 200,
       body: pdf.toString('base64'),
