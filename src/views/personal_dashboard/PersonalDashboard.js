@@ -1,5 +1,5 @@
 //added in modal for social sharing
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./PersonalDashboard.scss";
 import Modal from 'react-modal'
 import Socials from "../../Social Sharing/Socials";
@@ -34,6 +34,20 @@ export default function PersonalDashboard() {
     setIsOpen(!isOpen);
   };
 
+  const [data, setData] = useState();
+  console.log('Data fetched: ', data)
+  useEffect(() => {
+    //// at end of url, try /api/shakespeareQuotes, /api/commits, or /api/moonPhases
+    fetch('https://bv9cpgqr4l.execute-api.us-east-1.amazonaws.com/dev-nisa/Personal-Dashboard-Metrics')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        setData(data)
+      })
+      .catch(error => console.log(error))
+  }, [])
+  
+
   return (
     <>
       <Modal
@@ -53,9 +67,9 @@ export default function PersonalDashboard() {
         <h1 className="personal__title">Sam Wilsons Impact</h1>
       </header>
       <div className="personal__main">
-        <Badge title="Children Served" total="500" nextThreshold="700" icon="Badge1.svg" toggleModal={toggleModal} />
-        <Badge title="Connections Discovered" total="100" nextThreshold="700" icon="Badge2.svg" toggleModal={toggleModal} />
-        <Badge title="Engagements Events" total="20" nextThreshold="70" icon="Badge3.svg" toggleModal={toggleModal} />
+        <Badge title="Children Served" total={data ? data.Served : 'Loading...'} nextThreshold="700" icon="Badge1.svg" toggleModal={toggleModal} />
+        <Badge title="Connections Discovered" total={data ? data.Connections : 'Loading...'} nextThreshold="700" icon="Badge2.svg" toggleModal={toggleModal} />
+        <Badge title="Engagements Events" total={data ? data.Events : 'Loading...'} nextThreshold="70" icon="Badge3.svg" toggleModal={toggleModal} />
       </div>
 
       <div className="personal__bottomtext">
