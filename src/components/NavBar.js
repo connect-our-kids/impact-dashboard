@@ -68,9 +68,9 @@ const NavBar = () => {
             {isAuthenticated && user && (
               <>
                 <img className="nav__avatar" src={user.picture} alt="User avatar" width="32" />
-                <img className="nav_dropdownIconOpen" src="arrow-down-sign-to-navigate.svg" alt="dropdown open" onClick={() => setOpen(true)} />
-                <img className="nav_dropdownIconClose" src="close-button.svg" alt="dropdown close" onClick={() => setOpen(false)} />
-                <img className="nav__mobile-menu-btn" src="menu-button.svg" alt="mobile menu" width="32" onClick={() => setOpen(!open)} />
+                <img className="nav_dropdownIconOpen" src={process.env.PUBLIC_URL + '/arrow-down-sign-to-navigate.svg'} alt="dropdown open" onClick={() => setOpen(true)} />
+                <img className="nav_dropdownIconClose" src={process.env.PUBLIC_URL + '/close-button.svg'} alt="dropdown close" onClick={() => setOpen(false)} />
+                <img className="nav__mobile-menu-btn" src={process.env.PUBLIC_URL + '/menu-button.svg'} alt="mobile menu" width="32" onClick={() => setOpen(!open)} />
                 <LoggedInDropdown open={open} />
               </>
             )}
