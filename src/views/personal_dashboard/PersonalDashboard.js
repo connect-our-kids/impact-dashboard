@@ -1,5 +1,5 @@
 //added in modal for social sharing
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import "./PersonalDashboard.scss";
 import Modal from 'react-modal'
@@ -41,9 +41,9 @@ export default function PersonalDashboard() {
 
   const [data, setData] = useState();
   console.log('Data fetched: ', data)
-  const { user } = useContext(Auth0Context);
-  console.log(user, "user")
-  const { getTokenSilently } = useAuth0();
+  // const { user } = useContext(Auth0Context);
+  const { user, loading, getTokenSilently} = useAuth0();
+
 
   useEffect(() => {
     const token =  getTokenSilently();
@@ -54,7 +54,11 @@ export default function PersonalDashboard() {
         Authorization: `Bearer ${token}`,
         withCredentials: true,
         "Content-Type": "application/json"
-      }
+        
+      }// },
+      // body: JSON.stringify({
+      //   email: user.email
+      // })
     })
       .then(res => res.data)
       .then(data => {
@@ -63,7 +67,12 @@ export default function PersonalDashboard() {
       })
       .catch(error => console.log(error))
   }, [])
-  
+
+
+  if (loading || !user) {
+    return <div>Loading...</div>;
+  }
+    console.log(user.email, "user")
 
   return (
     <>
