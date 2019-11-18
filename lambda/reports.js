@@ -44,16 +44,23 @@ module.exports.pdf = async (event, context) => {
 
     const page = await browser.newPage()
     // page.setContent(html)
+    // currently getting the public dashboard to test styling. 
+    // should switch to current team dashboard view (assuming user is logged in already, this should work fine)
     await page.goto('https://impact-dashboard.mjherich.now.sh/', {waitUntil: 'networkidle0'});
+    
+    // Style adjustments
+    // to add for team: .team__section--middle:last-child {display: none}
+    await page.addStyleTag({ content: '.nav__btn.nav__btn--login { display: none} .public__donate { display: none}' })
 
-    // 4. Create pdf file with puppeteer
+    // Create pdf file with puppeteer
     const pdf = await page.pdf({
       format: 'A4',
+      landscape: true,
       printBackground: true,
       margin: { top: '1cm', right: '1cm', bottom: '1cm', left: '1cm' }
     })
 
-    // 5. Return PDf as base64 string
+    // Return PDf as base64 string
     const response = {
       headers: {
         'Content-type': 'application/pdf',
