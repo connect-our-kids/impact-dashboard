@@ -15,6 +15,13 @@ const Badge = ({ title, total, nextThreshold, icon, toggleModal, level }) => (
     </div>
     <div className="icon">
       <div className="icon-container">
+        <div className="icon-star" style={
+          (process.env.NODE_ENV === 'production' ? 
+            {backgroundImage: `url('/${process.env.REACT_APP_STAGE}/mdi-star-four-points.svg')`}
+          :
+            {backgroundImage: "url('/mdi-star-four-points.svg')"}
+          )
+        } />
         <img src={icon} alt="badge icon" />
       </div>
     </div>

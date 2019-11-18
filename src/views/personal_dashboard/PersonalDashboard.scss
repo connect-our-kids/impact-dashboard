@@ -66,14 +66,12 @@ header.personal {
       }
       .icon-container {
         position: relative;
-        &::before {
-          content: "";
+        .icon-star {
           width: 25px;
           height: 25px;
           position: absolute;
           top: -1px;
           left: -1px;
-          background-image: url('/mdi-star-four-points.svg');
           background-position: center center;
           background-repeat: no-repeat;
         }
