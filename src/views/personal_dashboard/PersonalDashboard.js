@@ -67,6 +67,7 @@ export default function PersonalDashboard() {
 
       <header className="personal">
         <h1 className="personal__title">Sam Wilsons Impact</h1>
+        <p>Reach the next threshold to change your badge color.</p>
       </header>
       <div className="personal__main">
         <Badge title="Children Served" total={data ? data.Served : 'Loading...'} nextThreshold="700" icon="Badge-Children-Served.svg" toggleModal={toggleModal} level="1" />
