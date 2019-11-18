@@ -7,9 +7,6 @@ import App from './App';
 import { Auth0Provider } from "./auth0-wrapper";
 import config from './auth_config.json';
 
-// mixpanel
-import { MixpanelProvider } from "react-mixpanel";
-
 //redux/router
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
