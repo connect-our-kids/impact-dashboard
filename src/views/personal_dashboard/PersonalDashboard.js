@@ -1,9 +1,12 @@
 //added in modal for social sharing
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import axios from 'axios';
 import "./PersonalDashboard.scss";
 import Modal from 'react-modal'
 import Socials from "../../Social Sharing/Socials";
 import ShareIcon from "../../Social Sharing/entypo-share.svg";
+
+import { useAuth0, Auth0Context, getTokenSilently } from "../../auth0-wrapper";
 
 const Badge = ({ title, total, nextThreshold, icon, toggleModal, level }) => (
   <div className={`badge level-${level}`}>
@@ -38,13 +41,25 @@ export default function PersonalDashboard() {
 
   const [data, setData] = useState();
   console.log('Data fetched: ', data)
+  const { user } = useContext(Auth0Context);
+  console.log(user, "user")
+  const { getTokenSilently } = useAuth0();
+
   useEffect(() => {
+    const token =  getTokenSilently();
+    console.log('TOKEN', token)
     //// at end of url, try /api/shakespeareQuotes, /api/commits, or /api/moonPhases
-    fetch('https://bv9cpgqr4l.execute-api.us-east-1.amazonaws.com/dev-nisa/Personal-Dashboard-Metrics')
-      .then(response => response.json())
+    fetch('https://bv9cpgqr4l.execute-api.us-east-1.amazonaws.com/dev-nisa/Personal-Dashboard-Metrics', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        withCredentials: true,
+        "Content-Type": "application/json"
+      }
+    })
+      .then(res => res.data)
       .then(data => {
         console.log(data)
-        setData(data)
+        return setData(data)
       })
       .catch(error => console.log(error))
   }, [])

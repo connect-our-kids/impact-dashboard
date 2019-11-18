@@ -1,4 +1,5 @@
 {
   "domain": "dev-mjherich.auth0.com",
-  "clientId": "a4zIw353hsg7B7Po9RHaFw5qXE0RdOTW"
+  "clientId": "a4zIw353hsg7B7Po9RHaFw5qXE0RdOTW",
+  "audience": "https://dev-mjherich.auth0.com/userinfo"
 }

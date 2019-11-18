@@ -50,7 +50,7 @@ const NavBar = () => {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
   const { user } = useContext(Auth0Context);
   const [open, setOpen] = React.useState(false); // Used for displaying and hiding the dropdown
-
+  console.log(user, "setUs");  
   return (
     <>
       <nav className="nav">
@@ -64,7 +64,6 @@ const NavBar = () => {
               Log In
             </button>
           )}
-
             {isAuthenticated && user && (
               <>
                 <img className="nav__avatar" src={user.picture} alt="User avatar" width="32" />

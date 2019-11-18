@@ -29,4 +29,4 @@ secrets.js
 .serverless
 # dotenv file, for api keys
 .env
-
+.vscode
