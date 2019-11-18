@@ -1,5 +1,6 @@
 //added in modal for social sharing
 import React, { useState, useEffect } from "react";
+import { useAuth0 } from "../../auth0-wrapper";
 import "./PersonalDashboard.scss";
 import Modal from 'react-modal'
 import Socials from "../../Social Sharing/Socials";
@@ -31,6 +32,7 @@ const Badge = ({ title, total, nextThreshold, icon, toggleModal, level }) => (
 )
 
 export default function PersonalDashboard() {
+  const { user } = useAuth0();
   const [isOpen, setIsOpen] = useState(false);
   const toggleModal = () => {
     setIsOpen(!isOpen);
@@ -66,7 +68,7 @@ export default function PersonalDashboard() {
       </Modal>
 
       <header className="personal">
-        <h1 className="personal__title">Sam Wilsons Impact</h1>
+        <h1 className="personal__title">{user ? user.name + "'s" : "Your"} Impact</h1>
         <p>Reach the next threshold to change your badge color.</p>
       </header>
       <div className="personal__main">
