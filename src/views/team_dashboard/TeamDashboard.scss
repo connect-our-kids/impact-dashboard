@@ -1,31 +1,33 @@
-header {
-    text-align: left;
-    h1 {
-      color: #508db3;
-      margin-left: 30rem;
-    }
-    h2 {
-      font-weight: normal;
-    }
-  }
-  main {
-    .public-stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      @media (max-width: 637px) {
-        grid-template-columns: 1fr;
-      }
-      .metric {
-        background: gray;
-        padding: 50px 0;
-        border: 1px solid black;
-      }
-      p {
-        margin-bottom: 0;
-      }
-    }
-  }
+.team__header{
+  margin: 60px 50px 50px 50px;
+  color: #158FB4;
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+}
 
-  .paragraph{
-    font-size: 20px;
+.team__section--middle{
+  margin-bottom: 50px;
+}
+
+.team__impact{
+  font-size: 30px;
+  font-weight: bold;
+  @media (max-width: 637px) {
+    font-size: 26px;
   }
+}
+.team__charts{
+  display: flex;
+  justify-content: center;
+  .team__pie{
+    width: 400px;
+    height: 300px;
+    }
+}
+
+@media (max-width: 637px) {
+  .public__visuals {
+    margin-top: 60px;
+  }
+}

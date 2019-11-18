@@ -1,29 +1,24 @@
-header {
-  text-align: left;
-  h1 {
-    color: #508db3;
-  }
-  h2 {
-    color: #6db9d0;
-    font-weight: 700;
-    margin-left: 20rem;
-  }
+.public__callout {
+  margin: 60px 50px 50px 50px;
+  color: #158FB4;
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
 }
-main {
-  .public-stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    @media (max-width: 637px) {
-      grid-template-columns: 1fr;
-    }
-    .metric {
-      background: gray;
-      padding: 50px 0;
-      border: 1px solid black;
-    }
-    p {
-      margin-bottom: 0;
-    }
-  }
+
+.public__donate {
+  height: 40px;
+  padding: 15px 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 60px 0;
+  background-color: #1d8eb6;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.public__donate:visited{
+  color:#fff;
 }

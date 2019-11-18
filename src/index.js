@@ -13,12 +13,18 @@ import { MixpanelProvider } from "react-mixpanel";
 //redux/router
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import {BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import thunk from 'redux-thunk';
 import reducer from './redux/reducers/index'
 
-
 import * as serviceWorker from './serviceWorker';
+
+export let redirectUri = window.location.origin;
+let baseName = "/";
+if (process.env.NODE_ENV === 'production') {
+  redirectUri = `${window.location.origin}/${process.env.REACT_APP_STAGE}/`;
+  baseName = `/${process.env.REACT_APP_STAGE}/`;
+}
 
 const onRedirectCallback = appState => {
   window.history.replaceState(
@@ -34,18 +40,16 @@ const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
-      <Auth0Provider
-        domain={config.domain}
-        client_id={config.clientId}
-        redirect_uri={window.location.origin}
-        onRedirectCallback={onRedirectCallback}
-      >
-        <MixpanelProvider>
-          <Router>
-            <App />
-          </Router>
-        </MixpanelProvider>
-      </Auth0Provider>
+    <Auth0Provider
+      domain={config.domain}
+      client_id={config.clientId}
+      redirect_uri={redirectUri}
+      onRedirectCallback={onRedirectCallback}
+    >
+      <Router basename={baseName}>
+        <App />
+      </Router>
+    </Auth0Provider>
   </Provider>,
   document.getElementById('root'));
 

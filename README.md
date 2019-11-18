@@ -35,17 +35,16 @@ required dependency:
 
 Take note of the secrets.js file, which is in the gitignore file so that keys aren't exposed. The credentials in secrets.js are what allows us to query against the Shakespeare public dataset.
 
-- queryShakespeare.js: where will be setting up instructions to  querying against BigQuery public shakespeare dataset.
-    - view comments in this file to get an understanding of code as it will be repeated for queries we will be making to impact bigquery db.
+- Under the lambda folder there will be 3 folders: publicdash, teamdash,personaldash. In each of these folders is where we will be setting up instructions to  querying against mock data from BigQuery.
+    - view comments in this file to get an understanding of code as it will be repeated for queries we will be making to the actual Impact dataset.
     - notice that where we are creating the client, we initially hard coded credentials to be able to  query against the dataset. For securities sake, we moved over the credentials into a secrets file that is then imported and used in place of hard coding the credentials.
-    - look at sqlQuery. That will be the sql needed to get what information we are looking for which is looking at word count.
-    - line 7 will both export the queryShakespeare file and set it up to get the query  we want( for the time being)
+    - look at sqlQuery. That will be the sql needed to get what information we are looking for with the mock data.
+    - line 7 will both export the query files and set it up to get the query  we want
 
 - navigate to handler.js
-    - We are importing the queryShakespeare.js file as shakespeare to utilize that query.
-    - The first two methods are just joke examples but enjoy.
-    - The last method is the shakespeareQuotes
-        - This is where the query will take place
+    - We are importing the each query file into handler.js to utilize those query.
+    - There will be 3 methods. One for each dashboard.
+        - This is where the query for each metric will take place
         - when serverless deploy is sent to work its magic,  it should create a lambda function that will query bigquery  and send back the data we requested ( as long as the credentials are valid, which the key will be valid by the time this is a necessary read)
 
 - once serverless deploy is working its magic, ideally it should deploy successfully. This being said we should receive urls that we can use for the GET requests later once we have the correct dataset to query against and the corresponding credentials. If you navigate to the in place GET urls, you'll see corresponding messages and details.
@@ -56,6 +55,18 @@ Take note of the secrets.js file, which is in the gitignore file so that keys ar
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# Deploying React App to AWS Lambda Function
+1. Create an `.env` file in root directory.
+2. Set `AWS_PROFILE` to the aws profile that you want to use for deployment (should be in `.aws/credentials`).
+3. Set `REACT_APP_STAGE`, should only contain text and dashes.
+4. Set `PUBLIC_URL` to be the stage name wrapped in slashes. Format here is important and required for assets to be loaded properly in the built index.html file.
+5. Your `.env` file should now closely match `.env.sample`
+6. Run `yarn build:deploy`.
+
+## Testing protected endpoints
+
+Currently /api/external is protected by checkJwt middleware. To test this from the frontend with the ExternalApi component, go to index.js in the src folder, comment out line 8, and uncomment lines 9 and 41
 
 ## Available Scripts
 

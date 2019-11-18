@@ -21,8 +21,12 @@ service: impact-dashboard
 # frameworkVersion: "=X.X.X"
 plugins:
   - serverless-plugin-include-dependencies
-
-
+  - serverless-apigw-binary
+  - serverless-apigwy-binary
+  - serverless-associate-waf
+  - serverless-offline
+  - serverless-mocha-plugin
+  - serverless-dotenv-plugin
 
 provider:
 # profile is for your powerUser credentials profile
@@ -38,55 +42,35 @@ provider:
 #  stage: dev
 #  region: us-east-1
 
-# you can add statements to the Lambda function's IAM Role here
-#  iamRoleStatements:
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:ListBucket"
-#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:PutObject"
-#      Resource:
-#        Fn::Join:
-#          - ""
-#          - - "arn:aws:s3:::"
-#            - "Ref" : "ServerlessDeploymentBucket"
-#            - "/*"
 
-# you can define service wide environment variables here
-#  environment:
-#    variable1: value1
-
-# you can add packaging information here
 package:
-  #  include:
-  #    - include-me.js
-  #    - include-me-dir/**
-  exclude:
-    - src/**
+  include:
+    - build/**
 
+custom:
+  apigwBinary:
+    types:
+      - '*/*'
 
 functions:
-  hello:
-    handler: lambda/handler.hello
+  ui:
+    handler: lambda/ui.universal
+    events:
+      - http: ANY {proxy+}
+      - http: ANY /
+#  expressApp:
+#    handler: server.expressHandler
+#    name: 'expressApp-${self:provider.stage}'
+#    events:
+#      - http: ANY /
+#      - http: 'ANY {proxy+}'
+
+  PublicDash:
+    handler: lambda/handler.PublicDash
+    name: 'publicDash-${env:REACT_APP_STAGE}'
     events:
       - http:
-          path: /
-          method: get
-  catmemes:
-    handler: lambda/handler.catMemes
-    name: 'hellocats-${self:provider.stage}'
-    events:
-      - http:
-          path: /cats
-          method: get
-  shakespeareQuotes:
-    handler: lambda/handler.shakespeareQuotes
-    name: 'shakespeare-${self:provider.stage}'
-    events:
-      - http:
-          path: /shakespeareQuotes
+          path: /Public-Dashboard-Metrics
           method: get
   # posts events to mixpanel
   mixpanelEvent:
@@ -104,64 +88,47 @@ functions:
       -http:
         path: /mixpanelUser
         method: post
-  gitHubBigQuery:
-    handler: lambda/handler.gitHubBigQuery
-    name: 'github-${self:provider.stage}'
+  TeamDash:
+    handler: lambda/handler.TeamDash
+    name: 'TeamDash-${env:REACT_APP_STAGE}'
     events:
       - http:
-          path: /commits
+          path: /Team-Dashboard-Metrics
           method: get
-  moonPhases:
-    handler: lambda/handler.moonPhases
-    name: 'moon-${self:provider.stage}'
+  PersonalDash:
+    handler: lambda/handler.PersonalDash
+    name: 'PersonalDash-${env:REACT_APP_STAGE}'
     events:
       - http:
-          path: /moonPhases
+          path: /Personal-Dashboard-Metrics
           method: get
-#    The following are a few example events you can configure
-#    NOTE: Please make sure to change your handler code to work with those events
-#    Check the event documentation for details
-#      - websocket: $connect
-#      - s3: ${env:BUCKET}
-#      - schedule: rate(10 minutes)
-#      - sns: greeter-topic
-#      - stream: arn:aws:dynamodb:region:XXXXXX:table/foo/stream/1970-01-01T00:00:00.000
-#      - alexaSkill: amzn1.ask.skill.xx-xx-xx-xx
-#      - alexaSmartHome: amzn1.ask.skill.xx-xx-xx-xx
-#      - iot:
-#          sql: "SELECT * FROM 'some_topic'"
-#      - cloudwatchEvent:
-#          event:
-#            source:
-#              - "aws.ec2"
-#            detail-type:
-#              - "EC2 Instance State-change Notification"
-#            detail:
-#              state:
-#                - pending
-#      - cloudwatchLog: '/aws/lambda/hello'
-#      - cognitoUserPool:
-#          pool: MyUserPool
-#          trigger: PreSignUp
-#      - alb:
-#          listenerArn: arn:aws:elasticloadbalancing:us-east-1:XXXXXX:listener/app/my-load-balancer/50dc6c495c0c9188/
-#          priority: 1
-#          conditions:
-#            host: example.com
-#            path: /hello
+  # Badge1:
+  #   handler: lambda/handler.Badge1
+  #   name: 'Badge1-${self:provider.stage}'
+  #   events:
+  #     - http:
+  #         path: /Badge1
+  #         method: get
+  # Badge2:
+  #   handler: lambda/handler.Badge2
+  #   name: 'Badge2-${self:provider.stage}'
+  #   events:
+  #     - http:
+  #         path: /Badge2
+  #         method: get
+  # Badge3:
+  #   handler: lambda/handler.Badge3
+  #   name: 'Badge3-${self:provider.stage}'
+  #   events:
+  #     - http:
+  #         path: /Badge3
+  #         method: get
+  # Badges:
+  #   handler: lambda/handler.Badges
+  #   name: 'Badges-${self:provider.stage}'
+  #   events:
+  #     - http:
+  #         path: /Badges
+  #         method: get
 
-#    Define function environment variables here
-#    environment:
-#      variable2: value2
 
-# you can add CloudFormation resource templates here
-#resources:
-#  Resources:
-#    NewResource:
-#      Type: AWS::S3::Bucket
-#      Properties:
-#        BucketName: my-new-bucket
-#  Outputs:
-#     NewOutput:
-#       Description: "Description for the output"
-#       Value: "Some output value"
