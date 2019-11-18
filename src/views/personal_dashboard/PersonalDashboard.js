@@ -5,15 +5,17 @@ import Modal from 'react-modal'
 import Socials from "../../Social Sharing/Socials";
 import ShareIcon from "../../Social Sharing/entypo-share.svg";
 
-const Badge = ({ title, total, nextThreshold, icon, toggleModal }) => (
-  <div className="badge">
+const Badge = ({ title, total, nextThreshold, icon, toggleModal, level }) => (
+  <div className={`badge level-${level}`}>
     <div className="info">
       <h3>{title}</h3>
       <p>Your Total: <strong>{total}</strong></p>
       <p>Next Threshold: <strong>{nextThreshold}</strong></p>
     </div>
     <div className="icon">
-      <img src={icon} alt="badge icon" />
+      <div className="icon-container">
+        <img src={icon} alt="badge icon" />
+      </div>
     </div>
     <div className="personal__share">
       <button onClick={toggleModal}>
@@ -67,9 +69,9 @@ export default function PersonalDashboard() {
         <h1 className="personal__title">Sam Wilsons Impact</h1>
       </header>
       <div className="personal__main">
-        <Badge title="Children Served" total={data ? data.Served : 'Loading...'} nextThreshold="700" icon="Badge1.svg" toggleModal={toggleModal} />
-        <Badge title="Connections Discovered" total={data ? data.Connections : 'Loading...'} nextThreshold="700" icon="Badge2.svg" toggleModal={toggleModal} />
-        <Badge title="Engagements Events" total={data ? data.Events : 'Loading...'} nextThreshold="70" icon="Badge3.svg" toggleModal={toggleModal} />
+        <Badge title="Children Served" total={data ? data.Served : 'Loading...'} nextThreshold="700" icon="Badge-Children-Served.svg" toggleModal={toggleModal} level="1" />
+        <Badge title="Connections Discovered" total={data ? data.Connections : 'Loading...'} nextThreshold="700" icon="Badge-Connections-Discovered.svg" toggleModal={toggleModal} level="2" />
+        <Badge title="Engagements Events" total={data ? data.Events : 'Loading...'} nextThreshold="70" icon="Badge-Engagement-Events.svg" toggleModal={toggleModal} level="3" />
       </div>
 
       <div className="personal__bottomtext">

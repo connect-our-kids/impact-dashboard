@@ -4,18 +4,27 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     @media (max-width: 637px) {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
     }
     .metric {
       padding: 50px 0;
+      @media (max-width: 637px) {
+        padding: 30px 0;
+      }
       .metricGrid__bold {
         font-size: 32px;
         font-weight: bold;
+        @media (max-width: 637px) {
+          font-size: 28px;
+        }
       }
       .metricGrid__title {
         font-size: 25px;
         margin: 0 auto;
         max-width: 170px;
+        @media (max-width: 637px) {
+          font-size: 22px;
+        }
       }
     }
     .metricGrid__divider {
@@ -44,5 +53,27 @@ main {
   background: #a4e1f4;
   .metricGrid__divider {
     background: #4483a0;
+  }
+}
+
+// Change order for mobile view
+@media (max-width: 637px) {
+  .metric-0 {
+    order: 5;
+  }
+  .metric-1 {
+    order: 1;
+  }
+  .metric-2 {
+    order: 2;
+  }
+  .metric-3 {
+    order: 3;
+  }
+  .metric-4 {
+    order: 4;
+  }
+  .metric-5 {
+    order: 6;
   }
 }

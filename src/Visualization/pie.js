@@ -74,7 +74,7 @@ const PieChart = props => {
   };
   return (
     <div>
-      <h2>Successful placements:</h2>
+      {/* <h2>Successful placements:</h2> */}
       <Doughnut data={data} options={option} />
       <h3>Of all kids we work with are successfully placed</h3>
     </div>

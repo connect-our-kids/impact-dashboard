@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Pie from "../../Visualization/pie";
 import DataGrid from "../../components/DataGrid";
 import {teamData} from "../../mockdata.js";
+import Loader from '../../components/Loader';
  
 export default function TeamDashboard(){
  
@@ -19,7 +20,7 @@ export default function TeamDashboard(){
   color: white;
   font-size: 20px;
 `;
-
+const [isLoading, setIsLoading] = useState(false);
 const [data, setData] = useState([
   {
     metric: "Children Served",
@@ -48,10 +49,12 @@ const [data, setData] = useState([
 ]);
 console.log('Data fetched: ', data)
 useEffect(() => {
+  setIsLoading(true);
   //// at end of url, try /api/shakespeareQuotes, /api/commits, or /api/moonPhases
   fetch('https://bv9cpgqr4l.execute-api.us-east-1.amazonaws.com/dev-nisa/Team-Dashboard-Metrics')
     .then(response => response.json())
     .then(data => {
+      setIsLoading(false);
       console.log(data)
       setData([
         {
@@ -88,6 +91,7 @@ return (
     <div>
       {/* passed team data into the data grid through props */}
       <DataGrid data={data}/>
+      <Loader isLoading={isLoading} />
     </div>
 
     <div className="team">
