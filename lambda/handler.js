@@ -111,13 +111,12 @@ module.exports.PublicDash = async event => {
 };
 
 //This function will capture and post events to mixpanel
-module.exports.mixpanelEvent = async event => {
+module.exports.sendEvent = async event => {
   return {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: 'Event sent to mixpanel',
-        event
+        message: ` ${event} sent to backend`,
       },
       null,
       2
@@ -126,13 +125,12 @@ module.exports.mixpanelEvent = async event => {
 }
 
 //This function will capture and post users to mixpanel
-module.exports.mixpanelUser = async event => {
+module.exports.sendUserInfo = async event => {
   return {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: 'User sent to mixpanel',
-        event
+        message: ` ${event} sent to backend`,
       },
       null,
       2
