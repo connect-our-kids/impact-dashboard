@@ -117,30 +117,72 @@ header.personal {
 }
 
 // Colorize Different tier badges
-.badge.level-1 .icon img {
-  border-color: #212529;
+.badge.level-1 {
+  .icon img {
+    border-color: #212529;
+  }
+  .info p:last-child strong {
+    color: #704C2F;
+  }
 }
-.badge.level-2 .icon img {
-  border-color: #704C2F;
+.badge.level-2 {
+  .icon img {
+    border-color: #704C2F;
+  }
+  .info p:last-child strong {
+    color: #AD3032;
+  }
 }
-.badge.level-3 .icon img {
-  border-color: #AD3032;
+.badge.level-3 {
+  .icon img {
+    border-color: #AD3032;
+  }
+  .info p:last-child strong {
+    color: #631588;
+  }
 }
-.badge.level-4 .icon img {
-  border-color: #631588;
+.badge.level-4 {
+  .icon img {
+    border-color: #631588;
+  }
+  .info p:last-child strong {
+    color: #2E3B8A;
+  }
 }
-.badge.level-5 .icon img {
-  border-color: #2E3B8A;
+.badge.level-5 {
+  .icon img {
+    border-color: #2E3B8A;
+  }
+  .info p:last-child strong {
+    color: #1F7218;
+  }
 }
-.badge.level-6 .icon img {
-  border-color: #1F7218;
+.badge.level-6 {
+  .icon img {
+    border-color: #1F7218;
+  }
+  .info p:last-child strong {
+    color: #DE633A;
+  }
 }
-.badge.level-7 .icon img {
-  border-color: #DE633A;
+.badge.level-7 {
+  .icon img {
+    border-color: #DE633A;
+  }
+  .info p:last-child strong {
+    color: #E8B923;
+  }
 }
-.badge.level-7 .icon img {
-  border-color: #E8B923;
+.badge.level-8 {
+  .icon img {
+    border-color: #E8B923;
+  }
+  .info p:last-child strong {
+    color: #E5E4E2;
+  }
 }
-.badge.level-7 .icon img {
-  border-color: #E5E4E2;
+.badge.level-9 {
+  .icon img {
+    border-color: #E5E4E2;
+  }
 }
