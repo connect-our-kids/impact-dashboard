@@ -23,13 +23,11 @@ header.personal {
   justify-content: center;
   text-align: left;
   .badge {
-    width: 23rem;
     min-width: 300px;
-    height: 18rem;
+    height: 14rem;
+    width: 100%;
     border: 1px solid #e5e4e2;
-    margin: 10px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     @media (max-width: 461px) {
       width: 100%;
@@ -39,7 +37,6 @@ header.personal {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 11rem;
       padding: 25px;
       @media (max-width: 461px) {
         padding: 15px 0 0 10px;
@@ -47,6 +44,7 @@ header.personal {
     }
     h3 {
       margin: 0 0 35px 0;
+      font-size: 20px;
     }
     p {
       margin-top: 5px;
@@ -56,7 +54,7 @@ header.personal {
       display: flex;
       align-items: center;
       background: #158fb4;
-      padding: 0 13px;
+      padding: 0 15px;
       img {
         border: 4px solid;
         border-radius: 50%;
@@ -77,27 +75,36 @@ header.personal {
         }
       }
     }
-    .personal__share {
-      border-top: 1px solid #e5e4e2;
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      button {
-        font-size: 18px;
-        cursor: pointer;
-        background: none;
-        border: none;
-        margin-right: 15px;
-        display: flex;
-        align-items: center;
-        &:focus {
-          outline: none;
-        }
-      }
-      img {
-        margin-left: 7px;
-      }
+  }
+}
+.badge-container {
+  width: 23rem;
+  margin: 10px;
+}
+.personal__share {
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: #e5e4e2;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  button {
+    font-size: 18px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    &:focus {
+      outline: none;
     }
+    p {
+      margin: 12px 0;
+    }
+  }
+  img {
+    margin-left: 7px;
   }
 }
 

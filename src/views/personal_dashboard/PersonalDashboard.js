@@ -7,22 +7,24 @@ import Socials from "../../Social Sharing/Socials";
 import ShareIcon from "../../Social Sharing/entypo-share.svg";
 
 const Badge = ({ title, total, nextThreshold, icon, toggleModal, level }) => (
-  <div className={`badge level-${level}`}>
-    <div className="info">
-      <h3>{title}</h3>
-      <p>Your Total: <strong>{total}</strong></p>
-      <p>Next Threshold: <strong>{nextThreshold}</strong></p>
-    </div>
-    <div className="icon">
-      <div className="icon-container">
-        <div className="icon-star" style={
-          (process.env.NODE_ENV === 'production' ? 
-            {backgroundImage: `url('/${process.env.REACT_APP_STAGE}/mdi-star-four-points.svg')`}
-          :
-            {backgroundImage: "url('/mdi-star-four-points.svg')"}
-          )
-        } />
-        <img src={icon} alt="badge icon" />
+  <div className="badge-container">
+    <div className={`badge level-${level}`}>
+      <div className="info">
+        <h3>{title}</h3>
+        <p>Your Total: <strong>{total}</strong></p>
+        <p>Next Threshold: <strong>{nextThreshold}</strong></p>
+      </div>
+      <div className="icon">
+        <div className="icon-container">
+          <div className="icon-star" style={
+            (process.env.NODE_ENV === 'production' ? 
+              {backgroundImage: `url('/${process.env.REACT_APP_STAGE}/mdi-star-four-points.svg')`}
+            :
+              {backgroundImage: "url('/mdi-star-four-points.svg')"}
+            )
+          } />
+          <img src={icon} alt="badge icon" />
+        </div>
       </div>
     </div>
     <div className="personal__share">
