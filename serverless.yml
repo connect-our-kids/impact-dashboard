@@ -30,12 +30,12 @@ plugins:
 
 provider:
 # profile is for your powerUser credentials profile
-  profile: 138110379499_PowerUserAccess
+  profile: ${env:AWS_PROFILE}
   name: aws
   runtime: nodejs10.x
   
   # make stage dev-[your name]
-  stage: dev-nisa
+  stage: ${env:REACT_APP_STAGE}
 
 
 # you can overwrite defaults here
@@ -89,19 +89,19 @@ functions:
   # posts events to mixpanel
   sendEvent:
     handler: lambda/handler.sendEvent
-    name: 'mixpanelevent-${self:provider.stage}'
+    name: 'mixpanelevent-${env:REACT_APP_STAGE}'
     events:
-      -http:
-        path: /sendEvent
-        method: post
+      - http:
+          path: /sendEvent
+          method: post
   # posts user info to mixpanel
   sendUserInfo:
     handler: lambda/handler.sendUserInfo
-    name: 'mixpaneluser-${self:provider.stage}'
+    name: 'mixpaneluser-${env:REACT_APP_STAGE}'
     events:
-      -http:
-        path: /sendUserInfo
-        method: post
+      - http:
+          path: /sendUserInfo
+          method: post
   # Badge1:
   #   handler: lambda/handler.Badge1
   #   name: 'Badge1-${self:provider.stage}'

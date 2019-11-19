@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { sendEvent } from '../analytics/mixpanel';
 import { useAuth0, Auth0Context } from "../auth0-wrapper";
 
 import './NavBar.scss';
@@ -60,7 +61,10 @@ const NavBar = () => {
         </div>
         <div className={`nav__menu${open ? " open" : " closed"}`}>
           {!isAuthenticated && (
-            <button className="nav__btn nav__btn--login" onClick={() => loginWithRedirect()}>
+            <button className="nav__btn nav__btn--login" onClick={async () => {
+                await sendEvent('click', 'login button');
+                loginWithRedirect()
+              }}>
               Log In
             </button>
           )}

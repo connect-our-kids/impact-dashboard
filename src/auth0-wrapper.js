@@ -1,5 +1,6 @@
 // src/react-auth0-spa.js
 import React, { useState, useEffect, useContext } from "react";
+import { sendUserInfo } from './analytics/mixpanel';
 import createAuth0Client from "@auth0/auth0-spa-js";
 
 const DEFAULT_REDIRECT_CALLBACK = () =>
@@ -35,6 +36,8 @@ export const Auth0Provider = ({
       if (isAuthenticated) {
         const user = await auth0FromHook.getUser();
         setUser(user);
+        // Sends user info to BE for processing on mixpanel
+        sendUserInfo(user.email);
       }
 
       setLoading(false);
