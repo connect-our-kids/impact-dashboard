@@ -1,7 +1,6 @@
 // Contains mockdata functions right now
 ///added headers to avoid CORS issues for now whil in dev
 ///added methods for new queries
-
 "use strict";
 const publicServed = require("./publicdash/queryChildrenServed");
 const publicPlacement = require("./publicdash/querySuccessfulPlacement");
@@ -111,6 +110,37 @@ module.exports.PublicDash = async event => {
   };
 };
 
+//This function will capture and post events to mixpanel
+module.exports.sendEvent = async (event, context) => {
+  console.log(context);
+  return {
+    statusCode: 200,
+    body: JSON.stringify(
+      {
+        message: `${JSON.stringify(context)}`,
+        // message: ` ${event} sent to backend`,
+      },
+      null,
+      2
+      )
+    }
+  }
+  
+  //This function will capture and post users to mixpanel
+  module.exports.sendUserInfo = async (event, context) => {
+    console.log(context);
+    return {
+      statusCode: 200,
+      body: JSON.stringify(
+        {
+        message: `${JSON.stringify(context)}`,
+        // message: ` ${event} sent to backend`,
+      },
+      null,
+      2
+    )
+  }
+}
 // module.exports.Badge3 = (event, context, callback) => {
 //   const html = `
 //   <html>

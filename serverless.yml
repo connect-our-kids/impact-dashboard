@@ -29,11 +29,18 @@ plugins:
   - serverless-dotenv-plugin
 
 provider:
-  # profile is for your powerUser credentials profile
+# profile is for your powerUser credentials profile
   profile: ${env:AWS_PROFILE}
   name: aws
   runtime: nodejs10.x
+  
+  # make stage dev-[your name]
   stage: ${env:REACT_APP_STAGE}
+
+
+# you can overwrite defaults here
+#  stage: dev
+#  region: us-east-1
 
 
 package:
@@ -79,6 +86,22 @@ functions:
       - http:
           path: /Personal-Dashboard-Metrics
           method: get
+  # posts events to mixpanel
+  sendEvent:
+    handler: lambda/handler.sendEvent
+    name: 'mixpanelevent-${env:REACT_APP_STAGE}'
+    events:
+      - http:
+          path: /sendEvent
+          method: post
+  # posts user info to mixpanel
+  sendUserInfo:
+    handler: lambda/handler.sendUserInfo
+    name: 'mixpaneluser-${env:REACT_APP_STAGE}'
+    events:
+      - http:
+          path: /sendUserInfo
+          method: post
   # Badge1:
   #   handler: lambda/handler.Badge1
   #   name: 'Badge1-${self:provider.stage}'
