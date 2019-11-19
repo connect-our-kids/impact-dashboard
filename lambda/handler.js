@@ -19,6 +19,7 @@ const personalServed = require("./personaldash/queryPersonalServed");
 const personalConnections = require("./personaldash/queryPersonalConnections");
 const personalEvents = require("./personaldash/queryPersonalEvents");
 
+
 module.exports.PersonalDash = async event => {
   const queryPersonalServed = await personalServed.queryPersonalServed();
   const queryPersonalConnections = await personalConnections.queryPersonalConnections();

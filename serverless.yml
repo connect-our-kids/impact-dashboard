@@ -79,6 +79,14 @@ functions:
       - http:
           path: /Personal-Dashboard-Metrics
           method: get
+  TeamReport:
+    handler: lambda/reports.pdf
+    name: 'TeamReport-${env:REACT_APP_STAGE}'
+    events:
+      - http:
+          path: /Team-Report
+          method: get
+          cors: true
   # Badge1:
   #   handler: lambda/handler.Badge1
   #   name: 'Badge1-${self:provider.stage}'
