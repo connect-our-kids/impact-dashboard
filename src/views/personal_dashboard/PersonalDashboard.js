@@ -50,7 +50,6 @@ export default function PersonalDashboard() {
   const [data, setData] = useState();
   console.log('Data fetched: ', data)
   useEffect(() => {
-    //// at end of url, try /api/shakespeareQuotes, /api/commits, or /api/moonPhases
     fetch('https://bv9cpgqr4l.execute-api.us-east-1.amazonaws.com/dev-nisa/Personal-Dashboard-Metrics')
       .then(response => response.json())
       .then(data => {

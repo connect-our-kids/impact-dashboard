@@ -1,72 +1,71 @@
 # impact-dashboard
-Getting started:
+
+
+|                                             [Sean Wu](https://github.com/seanwu20)                                     |                                              [Matt Herich](https://github.com/mjherich)                                              |                                                          [Nisa Champagne](https://github.com/nisaChampagne)                                                           |                                       [Eleasah Halsmer](https://github.com/ehalsmer)                                                            | |
+| :-----------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: | :---: |
+| [<img src="https://avatars1.githubusercontent.com/u/42618627?s=400&u=fb9268698479b77a4ae4117124b59f615f21ad45&v=4" width = "250" />](https://github.com/seanwu20) |       [<img src="https://avatars1.githubusercontent.com/u/8888824?s=400&v=4" width = "250" />](https://github.com/mjherich)       | [<img src="https://avatars3.githubusercontent.com/u/50988313?s=460&v=4" width = "250" />](https://github.com/nisaChampagne) |       [<img src="https://avatars1.githubusercontent.com/u/44128101?s=460&v=4" width = "250" />](https://github.com/ehalsmer)  ||
+|                          [<img src="https://github.com/favicon.ico" width="15"> ](https://www.linkedin.com/in/seanwu20/)                           |                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/mjherich)                        |                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/nisaChampagne)                                       |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ehalsmer)                   ||
+|    [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/seanwu20/)     | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/matt-herich-41246082/) |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/nisa-champagne-32782b182/)                 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/ehalsmer/)||
+<br>
+<br>
+
+|                                             [Patrick Gordon](https://github.com/seanwu20)                                     |                                              [Desiree Morris](https://github.com/DavidLam89)                                              |                                                          [Judy Ghashim](https://github.com/Jordan-Stoddard)                                                           |                                       [Diane Myers](https://github.com/gsamaniego41)                                       |                                                                |
+| :-----------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://pbs.twimg.com/profile_images/1099429898144366592/snfPARcP_400x400.png" width = "250" />](https://github.com/seanwu20) |       [<img src="https://avatars0.githubusercontent.com/u/19841364?s=400&v=4" width = "250" />](https://github.com/DavidLam89)       | [<img src="https://avatars0.githubusercontent.com/u/42726527?s=400&u=a74e6efa13ba1cac3a1a78534cbb0e0f2339523e&v=4" width = "250" />](https://github.com/Jordan-Stoddard) |       [<img src="https://avatars0.githubusercontent.com/u/35754959?s=400&v=4" width = "250" />](https://github.com/gsamaniego41)        |                                                            |
+|                          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/adventurini)                           |                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/DavidLam89)                        |                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Jordan-Stoddard)                                       |                   [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/gsamaniego41)                   |                                              |
+|    [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/anthony-v-7a18bb111/)     | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/david-lam-462149183/) |                 [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/ronald-libago-96487815b/)                 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/gabriel-samaniego-69525239/) |
+<br>
+
+
+Deploying:
 ---
 
-1. Install dependencies  
-2. On the root directory, there should be a file named ```serverless.yml```. Open that up. 
-    * In the provider section, change the profile to match the ```credentials``` file in your ```.aws``` folder
-    * Change the stage to ```dev-${your name}``` if you're developing, or ```staging-1```/```staging-2``` if you are doing QA
+1. Install dependencies, AWS CLI (`https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
+`) and Serverless `npm i -g server less`
+    * Create an `.env` file in root directory.
+    * Set `AWS_PROFILE` to the aws profile that you want to use for deployment (should be in `.aws/credentials`).
+    * Set `REACT_APP_STAGE`, should only contain text and dashes.
+    * Set `PUBLIC_URL` to be the stage name wrapped in slashes. Format here is important and required for assets to be loaded properly in the built index.html file.
+    * Your `.env` file should now closely match `.env.sample`
+
+2. Create a secrets.js for Google BigQuery stuff
+    ```
+    const bigQueryCredentials = {
+        type: "service_account",  
+        project_id: "",  
+        private_key_id: "",  
+        private_key: "",  
+        client_email: "",  
+        client_id: "",  
+        auth_uri: "",  
+        token_uri: "",  
+        auth_provider_x509_cert_url: "",  
+        client_x509_cert_url: ""  
+    }  
     
-Although we won't be using the queryShakespeare.js and /shakespeareQuotes endpoint, Nisa has the necessary credentials. Put them in a secrets.js file as a json object, and export it. For example:  
-```
-const bigQueryCredentials = {
-    type: "service_account",  
-    project_id: "",  
-    private_key_id: "",  
-    private_key: "",  
-    client_email: "",  
-    client_id: "",  
-    auth_uri: "",  
-    token_uri: "",  
-    auth_provider_x509_cert_url: "",  
-    client_x509_cert_url: ""  
-}  
+    module.exports = bigQueryCredentials  
+    ```
 
-module.exports = bigQueryCredentials  
-```
-
-Use the command ```serverless deploy``` to deploy onto AWS. You should then see your functions under Lambda. If not, make sure your region is set to North Virginia
-
-
-# Connecting BigQuery to AWS
-required dependency:
-
-- @google-cloud/bigquery (should already be installed and in the root package.json)
-
-Take note of the secrets.js file, which is in the gitignore file so that keys aren't exposed. The credentials in secrets.js are what allows us to query against the Shakespeare public dataset.
-
-- Under the lambda folder there will be 3 folders: publicdash, teamdash,personaldash. In each of these folders is where we will be setting up instructions to  querying against mock data from BigQuery.
-    - view comments in this file to get an understanding of code as it will be repeated for queries we will be making to the actual Impact dataset.
-    - notice that where we are creating the client, we initially hard coded credentials to be able to  query against the dataset. For securities sake, we moved over the credentials into a secrets file that is then imported and used in place of hard coding the credentials.
-    - look at sqlQuery. That will be the sql needed to get what information we are looking for with the mock data.
-    - line 7 will both export the query files and set it up to get the query  we want
-
-- navigate to handler.js
-    - We are importing the each query file into handler.js to utilize those query.
-    - There will be 3 methods. One for each dashboard.
-        - This is where the query for each metric will take place
-        - when serverless deploy is sent to work its magic,  it should create a lambda function that will query bigquery  and send back the data we requested ( as long as the credentials are valid, which the key will be valid by the time this is a necessary read)
-
-- once serverless deploy is working its magic, ideally it should deploy successfully. This being said we should receive urls that we can use for the GET requests later once we have the correct dataset to query against and the corresponding credentials. If you navigate to the in place GET urls, you'll see corresponding messages and details.
-- I would suggest following this set of steps/files  to successfully query against the impact dataset.
-
-
-
+3. Use the command ```yarn build:deploy``` to deploy onto AWS. You should now be able to see all your functions on AWS. Make sure your region is set to North Virginia
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Deploying React App to AWS Lambda Function
-1. Create an `.env` file in root directory.
-2. Set `AWS_PROFILE` to the aws profile that you want to use for deployment (should be in `.aws/credentials`).
-3. Set `REACT_APP_STAGE`, should only contain text and dashes.
-4. Set `PUBLIC_URL` to be the stage name wrapped in slashes. Format here is important and required for assets to be loaded properly in the built index.html file.
-5. Your `.env` file should now closely match `.env.sample`
-6. Run `yarn build:deploy`.
+# Auth0
+​
+We are using the implicit grant user authentication flow provided by the Auth0 Single Page App SDK (https://auth0.com/docs/libraries/auth0-spa-js). Notice the files `auth0-wrapper.js` and `auth_config.js`. This is where the Auth0 client is initialized and the domain/clientId are stored.
+​
+## Using the useAuth0 Hook
+​
+You are able to access user information and logged in status with the `useAuth0()` custom hook which is defined in the wrapper.
+​
+Example:  `const { user, loggedIn } = useAuth0()`
 
-## Testing protected endpoints
 
-Currently /api/external is protected by checkJwt middleware. To test this from the frontend with the ExternalApi component, go to index.js in the src folder, comment out line 8, and uncomment lines 9 and 41
+## Testing 
+
+No testing as of yet, but there is a example test in the test folder
+
 
 ## Available Scripts
 
@@ -109,6 +108,10 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ### `yarn build:dev`
 
 Builds a dev environment. The backend will depend on what your serverless.yml has specified. The frontend will go to [http://localhost:3000](http://localhost:3000)
+
+
+### `yarn build:deploy`
+Builds the react app with properly configured react router basename and auth0 redirect URI. Make sure your aws credentials are added and the `.env` file is properly configured.
 
 ## Learn More
 

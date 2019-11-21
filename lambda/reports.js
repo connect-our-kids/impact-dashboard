@@ -1,4 +1,6 @@
 'use strict'
+
+//This produces a pdf
 const chromium = require('chrome-aws-lambda')
 const fs = require('fs')
 const path = require('path')

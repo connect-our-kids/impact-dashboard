@@ -1,3 +1,5 @@
+//This file spins up a server on a lambda function called ui. It uses server code from server.js
+
 const awsServerlessExpress = require('aws-serverless-express');
 const server = require('./server');
 
