@@ -45,6 +45,16 @@ Deploying:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Auth0
+​
+We are using the implicit grant user authentication flow provided by the Auth0 Single Page App SDK (https://auth0.com/docs/libraries/auth0-spa-js). Notice the files `auth0-wrapper.js` and `auth_config.js`. This is where the Auth0 client is initialized and the domain/clientId are stored.
+​
+## Using the useAuth0 Hook
+​
+You are able to access user information and logged in status with the `useAuth0()` custom hook which is defined in the wrapper.
+​
+Example:  `const { user, loggedIn } = useAuth0()`
+
 
 ## Testing 
 
@@ -95,8 +105,7 @@ Builds a dev environment. The backend will depend on what your serverless.yml ha
 
 
 ### `yarn build:deploy`
-Magic command that deploys. Sets public url for the build. Then deploys
-
+Builds the react app with properly configured react router basename and auth0 redirect URI. Make sure your aws credentials are added and the `.env` file is properly configured.
 
 ## Learn More
 
