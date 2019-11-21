@@ -1,7 +1,4 @@
-// Contains mockdata functions right now
-///added headers to avoid CORS issues for now whil in dev
-///added methods for new queries
-
+//All lambda functions go ere except for ui and report
 "use strict";
 const publicServed = require("./publicdash/queryChildrenServed");
 const publicPlacement = require("./publicdash/querySuccessfulPlacement");
