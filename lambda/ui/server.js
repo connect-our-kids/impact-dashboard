@@ -1,3 +1,5 @@
+//server code to deploy react app on express
+
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware');
 
 const express = require('express');

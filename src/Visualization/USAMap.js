@@ -1,3 +1,5 @@
+//Map works but does not render useful data yet
+
 import React, { Component } from 'react';
 import './USAMap.scss'; /* optional for styling like the :hover pseudo-class */
 import USAMap from "react-usa-map";

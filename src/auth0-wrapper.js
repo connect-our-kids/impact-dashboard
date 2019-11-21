@@ -1,4 +1,5 @@
-// src/react-auth0-spa.js
+//boilerplate code from Auth0. Implements implicit grant 2.0 flow (MAGIC!!!!)
+//https://auth0.com/docs/libraries/auth0-spa-js
 import React, { useState, useEffect, useContext } from "react";
 import createAuth0Client from "@auth0/auth0-spa-js";
 
