@@ -47,7 +47,7 @@ custom:
 
 functions:
   ui:
-    handler: lambda/ui.universal
+    handler: lambda/ui/ui.universal
     events:
       - http: ANY {proxy+}
       - http: ANY /

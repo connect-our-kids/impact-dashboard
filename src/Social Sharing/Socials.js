@@ -1,3 +1,4 @@
+//Sharing is done, but sharing badges is not. Take not on lambda functions in handler.js and serverless.yml
 
 import React from "react";
 import "./Socials.scss";
