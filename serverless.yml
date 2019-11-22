@@ -23,7 +23,6 @@ plugins:
   - serverless-plugin-include-dependencies
   - serverless-apigw-binary
   - serverless-apigwy-binary
-  - serverless-associate-waf
   - serverless-offline
   - serverless-mocha-plugin
   - serverless-dotenv-plugin
